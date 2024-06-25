@@ -1,0 +1,5 @@
+Dependencies:
+
+* Step Circular Progress bar : https://pub.dev/documentation/step_progress_indicator/latest/
+
+* Charts : https://pub.dev/packages/syncfusion_flutter_charts
