@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:minor_project/UI%20req/Colors_req.dart';
 
-class AppBars extends StatelessWidget {
-  const AppBars({super.key});
+class navBar extends StatelessWidget {
+  const navBar({super.key});
 
   @override
   Widget build(BuildContext context) {

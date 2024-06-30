@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
-import 'package:minor_project/cAppBar.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:minor_project/navBar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Theme_req.offWhite,
       appBar: AppBar(
-        actions: const [AppBars()],
+        actions: const [navBar()],
       ),
       body: const Center(),
     );
