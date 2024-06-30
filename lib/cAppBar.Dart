@@ -75,7 +75,7 @@ class AppBars extends StatelessWidget {
               ),
               const CircleAvatar(),
               const SizedBox(
-                width: 5,
+                width: 5
               ),
               const CircleAvatar(),
             ],
