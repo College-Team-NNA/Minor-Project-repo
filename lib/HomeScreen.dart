@@ -16,7 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Theme_req.offWhite,
       appBar: AppBar(
-        actions: const [navBar()],
+        actions: const [ navBar()
+        ],
       ),
       body: const Center(),
     );

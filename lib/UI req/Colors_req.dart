@@ -10,7 +10,6 @@ class Theme_req {
   static const Color piechart_outer = Color(0xFF9489E9); //pie chart
   static const Color titles = Color(0xFF1E1E1E); //titles
 
-  
-  static const EdgeInsets defaultPadding =
-      EdgeInsets.symmetric(horizontal: 32.0);
+  static const EdgeInsets defaultPadding_navBar =
+      EdgeInsets.only(left: 32.0, right: 32.0, top: 8.0);
 }
