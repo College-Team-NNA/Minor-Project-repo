@@ -12,4 +12,5 @@ class Theme_req {
 
   static const EdgeInsets defaultPadding_navBar =
       EdgeInsets.only(left: 32.0, right: 32.0, top: 8.0);
+  static const EdgeInsets screenPadding = EdgeInsets.only(left: 30.0, right: 30.0,top: 10);
 }
