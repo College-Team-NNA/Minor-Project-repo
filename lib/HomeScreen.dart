@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
 import 'package:minor_project/navBar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,37 +23,361 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 22.0, horizontal: 28.0),
+          padding: Theme_req.screenPadding,
           child: Row(
             children: [
               Expanded(
-                  flex: 7,
+                  flex: 6,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(24.0)),
-                    ),
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(left: 7,right: 7,top: 7),
+                            height: 300,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height: 115,
+                                  decoration: BoxDecoration(
+                                    color: Theme_req.piechart_outer,
+                                    borderRadius: BorderRadius.circular(25.0),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 65, left: 50,right: 50,// Adjust the positioning as needed
+                                  child: CircleAvatar(
+                                    radius: 40, // Radius of the CircleAvatar
+                                    backgroundColor: Theme_req.bio_name,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 10,),
+                          Container(
+                            padding: Theme_req.defaultPadding_navBar,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            child: Column(
+                              children: [
+                                Text(
+                                  "Information",
+                                  style: GoogleFonts.montserrat(
+                                      color: Theme_req.bio_name,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 20),
+                                ),
+                                Divider(),
+                                Row(
+                                  children: [
+                                    Icon(Icons.language,color: Theme_req.info_tag_title,),
+                                    SizedBox(width: 3,),
+                                    Text("Website",
+                                      style: GoogleFonts.montserrat(
+                                          color: Theme_req.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),
+                                    ),
+                                    Spacer(),
+                                    Text("www.xyz.com",style: GoogleFonts.montserrat(
+                                        color: Theme_req.black,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 13),),
+                                  ],
+                                ),
+                                Spacer(),
+                                Row(
+                                  children: [
+                                    Icon(Icons.mail,color: Theme_req.info_tag_title,),
+                                    SizedBox(width: 3,),
+                                    Text("Email",
+                                      style: GoogleFonts.montserrat(
+                                          color: Theme_req.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),),
+                                    Spacer(),
+                                    Text("jhaarya1002@gmail.com",style: GoogleFonts.montserrat(
+                                        color: Theme_req.black,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 13),),
+                                  ],
+                                ),
+                                Spacer(),
+                                Row(
+                                  children: [
+                                    Icon(Icons.phone_outlined,color: Theme_req.info_tag_title,),
+                                    SizedBox(width: 3,),
+                                    Text("Phone",style: GoogleFonts.montserrat(
+                                        color: Theme_req.black,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 13),),
+                                    Spacer(),
+                                    Text("+91 8750728921",style: GoogleFonts.montserrat(
+                                        color: Theme_req.black,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 13),),
+                                  ],
+                                ),
+                                Spacer(),
+                                Row(
+                                  children: [
+                                    Icon(Icons.calendar_month_sharp,color: Theme_req.info_tag_title,),
+                                    SizedBox(width: 3,),
+                                    Text("Joined",
+                                      style: GoogleFonts.montserrat(
+                                          color: Theme_req.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),),
+                                    Spacer(),
+                                    Text("13 July 2015",
+                                      style: GoogleFonts.montserrat(
+                                          color: Theme_req.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),),
+                                  ],
+                                ),
+                                Spacer(),
+
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 10,),
+                          Container(
+                            padding: Theme_req.defaultPadding_navBar,
+                            height: 120,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            child: Column(
+                              children: [
+                                Text(
+                                  "Contact me at",
+                                  style: GoogleFonts.montserrat(
+                                      color: Theme_req.bio_name,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 20),
+                                ),
+                                Divider(),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 50.0,right: 50,top: 20,bottom: 20),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      FaIcon(FontAwesomeIcons.linkedin,color: Theme_req.follow_btn,),
+                                      Spacer(),
+                                      FaIcon(FontAwesomeIcons.instagram,color: Theme_req.follow_btn,),
+                                      Spacer(),
+                                      FaIcon(FontAwesomeIcons.facebook,color: Theme_req.follow_btn,),
+                                      Spacer(),
+                                      FaIcon(FontAwesomeIcons.github,color: Theme_req.follow_btn,),
+                                      Spacer(),
+                                      FaIcon(FontAwesomeIcons.behance,color: Theme_req.follow_btn,),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
                   )),
               Expanded(
                   flex: 4,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(24.0)),
-                    ),
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Hello, World!',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 10,),
+                          Container(
+                            height: 280,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Hello, World!',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 10,),
+                          Container(
+                              padding: EdgeInsets.all(35),
+                              height: 155,
+                              decoration: BoxDecoration(
+                                color: Theme_req.follow_btn,
+                                borderRadius: BorderRadius.circular(25.0),
+                              ),
+                              child: Column(
+                                children: [
+                                  Center(child: Text("Continue Learning",
+                                    style: GoogleFonts.montserrat(
+                                        color: Theme_req.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 20),)),
+                                  SizedBox(height: 10,),
+                                  Align(alignment: Alignment.bottomRight,
+                                    child: CircleAvatar(
+                                      backgroundColor: Theme_req.white,
+                                      radius: 23,
+                                      child: IconButton(
+                                        icon: FaIcon(FontAwesomeIcons.play,size: 20,), // Your icon
+                                        color: Theme_req.follow_btn, // Icon color
+                                        onPressed: () {},
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              )
+                          ),
+                        ],
+                      )
                   )),
               Expanded(
                   flex: 9,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
+                      padding: EdgeInsets.only(left: 40,right: 40,top: 20,bottom: 20),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(24.0)),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "Recent Projects",
+                                style: GoogleFonts.montserrat(
+                                    color: Theme_req.bio_name,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 20),
+                              ),
+                              Spacer(),
+                              IconButton(
+                                  onPressed: (){},
+                                  icon: Icon(Icons.file_upload_outlined,
+                                    color: Theme_req.follow_btn,
+                                    size: 35,
+                                  )),
+                            ],
+                          ),
+                          Expanded(
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        width:250,height:140,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius: BorderRadius.circular(24.0)),
+                                      ),
+                                      SizedBox(width: 30,),
+                                      Container(
+                                        width:250,height:140,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius: BorderRadius.circular(24.0)),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10,),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        width:250,height:140,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius: BorderRadius.circular(24.0)),
+                                      ),
+                                      SizedBox(width: 30,),
+                                      Container(
+                                        width:250,height:140,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius: BorderRadius.circular(24.0)),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10,),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        width:250,height:140,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius: BorderRadius.circular(24.0)),
+                                      ),
+                                      SizedBox(width: 30,),
+                                      Container(
+                                        width:250,height:140,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius: BorderRadius.circular(24.0)),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10,),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        width:250,height:140,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius: BorderRadius.circular(24.0)),
+                                      ),
+                                      SizedBox(width: 30,),
+                                      Container(
+                                        width:250,height:140,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius: BorderRadius.circular(24.0)),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   )),
             ],
