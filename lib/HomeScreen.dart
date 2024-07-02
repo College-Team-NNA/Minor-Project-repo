@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Theme_req.offWhite,
       appBar: AppBar(
+        backgroundColor: Theme_req.offWhite,
         actions: const [navBar()],
       ),
       body: SafeArea(
@@ -35,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: EdgeInsets.only(left: 7,right: 7,top: 7),
+                            padding: const EdgeInsets.only(left: 7,right: 7,top: 7),
                             height: 300,
                             decoration: BoxDecoration(
                               color: Colors.white,
@@ -50,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     borderRadius: BorderRadius.circular(25.0),
                                   ),
                                 ),
-                                Positioned(
+                                const Positioned(
                                   top: 65, left: 50,right: 50,// Adjust the positioning as needed
                                   child: CircleAvatar(
                                     radius: 40, // Radius of the CircleAvatar
@@ -60,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                           ),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           Container(
                             padding: Theme_req.defaultPadding_navBar,
                             height: 200,
@@ -77,68 +78,68 @@ class _HomeScreenState extends State<HomeScreen> {
                                       fontWeight: FontWeight.w600,
                                       fontSize: 20),
                                 ),
-                                Divider(),
+                                const Divider(),
                                 Row(
                                   children: [
-                                    Icon(Icons.language,color: Theme_req.info_tag_title,),
-                                    SizedBox(width: 3,),
+                                    const Icon(Icons.language,color: Theme_req.info_tag_title,),
+                                    const SizedBox(width: 3,),
                                     Text("Website",
                                       style: GoogleFonts.montserrat(
                                           color: Theme_req.black,
                                           fontWeight: FontWeight.w500,
                                           fontSize: 13),
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     Text("www.xyz.com",style: GoogleFonts.montserrat(
                                         color: Theme_req.black,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 13),),
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Row(
                                   children: [
-                                    Icon(Icons.mail,color: Theme_req.info_tag_title,),
-                                    SizedBox(width: 3,),
+                                    const Icon(Icons.mail,color: Theme_req.info_tag_title,),
+                                    const SizedBox(width: 3,),
                                     Text("Email",
                                       style: GoogleFonts.montserrat(
                                           color: Theme_req.black,
                                           fontWeight: FontWeight.w500,
                                           fontSize: 13),),
-                                    Spacer(),
+                                    const Spacer(),
                                     Text("jhaarya1002@gmail.com",style: GoogleFonts.montserrat(
                                         color: Theme_req.black,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 13),),
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Row(
                                   children: [
-                                    Icon(Icons.phone_outlined,color: Theme_req.info_tag_title,),
-                                    SizedBox(width: 3,),
+                                    const Icon(Icons.phone_outlined,color: Theme_req.info_tag_title,),
+                                    const SizedBox(width: 3,),
                                     Text("Phone",style: GoogleFonts.montserrat(
                                         color: Theme_req.black,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 13),),
-                                    Spacer(),
+                                    const Spacer(),
                                     Text("+91 8750728921",style: GoogleFonts.montserrat(
                                         color: Theme_req.black,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 13),),
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Row(
                                   children: [
-                                    Icon(Icons.calendar_month_sharp,color: Theme_req.info_tag_title,),
-                                    SizedBox(width: 3,),
+                                    const Icon(Icons.calendar_month_sharp,color: Theme_req.info_tag_title,),
+                                    const SizedBox(width: 3,),
                                     Text("Joined",
                                       style: GoogleFonts.montserrat(
                                           color: Theme_req.black,
                                           fontWeight: FontWeight.w500,
                                           fontSize: 13),),
-                                    Spacer(),
+                                    const Spacer(),
                                     Text("13 July 2015",
                                       style: GoogleFonts.montserrat(
                                           color: Theme_req.black,
@@ -146,12 +147,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                           fontSize: 13),),
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
 
                               ],
                             ),
                           ),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           Container(
                             padding: Theme_req.defaultPadding_navBar,
                             height: 120,
@@ -168,9 +169,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       fontWeight: FontWeight.w600,
                                       fontSize: 20),
                                 ),
-                                Divider(),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 50.0,right: 50,top: 20,bottom: 20),
+                                const Divider(),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 50.0,right: 50,top: 20,bottom: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -206,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(25.0),
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 'Hello, World!',
                                 style: TextStyle(
@@ -215,14 +216,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           Container(
                             height: 280,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(25.0),
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 'Hello, World!',
                                 style: TextStyle(
@@ -231,9 +232,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           Container(
-                              padding: EdgeInsets.all(35),
+                              padding: const EdgeInsets.all(35),
                               height: 155,
                               decoration: BoxDecoration(
                                 color: Theme_req.follow_btn,
@@ -246,13 +247,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Theme_req.white,
                                         fontWeight: FontWeight.w700,
                                         fontSize: 20),)),
-                                  SizedBox(height: 10,),
+                                  const SizedBox(height: 10,),
                                   Align(alignment: Alignment.bottomRight,
                                     child: CircleAvatar(
                                       backgroundColor: Theme_req.white,
                                       radius: 23,
                                       child: IconButton(
-                                        icon: FaIcon(FontAwesomeIcons.play,size: 20,), // Your icon
+                                        icon: const FaIcon(FontAwesomeIcons.play,size: 20,), // Your icon
                                         color: Theme_req.follow_btn, // Icon color
                                         onPressed: () {},
                                       ),
@@ -269,7 +270,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      padding: EdgeInsets.only(left: 40,right: 40,top: 20,bottom: 20),
+                      padding: const EdgeInsets.only(left: 40,right: 40,top: 20,bottom: 20),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(24.0)),
@@ -284,10 +285,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontWeight: FontWeight.w600,
                                     fontSize: 20),
                               ),
-                              Spacer(),
+                              const Spacer(),
                               IconButton(
                                   onPressed: (){},
-                                  icon: Icon(Icons.file_upload_outlined,
+                                  icon: const Icon(Icons.file_upload_outlined,
                                     color: Theme_req.follow_btn,
                                     size: 35,
                                   )),
@@ -306,7 +307,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             color: Theme_req.offWhite,
                                             borderRadius: BorderRadius.circular(24.0)),
                                       ),
-                                      SizedBox(width: 30,),
+                                      const SizedBox(width: 30,),
                                       Container(
                                         width:250,height:140,
                                         decoration: BoxDecoration(
@@ -315,7 +316,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10,),
+                                  const SizedBox(height: 10,),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -325,7 +326,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             color: Theme_req.offWhite,
                                             borderRadius: BorderRadius.circular(24.0)),
                                       ),
-                                      SizedBox(width: 30,),
+                                      const SizedBox(width: 30,),
                                       Container(
                                         width:250,height:140,
                                         decoration: BoxDecoration(
@@ -334,7 +335,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10,),
+                                  const SizedBox(height: 10,),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -344,7 +345,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             color: Theme_req.offWhite,
                                             borderRadius: BorderRadius.circular(24.0)),
                                       ),
-                                      SizedBox(width: 30,),
+                                      const SizedBox(width: 30,),
                                       Container(
                                         width:250,height:140,
                                         decoration: BoxDecoration(
@@ -353,7 +354,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10,),
+                                  const SizedBox(height: 10,),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -363,7 +364,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             color: Theme_req.offWhite,
                                             borderRadius: BorderRadius.circular(24.0)),
                                       ),
-                                      SizedBox(width: 30,),
+                                      const SizedBox(width: 30,),
                                       Container(
                                         width:250,height:140,
                                         decoration: BoxDecoration(
@@ -387,3 +388,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+

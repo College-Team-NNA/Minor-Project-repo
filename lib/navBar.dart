@@ -9,7 +9,7 @@ class navBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        height: 56.0,
+        height: 53.0,
         decoration: const BoxDecoration(color: Theme_req.offWhite),
         child: Padding(
           padding: Theme_req.defaultPadding_navBar,
@@ -59,7 +59,9 @@ class navBar extends StatelessWidget {
               Expanded(
                 child: SizedBox(
                   width: 150.0,
+                  height: 34.0,
                   child: TextField(
+                    style: TextStyle(color: Theme_req.white),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.all(4.0),
                       border: OutlineInputBorder(
@@ -68,10 +70,10 @@ class navBar extends StatelessWidget {
                       filled: true,
                       fillColor: Theme_req.black,
                       prefixIcon: const Padding(
-                        padding: EdgeInsets.only(left: 12.0),
+                        padding: EdgeInsets.only(left: 2.0,top: 2.0),
                         child: Icon(
                           Icons.search,
-                          size: 30.0,
+                          size: 26.0,
                         ),
                       ),
                       prefixIconColor: Colors.white,
@@ -80,37 +82,39 @@ class navBar extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                width: 20,
+                width: 12,
               ),
               CircleAvatar(
-                  radius: 25,
+                  radius: 18,
                   backgroundColor: Theme_req.black,
                   child: IconButton(
                     icon: const Icon(
                       Icons.mail,
                       color: Colors.white,
+                      size: 19,
                     ),
                     color: Theme_req.black,
                     onPressed: () {},
                   )),
               const SizedBox(
-                width: 15,
+                width: 12,
               ),
               CircleAvatar(
-                  radius: 25,
+                  radius: 18,
                   backgroundColor: Theme_req.black,
                   child: IconButton(
                     icon: const Icon(
                       Icons.notifications,
                       color: Colors.white,
+                      size: 19,
                     ),
                     color: Theme_req.black,
                     onPressed: () {},
                   )),
-              const SizedBox(width: 15),
+              const SizedBox(width: 12),
               GestureDetector(
                 child: CircleAvatar(
-                  radius: 25,
+                  radius: 18,
                   backgroundColor: Theme_req.black,
                   // child: Image.network(
                   // 'https://s3-alpha-sig.figma.com/img/9a2e/d58e/aa7d7d387d8aedeaf7086c75f7aafc8c?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ejm9GkGGuT3ax7XeyQCbg9xXwRYcuEiwqUZ4nT8cbVY3YlE6yNqIk~c8ernrkGwZj2X8Qq51ox7ehHHXZnPnsU9BSIS67nKUBqkZwI0BV4TN~PkoJ4rYEKfkq6nN3iOiG80NTa1-0JekoPP8MvYCRv7GOojCHlYvSdpDlmwnCgxBQh0Rx7p6pui219Fc-54UHgGSHc6XocxC9l3rE-VqOYTZOCeVMMDUxWmw5l8hYOljLvy8vKWHzFOVEQdSIX-GAvtUPiGZS7t4BELyJil~Y9pYwCGGbU9u9~HGhXz23tjtM22~0OlllZ8KDjz51K8FRqVpK1cVvq-iR-JDxLtVnA__'),
