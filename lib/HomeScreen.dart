@@ -25,114 +25,143 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SafeArea(
         child: Padding(
-          padding:const EdgeInsets.only(left: 60,right: 60,top: 10),
+          padding: const EdgeInsets.only(left: 60, right: 60, top: 10),
           child: Row(
             children: [
               Expanded(
-                  flex: 6,
-                  child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(left: 7,right: 7,top: 7),
-                            height: 300,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(25.0),
+                flex: 6,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding:
+                            const EdgeInsets.only(left: 7, right: 7, top: 7),
+                        height: 300,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        child: Stack(
+                          children: [
+                            Container(
+                              height: 70,
+                              decoration: BoxDecoration(
+                                color: Theme_req.piechart_outer,
+                                borderRadius: BorderRadius.circular(25.0),
+                              ),
                             ),
-                            child: Stack(
-                              children: [
-                                Container(
-                                  height: 70,
-                                  decoration: BoxDecoration(
-                                    color: Theme_req.piechart_outer,
-                                    borderRadius: BorderRadius.circular(25.0),
-
+                            Positioned(
+                              top: 25, left: 50,
+                              right: 50, // Adjust the positioning as needed
+                              child: Column(
+                                children: [
+                                  const CircleAvatar(
+                                    radius: 35, // Radius of the CircleAvatar
+                                    backgroundColor: Theme_req.bio_name,
                                   ),
-                                ),
-                                Positioned(
-                                  top: 25, left: 50,right: 50,// Adjust the positioning as needed
-                                  child: Column(
-                                    children: [
-                                      const CircleAvatar(
-                                        radius: 35, // Radius of the CircleAvatar
-                                        backgroundColor: Theme_req.bio_name,
-                                      ),
-                                      Text("@aryajha",
-                                        style: GoogleFonts.montserrat(
-                                            color: Theme_req.bio_name,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 13),
-                                      ),
-                                      Text("Arya Jha",
-                                        style: GoogleFonts.montserrat(
-                                          color: Theme_req.bio_name,
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 25),),
-                                      Text("Flutter Developer",
-                                        style: GoogleFonts.montserrat(
-                                            color: Theme_req.bio_name,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 10),),
-                                      const Divider(),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 20.0,right: 20),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            Container(width:120,height: 26,
-                                              child: ElevatedButton(
-                                                onPressed: (){},
-                                                style: ButtonStyle(
-                                                  backgroundColor: MaterialStateProperty.all<Color>(Theme_req.follow_btn),
-                                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                                    RoundedRectangleBorder(
-                                                      borderRadius: BorderRadius.circular(8), // Curved corners
-                                                    ),
-                                                  ),
-                                                ),
-                                                child: Text("FOLLOW",
-                                                  style: GoogleFonts.montserrat(
-                                                      color: Theme_req.white,
-                                                      fontWeight: FontWeight.w500,
-                                                      fontSize: 11),
+                                  Text(
+                                    "@aryajha",
+                                    style: GoogleFonts.montserrat(
+                                        color: Theme_req.bio_name,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 13),
+                                  ),
+                                  Text(
+                                    "Arya Jha",
+                                    style: GoogleFonts.montserrat(
+                                        color: Theme_req.bio_name,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 25),
+                                  ),
+                                  Text(
+                                    "Flutter Developer",
+                                    style: GoogleFonts.montserrat(
+                                        color: Theme_req.bio_name,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 10),
+                                  ),
+                                  const Divider(),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 20.0, right: 20),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          width: 120,
+                                          height: 26,
+                                          child: ElevatedButton(
+                                            onPressed: () {},
+                                            style: ButtonStyle(
+                                              backgroundColor:
+                                                  MaterialStateProperty.all<
+                                                          Color>(
+                                                      Theme_req.follow_btn),
+                                              shape: MaterialStateProperty.all<
+                                                  RoundedRectangleBorder>(
+                                                RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8), // Curved corners
                                                 ),
                                               ),
                                             ),
-                                            SizedBox(width: 15,),
-                                            Container(width:120,height: 26,
-                                              child: ElevatedButton(
-                                                onPressed: (){},
-                                                style: ButtonStyle(
-                                                  backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                                    RoundedRectangleBorder(
-                                                      borderRadius: BorderRadius.circular(8), // Curved corners
-                                                    ),
-                                                  ),
-                                                ),
-                                                child: Text("Edit Profile",
-                                                  style: GoogleFonts.montserrat(
-                                                    color: Theme_req.follow_btn,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 11),),
-                                              ),
-                                            )
-                                          ],
+                                            child: Text(
+                                              "FOLLOW",
+                                              style: GoogleFonts.montserrat(
+                                                  color: Theme_req.white,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 11),
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                      const SizedBox(height: 8,),
-                                      Text("sdfgdrgdfkjnskjfhjfbdvzdnbgrdjrbnzzvbdjhgbjdfbzdvjhzdbjfbzdjbgfdjhfjzvndbhjzbndfnuhfzjskdnfkjsgfjzbdjfzsdgefjzbdvdgfgusbdfnvvbzsgfhbzdjbvdvrdg",
-                                        maxLines: 3,
-                                          style: GoogleFonts.montserrat(fontSize: 15),
-                                      )
-                                    ],
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Container(
+                                          width: 120,
+                                          height: 26,
+                                          child: ElevatedButton(
+                                            onPressed: () {},
+                                            style: ButtonStyle(
+                                              backgroundColor:
+                                                  MaterialStateProperty.all<
+                                                      Color>(Colors.white),
+                                              shape: MaterialStateProperty.all<
+                                                  RoundedRectangleBorder>(
+                                                RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8), // Curved corners
+                                                ),
+                                              ),
+                                            ),
+                                            child: Text(
+                                              "Edit Profile",
+                                              style: GoogleFonts.montserrat(
+                                                  color: Theme_req.follow_btn,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 11),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  const SizedBox(
+                                    height: 8,
+                                  ),
+                                  Text(
+                                    "sdfgdrgdfkjnskjfhjfbdvzdnbgrdjrbnzzvbdjhgbjdfbzdvjhzdbjfbzdjbgfdjhfjzvndbhjzbndfnuhfzjskdnfkjsgfjzbdjfzsdgefjzbdvdgfgusbdfnvvbzsgfhbzdjbvdvrdg",
+                                    maxLines: 3,
+                                    style: GoogleFonts.montserrat(fontSize: 15),
+                                  )
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -419,7 +448,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      padding: const EdgeInsets.only(left: 40,right: 40,top: 20,bottom: 20),
+                      padding: const EdgeInsets.only(
+                          left: 40, right: 40, top: 20, bottom: 20),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(24.0)),
@@ -436,14 +466,17 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               const Spacer(),
                               IconButton(
-                                  onPressed: (){},
-                                  icon: const Icon(Icons.file_upload_outlined,
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                    Icons.file_upload_outlined,
                                     color: Theme_req.follow_btn,
                                     size: 35,
                                   )),
                             ],
                           ),
-                          const SizedBox(height: 10,),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           Expanded(
                             child: SingleChildScrollView(
                               child: Column(
@@ -451,92 +484,122 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Expanded(flex:5,
+                                      Expanded(
+                                        flex: 5,
                                         child: Container(
                                           // width:270,
-                                          height:160,
+                                          height: 160,
                                           decoration: BoxDecoration(
                                               color: Theme_req.offWhite,
-                                              borderRadius: BorderRadius.circular(24.0)),
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0)),
                                         ),
                                       ),
-                                      const SizedBox(width: 30,),
-                                      Expanded(flex:5,
+                                      const SizedBox(
+                                        width: 30,
+                                      ),
+                                      Expanded(
+                                        flex: 5,
                                         child: Container(
                                           // width:270,
-                                          height:160,
+                                          height: 160,
                                           decoration: BoxDecoration(
                                               color: Theme_req.offWhite,
-                                              borderRadius: BorderRadius.circular(24.0)),
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0)),
                                         ),
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 30,),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          width:270,height:160,
+                                          width: 270,
+                                          height: 160,
                                           decoration: BoxDecoration(
                                               color: Theme_req.offWhite,
-                                              borderRadius: BorderRadius.circular(24.0)),
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0)),
                                         ),
                                       ),
-                                      const SizedBox(width: 30,),
+                                      const SizedBox(
+                                        width: 30,
+                                      ),
                                       Expanded(
                                         child: Container(
-                                          width:270,height:160,
+                                          width: 270,
+                                          height: 160,
                                           decoration: BoxDecoration(
                                               color: Theme_req.offWhite,
-                                              borderRadius: BorderRadius.circular(24.0)),
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0)),
                                         ),
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 30,),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          width:270,height:160,
+                                          width: 270,
+                                          height: 160,
                                           decoration: BoxDecoration(
                                               color: Theme_req.offWhite,
-                                              borderRadius: BorderRadius.circular(24.0)),
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0)),
                                         ),
                                       ),
-                                      const SizedBox(width: 30,),
+                                      const SizedBox(
+                                        width: 30,
+                                      ),
                                       Expanded(
                                         child: Container(
-                                          width:270,height:160,
+                                          width: 270,
+                                          height: 160,
                                           decoration: BoxDecoration(
                                               color: Theme_req.offWhite,
-                                              borderRadius: BorderRadius.circular(24.0)),
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0)),
                                         ),
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 30,),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          width:270,height:160,
+                                          width: 270,
+                                          height: 160,
                                           decoration: BoxDecoration(
                                               color: Theme_req.offWhite,
-                                              borderRadius: BorderRadius.circular(24.0)),
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0)),
                                         ),
                                       ),
-                                      const SizedBox(width: 30,),
+                                      const SizedBox(
+                                        width: 30,
+                                      ),
                                       Expanded(
                                         child: Container(
-                                          width:270,height:160,
+                                          width: 270,
+                                          height: 160,
                                           decoration: BoxDecoration(
                                               color: Theme_req.offWhite,
-                                              borderRadius: BorderRadius.circular(24.0)),
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0)),
                                         ),
                                       ),
                                     ],
