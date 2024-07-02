@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Container(
                         padding:
                             const EdgeInsets.only(left: 7, right: 7, top: 7),
-                        height: 300,
+                        height: MediaQuery.of(context).size.height * 0.45,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(25.0),
@@ -48,9 +48,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Container(
                               height: 70,
+                              width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
                                 color: Theme_req.piechart_outer,
                                 borderRadius: BorderRadius.circular(25.0),
+                              ),
+                              child: Image.network(
+                                "https://s3-alpha-sig.figma.com/img/bc9e/dea8/b59e91cfa53a4f01c9995fc82559370e?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dyR9WZPAjAFx4sq~0W1eTdXeXdPy7rqBDv1WrywOQFN1hL6Ql7iET~~SSpalDk-StOvrDW2PwfPq7Km6kkZMOYCKmn95kdITwBhRXcJ~WUs3llIir7-zJmSmdm-ZS8zfEW1pl0QIJNhri80V-qqw~Nal~37dzVtSucF6-zKNAbMFBNBXjJyv3WQqkKswNoY4aNGb9AG8aaL1KnuGIJkoRfe4kTp6Q9kcbv2rgOesgbFgmYIUsjIGLEfj7Csug9MJck0-2Zuo5pRb2GUdMpLiBmTA8XrUDuO1Ij7sFdDgqWDaShDiOFeimrFfj1AWuNuq4rXveHnpHt304pkLTzg4VQ__",
+                                color: Theme_req.piechart_outer,
+                                colorBlendMode: BlendMode.color,
+                                fit: BoxFit.cover,
                               ),
                             ),
                             Positioned(
@@ -119,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 15,
                                         ),
                                         Container(
@@ -166,12 +173,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       Container(
+                        constraints: BoxConstraints(maxHeight: 550),
                         padding: Theme_req.defaultPadding_navBar,
-                        height: 200,
+                        height: MediaQuery.of(context).size.height * .25,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(25.0),
@@ -183,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: GoogleFonts.montserrat(
                                   color: Theme_req.bio_name,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 20),
+                                  fontSize: Theme_req.Heading_size),
                             ),
                             const Divider(),
                             Row(
@@ -297,12 +305,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       Container(
                         padding: Theme_req.defaultPadding_navBar,
-                        height: 120,
+                        constraints: BoxConstraints(maxHeight: 145),
+                        height: MediaQuery.of(context).size.height * 0.15,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(25.0),
@@ -314,38 +323,46 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: GoogleFonts.montserrat(
                                   color: Theme_req.bio_name,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 20),
+                                  fontSize: Theme_req.Heading_size),
                             ),
                             const Divider(),
+                            const SizedBox(
+                              height: 8,
+                            ),
                             const Padding(
-                              padding: EdgeInsets.only(
-                                  left: 50.0, right: 50, top: 20, bottom: 20),
+                              padding: EdgeInsets.symmetric(horizontal: 60.0),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   FaIcon(
                                     FontAwesomeIcons.linkedin,
                                     color: Theme_req.follow_btn,
+                                    size: 35,
                                   ),
-                                  Spacer(),
+                                  // Spacer(),
                                   FaIcon(
                                     FontAwesomeIcons.instagram,
                                     color: Theme_req.follow_btn,
+                                    size: 35,
                                   ),
-                                  Spacer(),
+                                  // Spacer(),
                                   FaIcon(
                                     FontAwesomeIcons.facebook,
                                     color: Theme_req.follow_btn,
+                                    size: 35,
                                   ),
-                                  Spacer(),
+                                  // Spacer(),
                                   FaIcon(
                                     FontAwesomeIcons.github,
                                     color: Theme_req.follow_btn,
+                                    size: 35,
                                   ),
-                                  Spacer(),
+                                  // Spacer(),
                                   FaIcon(
                                     FontAwesomeIcons.behance,
                                     color: Theme_req.follow_btn,
+                                    size: 35,
                                   ),
                                 ],
                               ),
@@ -366,7 +383,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: 200,
+                        height: MediaQuery.of(context).size.height * 0.26,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(25.0),
@@ -380,11 +397,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       Container(
-                        height: 280,
+                        height: MediaQuery.of(context).size.height * 0.42,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(25.0),
@@ -398,45 +415,51 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       Container(
-                        padding: const EdgeInsets.all(35),
-                        height: 155,
+                        padding: const EdgeInsets.only(
+                          left: 30,
+                          right: 30,
+                        ),
+                        height: MediaQuery.of(context).size.height * 0.17,
                         decoration: BoxDecoration(
                           color: Theme_req.follow_btn,
                           borderRadius: BorderRadius.circular(25.0),
                         ),
-                        child: Column(
-                          children: [
-                            Center(
-                                child: Text(
-                              "Continue Learning",
-                              style: GoogleFonts.montserrat(
-                                  color: Theme_req.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 20),
-                            )),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Align(
-                              alignment: Alignment.bottomRight,
-                              child: CircleAvatar(
-                                backgroundColor: Theme_req.white,
-                                radius: 23,
-                                child: IconButton(
-                                  icon: const FaIcon(
-                                    FontAwesomeIcons.play,
-                                    size: 20,
-                                  ), // Your icon
-                                  color: Theme_req.follow_btn, // Icon color
-                                  onPressed: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 28.0),
+                          child: Column(
+                            children: [
+                              Center(
+                                  child: Text(
+                                "Continue Learning",
+                                style: GoogleFonts.montserrat(
+                                    color: Theme_req.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 20),
+                              )),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Align(
+                                alignment: Alignment.bottomRight,
+                                child: CircleAvatar(
+                                  backgroundColor: Theme_req.white,
+                                  radius: 21,
+                                  child: IconButton(
+                                    icon: const FaIcon(
+                                      FontAwesomeIcons.play,
+                                      size: 18,
+                                    ), // Your icon
+                                    color: Theme_req.follow_btn, // Icon color
+                                    onPressed: () {},
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -444,174 +467,175 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Expanded(
-                  flex: 9,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      padding: const EdgeInsets.only(
-                          left: 40, right: 40, top: 20, bottom: 20),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(24.0)),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                "Recent Projects",
-                                style: GoogleFonts.montserrat(
-                                    color: Theme_req.bio_name,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 20),
-                              ),
-                              const Spacer(),
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    Icons.file_upload_outlined,
-                                    color: Theme_req.follow_btn,
-                                    size: 35,
-                                  )),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Expanded(
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        flex: 5,
-                                        child: Container(
-                                          // width:270,
-                                          height: 160,
-                                          decoration: BoxDecoration(
-                                              color: Theme_req.offWhite,
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0)),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 30,
-                                      ),
-                                      Expanded(
-                                        flex: 5,
-                                        child: Container(
-                                          // width:270,
-                                          height: 160,
-                                          decoration: BoxDecoration(
-                                              color: Theme_req.offWhite,
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0)),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 30,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: 270,
-                                          height: 160,
-                                          decoration: BoxDecoration(
-                                              color: Theme_req.offWhite,
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0)),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 30,
-                                      ),
-                                      Expanded(
-                                        child: Container(
-                                          width: 270,
-                                          height: 160,
-                                          decoration: BoxDecoration(
-                                              color: Theme_req.offWhite,
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0)),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 30,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: 270,
-                                          height: 160,
-                                          decoration: BoxDecoration(
-                                              color: Theme_req.offWhite,
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0)),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 30,
-                                      ),
-                                      Expanded(
-                                        child: Container(
-                                          width: 270,
-                                          height: 160,
-                                          decoration: BoxDecoration(
-                                              color: Theme_req.offWhite,
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0)),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 30,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: 270,
-                                          height: 160,
-                                          decoration: BoxDecoration(
-                                              color: Theme_req.offWhite,
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0)),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 30,
-                                      ),
-                                      Expanded(
-                                        child: Container(
-                                          width: 270,
-                                          height: 160,
-                                          decoration: BoxDecoration(
-                                              color: Theme_req.offWhite,
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0)),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                flex: 9,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    padding: const EdgeInsets.only(
+                        left: 40, right: 40, top: 20, bottom: 20),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(24.0)),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Recent Projects",
+                              style: GoogleFonts.montserrat(
+                                  color: Theme_req.bio_name,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: Theme_req.Heading_size),
                             ),
-                          )
-                        ],
-                      ),
+                            const Spacer(),
+                            IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.file_upload_outlined,
+                                  color: Theme_req.follow_btn,
+                                  size: 35,
+                                )),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Expanded(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      flex: 5,
+                                      child: Container(
+                                        // width:270,
+                                        height: 160,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius:
+                                                BorderRadius.circular(24.0)),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Expanded(
+                                      flex: 5,
+                                      child: Container(
+                                        // width:270,
+                                        height: 160,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius:
+                                                BorderRadius.circular(24.0)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: 270,
+                                        height: 160,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius:
+                                                BorderRadius.circular(24.0)),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Expanded(
+                                      child: Container(
+                                        width: 270,
+                                        height: 160,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius:
+                                                BorderRadius.circular(24.0)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: 270,
+                                        height: 160,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius:
+                                                BorderRadius.circular(24.0)),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Expanded(
+                                      child: Container(
+                                        width: 270,
+                                        height: 160,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius:
+                                                BorderRadius.circular(24.0)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: 270,
+                                        height: 160,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius:
+                                                BorderRadius.circular(24.0)),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Expanded(
+                                      child: Container(
+                                        width: 270,
+                                        height: 160,
+                                        decoration: BoxDecoration(
+                                            color: Theme_req.offWhite,
+                                            borderRadius:
+                                                BorderRadius.circular(24.0)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
                     ),
-                  )),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
