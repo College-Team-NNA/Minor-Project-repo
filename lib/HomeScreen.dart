@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
 import 'package:minor_project/navBar.dart';
@@ -24,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: Theme_req.screenPadding,
+          padding: EdgeInsets.only(left: 60,right: 60,top: 10),
           child: Row(
             children: [
               Expanded(
@@ -294,6 +295,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   )),
                             ],
                           ),
+                          SizedBox(height: 10,),
                           Expanded(
                             child: SingleChildScrollView(
                               child: Column(
@@ -301,72 +303,78 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
+                                      Expanded(flex:5,
+                                        child: Container(
+                                          // width:270,
+                                          height:160,
+                                          decoration: BoxDecoration(
+                                              color: Theme_req.offWhite,
+                                              borderRadius: BorderRadius.circular(24.0)),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 30,),
+                                      Expanded(flex:5,
+                                        child: Container(
+                                          // width:270,
+                                          height:160,
+                                          decoration: BoxDecoration(
+                                              color: Theme_req.offWhite,
+                                              borderRadius: BorderRadius.circular(24.0)),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 30,),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
                                       Container(
-                                        width:250,height:140,
+                                        width:270,height:160,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius: BorderRadius.circular(24.0)),
                                       ),
                                       const SizedBox(width: 30,),
                                       Container(
-                                        width:250,height:140,
+                                        width:270,height:160,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius: BorderRadius.circular(24.0)),
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 10,),
+                                  const SizedBox(height: 30,),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Container(
-                                        width:250,height:140,
+                                        width:270,height:160,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius: BorderRadius.circular(24.0)),
                                       ),
                                       const SizedBox(width: 30,),
                                       Container(
-                                        width:250,height:140,
+                                        width:270,height:160,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius: BorderRadius.circular(24.0)),
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 10,),
+                                  const SizedBox(height: 30,),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Container(
-                                        width:250,height:140,
+                                        width:270,height:160,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius: BorderRadius.circular(24.0)),
                                       ),
                                       const SizedBox(width: 30,),
                                       Container(
-                                        width:250,height:140,
-                                        decoration: BoxDecoration(
-                                            color: Theme_req.offWhite,
-                                            borderRadius: BorderRadius.circular(24.0)),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 10,),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        width:250,height:140,
-                                        decoration: BoxDecoration(
-                                            color: Theme_req.offWhite,
-                                            borderRadius: BorderRadius.circular(24.0)),
-                                      ),
-                                      const SizedBox(width: 30,),
-                                      Container(
-                                        width:250,height:140,
+                                        width:270,height:160,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius: BorderRadius.circular(24.0)),
