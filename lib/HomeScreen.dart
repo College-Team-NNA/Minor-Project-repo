@@ -50,6 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   decoration: BoxDecoration(
                                     color: Theme_req.piechart_outer,
                                     borderRadius: BorderRadius.circular(25.0),
+
                                   ),
                                 ),
                                 const Positioned(
