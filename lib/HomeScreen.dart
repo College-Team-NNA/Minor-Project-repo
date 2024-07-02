@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
 import 'package:minor_project/navBar.dart';
@@ -23,10 +24,95 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: Theme_req.screenPadding,
+          padding: EdgeInsets.only(left: 60,right: 60,top: 10),
           child: Row(
             children: [
               Expanded(
+                  flex: 6,
+                  child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(left: 7,right: 7,top: 7),
+                            height: 300,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height: 115,
+                                  decoration: BoxDecoration(
+                                    color: Theme_req.piechart_outer,
+                                    borderRadius: BorderRadius.circular(25.0),
+
+                                  ),
+                                ),
+                                const Positioned(
+                                  top: 65, left: 50,right: 50,// Adjust the positioning as needed
+                                  child: CircleAvatar(
+                                    radius: 40, // Radius of the CircleAvatar
+                                    backgroundColor: Theme_req.bio_name,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 10,),
+                          Container(
+                            padding: Theme_req.defaultPadding_navBar,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            child: Column(
+                              children: [
+                                Text(
+                                  "Information",
+                                  style: GoogleFonts.montserrat(
+                                      color: Theme_req.bio_name,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 20),
+                                ),
+                                const Divider(),
+                                Row(
+                                  children: [
+                                    const Icon(Icons.language,color: Theme_req.info_tag_title,),
+                                    const SizedBox(width: 3,),
+                                    Text("Website",
+                                      style: GoogleFonts.montserrat(
+                                          color: Theme_req.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),
+                                    ),
+                                    const Spacer(),
+                                    Text("www.xyz.com",style: GoogleFonts.montserrat(
+                                        color: Theme_req.black,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 13),),
+                                  ],
+                                ),
+                                const Spacer(),
+                                Row(
+                                  children: [
+                                    const Icon(Icons.mail,color: Theme_req.info_tag_title,),
+                                    const SizedBox(width: 3,),
+                                    Text("Email",
+                                      style: GoogleFonts.montserrat(
+                                          color: Theme_req.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),),
+                                    const Spacer(),
+                                    Text("jhaarya1002@gmail.com",style: GoogleFonts.montserrat(
+                                        color: Theme_req.black,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 13),),
+                                  ],
                 flex: 6,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
