@@ -42,14 +42,30 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(25.0),
                             ),
-                            child: Stack(
+                            const Divider(),
+                            Row(
                               children: [
-                                Container(
-                                  height: 115,
-                                  decoration: BoxDecoration(
-                                    color: Theme_req.piechart_outer,
-                                    borderRadius: BorderRadius.circular(25.0),
-                                  ),
+                                const Icon(
+                                  Icons.language,
+                                  color: Theme_req.info_tag_title,
+                                ),
+                                const SizedBox(
+                                  width: 3,
+                                ),
+                                Text(
+                                  "Website",
+                                  style: GoogleFonts.montserrat(
+                                      color: Theme_req.black,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 13),
+                                ),
+                                const Spacer(),
+                                Text(
+                                  "www.xyz.com",
+                                  style: GoogleFonts.montserrat(
+                                      color: Theme_req.black,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 13),
                                 ),
                                 const Positioned(
                                   top: 65, left: 50,right: 50,// Adjust the positioning as needed
@@ -71,12 +87,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             child: Column(
                               children: [
+                                const Icon(
+                                  Icons.mail,
+                                  color: Theme_req.info_tag_title,
+                                ),
+                                const SizedBox(
+                                  width: 3,
+                                ),
                                 Text(
-                                  "Information",
+                                  "Email",
                                   style: GoogleFonts.montserrat(
-                                      color: Theme_req.bio_name,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 20),
+                                      color: Theme_req.black,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 13),
                                 ),
                                 const Divider(),
                                 Row(
@@ -162,12 +185,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             child: Column(
                               children: [
+                                const Icon(
+                                  Icons.calendar_month_sharp,
+                                  color: Theme_req.info_tag_title,
+                                ),
+                                const SizedBox(
+                                  width: 3,
+                                ),
                                 Text(
-                                  "Contact me at",
+                                  "Joined",
                                   style: GoogleFonts.montserrat(
-                                      color: Theme_req.bio_name,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 20),
+                                      color: Theme_req.black,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 13),
                                 ),
                                 const Divider(),
                                 const Padding(
@@ -375,12 +405,249 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ],
                               ),
-                            ),
-                          )
-                        ],
+                            )
+                          ],
+                        ),
                       ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 4,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 200,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Hello, World!',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        height: 280,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Hello, World!',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(35),
+                        height: 155,
+                        decoration: BoxDecoration(
+                          color: Theme_req.follow_btn,
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        child: Column(
+                          children: [
+                            Center(
+                                child: Text(
+                              "Continue Learning",
+                              style: GoogleFonts.montserrat(
+                                  color: Theme_req.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 20),
+                            )),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Align(
+                              alignment: Alignment.bottomRight,
+                              child: CircleAvatar(
+                                backgroundColor: Theme_req.white,
+                                radius: 23,
+                                child: IconButton(
+                                  icon: const FaIcon(
+                                    FontAwesomeIcons.play,
+                                    size: 20,
+                                  ), // Your icon
+                                  color: Theme_req.follow_btn, // Icon color
+                                  onPressed: () {},
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 9,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    padding: const EdgeInsets.only(
+                        left: 40, right: 40, top: 20, bottom: 20),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(24.0)),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Recent Projects",
+                              style: GoogleFonts.montserrat(
+                                  color: Theme_req.bio_name,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 20),
+                            ),
+                            const Spacer(),
+                            IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.file_upload_outlined,
+                                  color: Theme_req.follow_btn,
+                                  size: 35,
+                                )),
+                          ],
+                        ),
+                        Expanded(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      width: 250,
+                                      height: 140,
+                                      decoration: BoxDecoration(
+                                          color: Theme_req.offWhite,
+                                          borderRadius:
+                                              BorderRadius.circular(24.0)),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Container(
+                                      width: 250,
+                                      height: 140,
+                                      decoration: BoxDecoration(
+                                          color: Theme_req.offWhite,
+                                          borderRadius:
+                                              BorderRadius.circular(24.0)),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      width: 250,
+                                      height: 140,
+                                      decoration: BoxDecoration(
+                                          color: Theme_req.offWhite,
+                                          borderRadius:
+                                              BorderRadius.circular(24.0)),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Container(
+                                      width: 250,
+                                      height: 140,
+                                      decoration: BoxDecoration(
+                                          color: Theme_req.offWhite,
+                                          borderRadius:
+                                              BorderRadius.circular(24.0)),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      width: 250,
+                                      height: 140,
+                                      decoration: BoxDecoration(
+                                          color: Theme_req.offWhite,
+                                          borderRadius:
+                                              BorderRadius.circular(24.0)),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Container(
+                                      width: 250,
+                                      height: 140,
+                                      decoration: BoxDecoration(
+                                          color: Theme_req.offWhite,
+                                          borderRadius:
+                                              BorderRadius.circular(24.0)),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      width: 250,
+                                      height: 140,
+                                      decoration: BoxDecoration(
+                                          color: Theme_req.offWhite,
+                                          borderRadius:
+                                              BorderRadius.circular(24.0)),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    Container(
+                                      width: 250,
+                                      height: 140,
+                                      decoration: BoxDecoration(
+                                          color: Theme_req.offWhite,
+                                          borderRadius:
+                                              BorderRadius.circular(24.0)),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
                     ),
-                  )),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -388,4 +655,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
