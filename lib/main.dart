@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:minor_project/HomeScreen.dart';
 
 void main() {
-  runApp(Proj());
+  runApp(const Proj());
 }
 
 class Proj extends StatelessWidget {

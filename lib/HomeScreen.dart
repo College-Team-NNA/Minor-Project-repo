@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
 import 'package:minor_project/navBar.dart';
@@ -47,8 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Stack(
                           children: [
                             Container(
-                              height: 70,
+                              height: MediaQuery.of(context).size.height * 0.18,
                               width: MediaQuery.of(context).size.width,
+                              clipBehavior: Clip.antiAlias,
                               decoration: BoxDecoration(
                                 color: Theme_req.piechart_outer,
                                 borderRadius: BorderRadius.circular(25.0),
@@ -61,12 +59,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Positioned(
-                              top: 25, left: 50,
+                              top: MediaQuery.of(context).size.height * 0.118,
+                              left: 50,
                               right: 50, // Adjust the positioning as needed
                               child: Column(
                                 children: [
-                                  const CircleAvatar(
-                                    radius: 35, // Radius of the CircleAvatar
+                                  CircleAvatar(
+                                    radius: MediaQuery.of(context).size.width *
+                                        0.03, // Radius of the CircleAvatar
                                     backgroundColor: Theme_req.bio_name,
                                   ),
                                   Text(
@@ -74,21 +74,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                     style: GoogleFonts.montserrat(
                                         color: Theme_req.bio_name,
                                         fontWeight: FontWeight.w500,
-                                        fontSize: 13),
+                                        fontSize: Theme_req.mtxt_size),
                                   ),
                                   Text(
                                     "Arya Jha",
                                     style: GoogleFonts.montserrat(
                                         color: Theme_req.bio_name,
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 25),
+                                        fontSize: Theme_req.ltxt_size),
                                   ),
                                   Text(
                                     "Flutter Developer",
                                     style: GoogleFonts.montserrat(
                                         color: Theme_req.bio_name,
                                         fontWeight: FontWeight.w600,
-                                        fontSize: 10),
+                                        fontSize: Theme_req.stxt_size),
                                   ),
                                   const Divider(),
                                   Padding(
@@ -98,62 +98,63 @@ class _HomeScreenState extends State<HomeScreen> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 120,
-                                          height: 26,
-                                          child: ElevatedButton(
-                                            onPressed: () {},
-                                            style: ButtonStyle(
-                                              backgroundColor:
-                                                  MaterialStateProperty.all<
-                                                          Color>(
-                                                      Theme_req.follow_btn),
-                                              shape: MaterialStateProperty.all<
-                                                  RoundedRectangleBorder>(
-                                                RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8), // Curved corners
-                                                ),
+                                        ElevatedButton(
+                                          onPressed: () {},
+                                          style: ButtonStyle(
+                                            elevation: MaterialStateProperty
+                                                .all<double>(0),
+                                            backgroundColor:
+                                                MaterialStateProperty.all<
+                                                        Color>(
+                                                    Theme_req.follow_btn),
+                                            shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
+                                              RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        8), // Curved corners
                                               ),
                                             ),
-                                            child: Text(
-                                              "FOLLOW",
-                                              style: GoogleFonts.montserrat(
-                                                  color: Theme_req.white,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 11),
-                                            ),
+                                          ),
+                                          child: Text(
+                                            "FOLLOW",
+                                            style: GoogleFonts.montserrat(
+                                                color: Theme_req.white,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 11),
                                           ),
                                         ),
                                         const SizedBox(
                                           width: 15,
                                         ),
-                                        Container(
-                                          width: 120,
-                                          height: 26,
-                                          child: ElevatedButton(
-                                            onPressed: () {},
-                                            style: ButtonStyle(
-                                              backgroundColor:
-                                                  MaterialStateProperty.all<
-                                                      Color>(Colors.white),
-                                              shape: MaterialStateProperty.all<
-                                                  RoundedRectangleBorder>(
-                                                RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8), // Curved corners
-                                                ),
+                                        OutlinedButton(
+                                          onPressed: () {},
+                                          style: ButtonStyle(
+                                            elevation: MaterialStateProperty
+                                                .all<double>(0),
+                                            // backgroundColor:
+                                            //     MaterialStateProperty.all<
+                                            //         Color>(Colors.white),
+                                            side: MaterialStateProperty.all<
+                                                    BorderSide>(
+                                                const BorderSide(
+                                                    color: Theme_req
+                                                        .piechart_outer)),
+                                            shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
+                                              RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        8), // Curved corners
                                               ),
                                             ),
-                                            child: Text(
-                                              "Edit Profile",
-                                              style: GoogleFonts.montserrat(
-                                                  color: Theme_req.follow_btn,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 11),
-                                            ),
+                                          ),
+                                          child: Text(
+                                            "Edit Profile",
+                                            style: GoogleFonts.montserrat(
+                                                color: Theme_req.follow_btn,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 11),
                                           ),
                                         )
                                       ],
@@ -165,7 +166,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Text(
                                     "sdfgdrgdfkjnskjfhjfbdvzdnbgrdjrbnzzvbdjhgbjdfbzdvjhzdbjfbzdjbgfdjhfjzvndbhjzbndfnuhfzjskdnfkjsgfjzbdjfzsdgefjzbdvdgfgusbdfnvvbzsgfhbzdjbvdvrdg",
                                     maxLines: 3,
-                                    style: GoogleFonts.montserrat(fontSize: 15),
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: Theme_req.mtxt_size),
                                   )
                                 ],
                               ),
@@ -177,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       Container(
-                        constraints: BoxConstraints(maxHeight: 550),
+                        constraints: const BoxConstraints(maxHeight: 550),
                         padding: Theme_req.defaultPadding_navBar,
                         height: MediaQuery.of(context).size.height * .25,
                         decoration: BoxDecoration(
@@ -310,7 +312,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Container(
                         padding: Theme_req.defaultPadding_navBar,
-                        constraints: BoxConstraints(maxHeight: 145),
+                        constraints: const BoxConstraints(maxHeight: 145),
                         height: MediaQuery.of(context).size.height * 0.15,
                         decoration: BoxDecoration(
                           color: Colors.white,
