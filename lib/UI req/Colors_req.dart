@@ -17,6 +17,6 @@ class Theme_req {
 
   static double Heading_size = 26.0;
   static double ltxt_size = 24.0;
-  static double mtxt_size = 15.0;
+  static double mtxt_size = 18.0;
   static double stxt_size = 12.0;
 }

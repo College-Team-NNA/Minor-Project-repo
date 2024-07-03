@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:readmore/readmore.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
 import 'package:minor_project/navBar.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Container(
                         padding:
                             const EdgeInsets.only(left: 7, right: 7, top: 7),
-                        height: MediaQuery.of(context).size.height * 0.45,
+                        height: MediaQuery.of(context).size.height * 0.468,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(25.0),
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Stack(
                           children: [
                             Container(
-                              height: MediaQuery.of(context).size.height * 0.18,
+                              height: MediaQuery.of(context).size.height * 0.20,
                               width: MediaQuery.of(context).size.width,
                               clipBehavior: Clip.antiAlias,
                               decoration: BoxDecoration(
@@ -168,12 +169,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                   const SizedBox(
                                     height: 8,
                                   ),
-                                  Text(
-                                    "sdfgdrgdfkjnskjfhjfbdvzdnbgrdjrbnzzvbdjhgbjdfbzdvjhzdbjfbzdjbgfdjhfjzvndbhjzbndfnuhfzjskdnfkjsgfjzbdjfzsdgefjzbdvdgfgusbdfnvvbzsgfhbzdjbvdvrdg",
-                                    maxLines: 3,
-                                    style: GoogleFonts.montserrat(
-                                        fontSize: Theme_req.mtxt_size),
-                                  )
+                                  const ReadMoreText(
+                                    "A pasod dnasljds okisjdasdnawjlkd oiasjdajdjndjencejdfeqwfjd kasjnewnddewjkbhdvdsjicnadjshasjkdfdahd  dhfasdjkfdsbdsjk djkhds sklsdndjkvcncjcdjkn ",
+                                    trimMode: TrimMode.Line,
+                                    trimLines: 2,
+                                    colorClickableText:
+                                        Theme_req.piechart_outer,
+                                    trimCollapsedText: 'Show more',
+                                    trimExpandedText: 'Show less',
+                                    textScaler: TextScaler.linear(1.2),
+                                  ),
                                 ],
                               ),
                             ),
@@ -318,7 +323,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Container(
                         padding: Theme_req.defaultPadding_navBar,
                         constraints: const BoxConstraints(maxHeight: 145),
-                        height: MediaQuery.of(context).size.height * 0.15,
+                        height: MediaQuery.of(context).size.height * 0.13,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(25.0),
