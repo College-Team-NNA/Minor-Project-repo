@@ -68,6 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     radius: MediaQuery.of(context).size.width *
                                         0.03, // Radius of the CircleAvatar
                                     backgroundColor: Theme_req.bio_name,
+                                    child: Image.asset(
+                                      "assets/Vector.png",
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                   Text(
                                     "@aryajha",

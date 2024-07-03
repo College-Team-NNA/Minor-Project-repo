@@ -109,13 +109,14 @@ class navBar extends StatelessWidget {
                   )),
               const SizedBox(width: 15),
               GestureDetector(
-                child: const CircleAvatar(
+                child: CircleAvatar(
                   radius: 25,
-                  backgroundColor: Theme_req.black,
-                  // child: Image.network(
-                  // 'https://s3-alpha-sig.figma.com/img/9a2e/d58e/aa7d7d387d8aedeaf7086c75f7aafc8c?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ejm9GkGGuT3ax7XeyQCbg9xXwRYcuEiwqUZ4nT8cbVY3YlE6yNqIk~c8ernrkGwZj2X8Qq51ox7ehHHXZnPnsU9BSIS67nKUBqkZwI0BV4TN~PkoJ4rYEKfkq6nN3iOiG80NTa1-0JekoPP8MvYCRv7GOojCHlYvSdpDlmwnCgxBQh0Rx7p6pui219Fc-54UHgGSHc6XocxC9l3rE-VqOYTZOCeVMMDUxWmw5l8hYOljLvy8vKWHzFOVEQdSIX-GAvtUPiGZS7t4BELyJil~Y9pYwCGGbU9u9~HGhXz23tjtM22~0OlllZ8KDjz51K8FRqVpK1cVvq-iR-JDxLtVnA__'),
+                  child: Image.asset(
+                    "assets/Vector.png",
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                onTap: () {}, 
+                onTap: () {},
               ),
             ],
           ),
