@@ -105,13 +105,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ElevatedButton(
                                           onPressed: () {},
                                           style: ButtonStyle(
-                                            elevation: MaterialStateProperty
-                                                .all<double>(0),
+                                            elevation:
+                                                WidgetStateProperty.all<double>(
+                                                    0),
                                             backgroundColor:
-                                                MaterialStateProperty.all<
-                                                        Color>(
+                                                WidgetStateProperty.all<Color>(
                                                     Theme_req.follow_btn),
-                                            shape: MaterialStateProperty.all<
+                                            shape: WidgetStateProperty.all<
                                                 RoundedRectangleBorder>(
                                               RoundedRectangleBorder(
                                                 borderRadius:
@@ -134,17 +134,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                         OutlinedButton(
                                           onPressed: () {},
                                           style: ButtonStyle(
-                                            elevation: MaterialStateProperty
-                                                .all<double>(0),
+                                            elevation:
+                                                WidgetStateProperty.all<double>(
+                                                    0),
                                             // backgroundColor:
                                             //     MaterialStateProperty.all<
                                             //         Color>(Colors.white),
-                                            side: MaterialStateProperty.all<
+                                            side: WidgetStateProperty.all<
                                                     BorderSide>(
                                                 const BorderSide(
                                                     color: Theme_req
                                                         .piechart_outer)),
-                                            shape: MaterialStateProperty.all<
+                                            shape: WidgetStateProperty.all<
                                                 RoundedRectangleBorder>(
                                               RoundedRectangleBorder(
                                                 borderRadius:
@@ -214,7 +215,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: GoogleFonts.montserrat(
                                       color: Theme_req.black,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 13),
+                                      fontSize: Theme_req.stxt_size),
                                 ),
                                 const Spacer(),
                                 Text(
@@ -222,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: GoogleFonts.montserrat(
                                       color: Theme_req.black,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 13),
+                                      fontSize: Theme_req.stxt_size),
                                 ),
                               ],
                             ),
@@ -241,7 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: GoogleFonts.montserrat(
                                       color: Theme_req.black,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 13),
+                                      fontSize: Theme_req.stxt_size),
                                 ),
                                 const Spacer(),
                                 Text(
@@ -249,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: GoogleFonts.montserrat(
                                       color: Theme_req.black,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 13),
+                                      fontSize: Theme_req.stxt_size),
                                 ),
                               ],
                             ),
@@ -268,7 +269,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: GoogleFonts.montserrat(
                                       color: Theme_req.black,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 13),
+                                      fontSize: Theme_req.stxt_size),
                                 ),
                                 const Spacer(),
                                 Text(
@@ -276,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: GoogleFonts.montserrat(
                                       color: Theme_req.black,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 13),
+                                      fontSize: Theme_req.stxt_size),
                                 ),
                               ],
                             ),
@@ -295,7 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: GoogleFonts.montserrat(
                                       color: Theme_req.black,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 13),
+                                      fontSize: Theme_req.stxt_size),
                                 ),
                                 const Spacer(),
                                 Text(
@@ -303,7 +304,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: GoogleFonts.montserrat(
                                       color: Theme_req.black,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 13),
+                                      fontSize: Theme_req.stxt_size),
                                 ),
                               ],
                             ),
