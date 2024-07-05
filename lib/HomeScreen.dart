@@ -170,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     height: 8,
                                   ),
                                   const ReadMoreText(
-                                    "A pasod dnasljds okisjdasdnawjlkd oiasjdajdjndjencejdfeqwfjd kasjnewnddewjkbhdvdsjicnadjshasjkdfdahd  dhfasdjkfdsbdsjk djkhds sklsdndjkvcncjcdjkn ",
+                                    "Takimata sit sit ut amet aliquyam vero elitr diam, justo et amet lorem no gubergren est, sea at kasd rebum. Duo amet justo sadipscing sed nonumy. Ipsum sed consetetur lorem voluptua takimata.",
                                     trimMode: TrimMode.Line,
                                     trimLines: 2,
                                     colorClickableText:
@@ -402,7 +402,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: const Center(
                           child: Text(
-                            'Hello, World!',
+                            'Activity Graph (In Progress)',
                             style: TextStyle(
                               color: Colors.black,
                             ),
@@ -420,7 +420,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: const Center(
                           child: Text(
-                            'Hello, World!',
+                            'Progress Bar (In Progress)',
                             style: TextStyle(
                               color: Colors.black,
                             ),
@@ -523,7 +523,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       flex: 5,
                                       child: Container(
                                         // width:270,
-                                        height: 160,
+                                        height: 200,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius:
@@ -537,7 +537,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       flex: 5,
                                       child: Container(
                                         // width:270,
-                                        height: 160,
+                                        height: 200,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius:
@@ -555,7 +555,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Container(
                                         width: 270,
-                                        height: 160,
+                                        height: 200,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius:
@@ -568,7 +568,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Container(
                                         width: 270,
-                                        height: 160,
+                                        height: 200,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius:
@@ -586,7 +586,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Container(
                                         width: 270,
-                                        height: 160,
+                                        height: 200,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius:
@@ -599,7 +599,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Container(
                                         width: 270,
-                                        height: 160,
+                                        height: 200,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius:
@@ -617,7 +617,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Container(
                                         width: 270,
-                                        height: 160,
+                                        height: 200,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius:
@@ -630,7 +630,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Container(
                                         width: 270,
-                                        height: 160,
+                                        height: 200,
                                         decoration: BoxDecoration(
                                             color: Theme_req.offWhite,
                                             borderRadius:
