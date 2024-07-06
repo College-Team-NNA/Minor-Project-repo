@@ -15,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    Size _size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Theme_req.offWhite,
       appBar: AppBar(
@@ -27,7 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             children: [
               Expanded(
-                flex: 6,
+                //Full Profile Column 6/19 parts flex
+                flex: 6 ,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -35,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
+                        //Profile Container
                         padding:
                             const EdgeInsets.only(left: 7, right: 7, top: 7),
                         height: MediaQuery.of(context).size.height * 0.468,
@@ -189,6 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       Container(
+                        //Information Container
                         constraints: const BoxConstraints(maxHeight: 550),
                         padding: Theme_req.defaultPadding_navBar,
                         height: MediaQuery.of(context).size.height * .25,
@@ -321,6 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       Container(
+                        //Contact Me Container
                         padding: Theme_req.defaultPadding_navBar,
                         constraints: const BoxConstraints(maxHeight: 145),
                         height: MediaQuery.of(context).size.height * 0.13,
@@ -342,10 +347,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 8,
                             ),
                             const Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 60.0),
+                              padding: EdgeInsets.symmetric(horizontal: 40.0),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   FaIcon(
                                     FontAwesomeIcons.linkedin,
@@ -386,7 +391,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Expanded(
+              Expanded( 
+                //Statistics Column 4/19 Part flex
                 flex: 4,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -395,7 +401,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: MediaQuery.of(context).size.height * 0.26,
+                        height: _size.height * 0.26,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(25.0),
@@ -479,7 +485,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Expanded(
-                flex: 9,
+                flex: 9, //Recent Projects Column 9/19 Parts flex
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
