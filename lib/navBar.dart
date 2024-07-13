@@ -18,7 +18,7 @@ class navBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.network(
-                'https://s3-alpha-sig.figma.com/img/9a2e/d58e/aa7d7d387d8aedeaf7086c75f7aafc8c?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ejm9GkGGuT3ax7XeyQCbg9xXwRYcuEiwqUZ4nT8cbVY3YlE6yNqIk~c8ernrkGwZj2X8Qq51ox7ehHHXZnPnsU9BSIS67nKUBqkZwI0BV4TN~PkoJ4rYEKfkq6nN3iOiG80NTa1-0JekoPP8MvYCRv7GOojCHlYvSdpDlmwnCgxBQh0Rx7p6pui219Fc-54UHgGSHc6XocxC9l3rE-VqOYTZOCeVMMDUxWmw5l8hYOljLvy8vKWHzFOVEQdSIX-GAvtUPiGZS7t4BELyJil~Y9pYwCGGbU9u9~HGhXz23tjtM22~0OlllZ8KDjz51K8FRqVpK1cVvq-iR-JDxLtVnA__',
+                "https://s3-alpha-sig.figma.com/img/9a2e/d58e/aa7d7d387d8aedeaf7086c75f7aafc8c?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TXGUUlK7sJE~OFl6-~7xxZoiZQYxVKP2yvQXZMZjDmMewYLmSihXPMpRCrLUXaTgR8nprpXwgJA2M5etURTriLgtDMFaSUkLo7MjR2hwZ6zTzbxFQh5l8aq~Ff4N6BDb3H627zNlHtaw3L-cstCBE80epgFzzUs6-qwMcwOXe0v54VG2bgslxDpp5V1zVL-c7sqBiT7v0acJoeJFokh3vHhxZDDB-nFs4otNqgfF4LL2I7twqpTdjtuvI5hDcO-1N~MfRECtvq1~~QgBfUmJiPulZbrp160UvHKYUjH2zYisuNIKCLXBuG2AmInpIl27SaQIUm69Rg6SZufvfkuTdg__",
                 height: 45.0,
                 width: 180.0,
               ),
