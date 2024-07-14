@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/Pages&Widgets/profile_tab.dart';
 import 'package:minor_project/Pages&Widgets/recent_projects_tab.dart';
 import 'package:minor_project/Pages&Widgets/status_learning_tab.dart';
