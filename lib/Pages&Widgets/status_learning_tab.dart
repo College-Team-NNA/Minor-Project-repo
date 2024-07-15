@@ -27,8 +27,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
           ),
           clipBehavior: Clip.antiAlias,
           child: Padding(
-            padding: const EdgeInsets.only(
-                left: 30.0, top: 10, right: 30, bottom: 10),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
