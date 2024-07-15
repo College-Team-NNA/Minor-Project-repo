@@ -155,27 +155,65 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
             ),
           ),
         ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.02,
-        ),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.02),
         Container(
           height: MediaQuery.of(context).size.height * 0.415,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(25.0),
           ),
-          child: const Center(
-            child: Text(
-              'Progress Bar (In Progress)',
-              style: TextStyle(
-                color: Colors.black,
-              ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Wireframing Advance",
+                  style: GoogleFonts.montserrat(
+                      fontSize: 24, fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    RichText(
+                      text: TextSpan(children: [
+                        const WidgetSpan(
+                            child: Icon(
+                          Icons.circle_rounded,
+                          size: 14,
+                          color: Colors.black,
+                        )),
+                        TextSpan(
+                            text: " Assignment",
+                            style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.w500))
+                      ]),
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          WidgetSpan(
+                              child: Icon(
+                            Icons.circle_rounded,
+                            size: 14,
+                            color: Colors.purple[700],
+                          )),
+                          TextSpan(
+                              text: " Lectures",
+                              style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w500))
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.02,
-        ),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.02),
         Container(
           padding: const EdgeInsets.only(
             left: 30,
