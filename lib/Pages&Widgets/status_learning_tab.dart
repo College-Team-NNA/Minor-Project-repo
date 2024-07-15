@@ -171,7 +171,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                 Text(
                   "Wireframing Advance",
                   style: GoogleFonts.montserrat(
-                      fontSize: 24, fontWeight: FontWeight.w600),
+                      fontSize: 24, fontWeight: FontWeight.w600, height: 1),
                 ),
                 const SizedBox(height: 8),
                 Row(
@@ -209,6 +209,13 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 8),
+                Expanded(
+                    child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)),
+                        clipBehavior: Clip.antiAlias,
+                        child: Placeholder()))
               ],
             ),
           ),
