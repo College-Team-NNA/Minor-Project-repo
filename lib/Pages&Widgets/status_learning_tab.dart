@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class StatusLearningTab extends StatefulWidget {
@@ -47,16 +49,17 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                 ),
                 const SizedBox(height: 6),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     RichText(
                       text: TextSpan(children: [
-                        const WidgetSpan(
-                            child: Icon(
-                          Icons.circle_rounded,
-                          size: 14,
-                          color: Colors.black,
-                        )),
+                        WidgetSpan(
+                          child: Icon(
+                            Icons.circle_rounded,
+                            size: 14,
+                            color: Colors.black.withOpacity(0.7),
+                          ),
+                        ),
                         TextSpan(
                             text: " CANCELLED",
                             style: GoogleFonts.montserrat(
@@ -69,7 +72,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                             child: Icon(
                           Icons.circle_rounded,
                           size: 14,
-                          color: Colors.purple[700],
+                          color: Colors.deepPurple.withOpacity(0.7),
                         )),
                         TextSpan(
                             text: " FINISHED",
@@ -119,11 +122,12 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                             end: Alignment.bottomCenter,
                           ),
                           markerSettings: const MarkerSettings(
-                            isVisible: true,
-                            color: Colors.white,
-                            borderColor: Colors.deepPurple,
-                            borderWidth: 2,
-                          ),
+                              isVisible: true,
+                              color: Colors.white,
+                              borderColor: Colors.deepPurple,
+                              borderWidth: 0.5,
+                              height: 6,
+                              width: 6),
                         ),
                         SplineAreaSeries<ChartData, String>(
                           name: "Cancelled",
@@ -157,7 +161,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
         ),
         SizedBox(height: MediaQuery.of(context).size.height * 0.02),
         Container(
-          height: MediaQuery.of(context).size.height * 0.415,
+          height: widget.size.height * 0.415,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(25.0),
@@ -169,13 +173,13 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Wireframing Advance",
+                  "Wireframing\nAdvance",
                   style: GoogleFonts.montserrat(
                       fontSize: 24, fontWeight: FontWeight.w600, height: 1),
                 ),
                 const SizedBox(height: 8),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     RichText(
                       text: TextSpan(children: [
@@ -194,11 +198,11 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                     RichText(
                       text: TextSpan(
                         children: [
-                          WidgetSpan(
+                          const WidgetSpan(
                               child: Icon(
                             Icons.circle_rounded,
                             size: 14,
-                            color: Colors.purple[700],
+                            color: Theme_req.piechart_outer,
                           )),
                           TextSpan(
                               text: " Lectures",
@@ -211,11 +215,44 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                 ),
                 const SizedBox(height: 8),
                 Expanded(
+                  child: Center(
                     child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10)),
-                        clipBehavior: Clip.antiAlias,
-                        child: Placeholder()))
+                      width: widget.size.height * 0.415 * 0.68,
+                      height: widget.size.height * 0.415 * 0.68,
+                      child: CircularStepProgressIndicator(
+                        totalSteps: 42,
+                        currentStep: 35,
+                        stepSize: 20,
+                        padding: 3.1415 / 80,
+                        startingAngle: 0,
+                        selectedColor: Theme_req.piechart_outer,
+                        unselectedColor: Color(0xffeaebec),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: CircularStepProgressIndicator(
+                            totalSteps: 42,
+                            currentStep: 28,
+                            stepSize: 20,
+                            padding: 3.1415 / 80,
+                            startingAngle: 0,
+                            selectedColor: Colors.black,
+                            unselectedColor: Color(0xffeaebec),
+                            child: Center(
+                              child: Text(
+                                " 75%\nDone",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 30,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

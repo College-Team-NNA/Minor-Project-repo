@@ -309,7 +309,7 @@ class _ProfileTabState extends State<ProfileTab> {
             child: Column(
               children: [
                 Text(
-                  "Contact me at",
+                  "Contact me",
                   style: GoogleFonts.montserrat(
                       color: Theme_req.bio_name,
                       fontWeight: FontWeight.w600,
