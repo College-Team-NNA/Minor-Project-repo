@@ -89,7 +89,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                         BoxDecoration(borderRadius: BorderRadius.circular(8.0)),
                     clipBehavior: Clip.antiAlias,
                     child: SfCartesianChart(
-                      backgroundColor: Color(0xff9688e9).withOpacity(0.8),
+                      backgroundColor: const Color(0xff9688e9).withOpacity(0.8),
                       plotAreaBorderWidth: 0,
                       primaryXAxis: CategoryAxis(
                         axisLine: const AxisLine(width: 0),
@@ -226,9 +226,9 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                         padding: 3.1415 / 80,
                         startingAngle: 0,
                         selectedColor: Theme_req.piechart_outer,
-                        unselectedColor: Color(0xffeaebec),
+                        unselectedColor: const Color(0xffeaebec),
                         child: Padding(
-                          padding: EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: CircularStepProgressIndicator(
                             totalSteps: 42,
                             currentStep: 28,
@@ -236,7 +236,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                             padding: 3.1415 / 80,
                             startingAngle: 0,
                             selectedColor: Colors.black,
-                            unselectedColor: Color(0xffeaebec),
+                            unselectedColor: const Color(0xffeaebec),
                             child: Center(
                               child: Text(
                                 " 75%\nDone",
