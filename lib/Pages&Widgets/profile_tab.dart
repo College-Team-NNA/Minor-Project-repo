@@ -146,7 +146,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       const SizedBox(
                         height: 8,
                       ),
-                      const ReadMoreText(
+                      ReadMoreText(
                         "Takimata sit sit ut amet aliquyam vero elitr diam, justo et amet lorem no gubergren est, sea at kasd rebum. Duo amet justo sadipscing sed nonumy. Ipsum sed consetetur lorem voluptua takimata.",
                         trimMode: TrimMode.Line,
                         trimLines: 2,
@@ -154,6 +154,8 @@ class _ProfileTabState extends State<ProfileTab> {
                         trimCollapsedText: 'Show more',
                         trimExpandedText: 'Show less',
                         textScaler: TextScaler.linear(1.2),
+                        style: GoogleFonts.montserrat(
+                            fontSize: Theme_req.stxt_size),
                       ),
                     ],
                   ),
@@ -197,7 +199,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
-                          fontSize: Theme_req.stxt_size),
+                          fontSize: Theme_req.mtxt_size),
                     ),
                     const Spacer(),
                     Text(
@@ -205,7 +207,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
-                          fontSize: Theme_req.stxt_size),
+                          fontSize: Theme_req.mtxt_size),
                     ),
                   ],
                 ),
@@ -224,7 +226,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
-                          fontSize: Theme_req.stxt_size),
+                          fontSize: Theme_req.mtxt_size),
                     ),
                     const Spacer(),
                     Text(
@@ -232,7 +234,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
-                          fontSize: Theme_req.stxt_size),
+                          fontSize: Theme_req.mtxt_size),
                     ),
                   ],
                 ),
@@ -251,7 +253,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
-                          fontSize: Theme_req.stxt_size),
+                          fontSize: Theme_req.mtxt_size),
                     ),
                     const Spacer(),
                     Text(
@@ -259,7 +261,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
-                          fontSize: Theme_req.stxt_size),
+                          fontSize: Theme_req.mtxt_size),
                     ),
                   ],
                 ),
@@ -278,7 +280,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
-                          fontSize: Theme_req.stxt_size),
+                          fontSize: Theme_req.mtxt_size),
                     ),
                     const Spacer(),
                     Text(
@@ -286,7 +288,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
-                          fontSize: Theme_req.stxt_size),
+                          fontSize: Theme_req.mtxt_size),
                     ),
                   ],
                 ),
