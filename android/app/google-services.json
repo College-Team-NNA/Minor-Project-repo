@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "776756715965",
+    "project_id": "test-andromeda-61de7",
+    "storage_bucket": "test-andromeda-61de7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776756715965:android:27becc4efa6730f62372d4",
+        "android_client_info": {
+          "package_name": "com.example.minor_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1i8j4tjCln7Nj-PXQAQS4CkyQFAY_GTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
