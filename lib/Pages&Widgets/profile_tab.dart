@@ -288,7 +288,6 @@ class _ProfileTabState extends State<ProfileTab> {
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
-                          
                           fontSize: Theme_req.mtxt_size),
                     ),
                   ],
