@@ -5,9 +5,8 @@ import 'package:minor_project/Pages&Widgets/HomeScreen.dart';
 import 'package:minor_project/firebase_options.dart';
 
 void main() async {
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  
   // await FirebaseAuth.instance.useAuthEmulator();
   runApp(const Proj());
 }
