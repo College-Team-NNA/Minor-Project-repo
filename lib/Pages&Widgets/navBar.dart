@@ -60,6 +60,7 @@ class navBar extends StatelessWidget {
                 child: SizedBox(
                   width: 150.0,
                   child: TextField(
+                    style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.all(4.0),
                       border: OutlineInputBorder(
