@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:minor_project/Pages&Widgets/HomeScreen.dart';
+import 'package:minor_project/Pages&Widgets/protfolio.dart';
 import 'package:minor_project/firebase_options.dart';
 
 void main() async {
@@ -19,7 +19,7 @@ class Proj extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        "/": (context) => const HomeScreen(),
+        "/portfolio": (context) => const HomeScreen(),
       },
     );
   }
