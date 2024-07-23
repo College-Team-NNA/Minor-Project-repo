@@ -108,16 +108,32 @@ class navBar extends StatelessWidget {
                   onPressed: () {},
                 )),
             const SizedBox(width: 15),
-            GestureDetector(
-              child: CircleAvatar(
-                radius: 25,
-                child: Image.asset(
-                  "assets/Vector.png",
-                  fit: BoxFit.cover,
-                ),
-              ),
-              onTap: () {},
-            ),
+            MenuAnchor(
+              childFocusNode: FocusNode(debugLabel: "Menu Button"),
+              menuChildren: const [
+                MenuItemButton(child: Text("1")),
+                MenuItemButton(child: Text("2"))
+              ],
+              builder: (BuildContext context, MenuController controller,
+                  Widget? child) {
+                return CircleAvatar(
+                  radius: 25,
+                  child: IconButton(
+                    onPressed: () {
+                      if (controller.isOpen) {
+                        controller.close();
+                      } else {
+                        controller.open();
+                      }
+                    },
+                    icon: Image.asset(
+                      "assets/Vector.png",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                );
+              },
+            )
           ],
         ),
       ),
