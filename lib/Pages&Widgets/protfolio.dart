@@ -5,14 +5,14 @@ import 'package:minor_project/Pages&Widgets/status_learning_tab.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
 import 'package:minor_project/Pages&Widgets/navBar.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Portfolio extends StatefulWidget {
+  const Portfolio({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Portfolio> createState() => _PortfolioState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _PortfolioState extends State<Portfolio> {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;

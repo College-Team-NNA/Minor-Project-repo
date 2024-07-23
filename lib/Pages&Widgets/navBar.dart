@@ -11,116 +11,114 @@ class navBar extends StatelessWidget {
       child: Container(
         height: 56.0,
         decoration: const BoxDecoration(color: Theme_req.offWhite),
-        child: Padding(
-          padding: Theme_req.defaultPadding_navBar,
-          child: Row(
-            // mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Image.network(
-                "https://s3-alpha-sig.figma.com/img/9a2e/d58e/aa7d7d387d8aedeaf7086c75f7aafc8c?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TXGUUlK7sJE~OFl6-~7xxZoiZQYxVKP2yvQXZMZjDmMewYLmSihXPMpRCrLUXaTgR8nprpXwgJA2M5etURTriLgtDMFaSUkLo7MjR2hwZ6zTzbxFQh5l8aq~Ff4N6BDb3H627zNlHtaw3L-cstCBE80epgFzzUs6-qwMcwOXe0v54VG2bgslxDpp5V1zVL-c7sqBiT7v0acJoeJFokh3vHhxZDDB-nFs4otNqgfF4LL2I7twqpTdjtuvI5hDcO-1N~MfRECtvq1~~QgBfUmJiPulZbrp160UvHKYUjH2zYisuNIKCLXBuG2AmInpIl27SaQIUm69Rg6SZufvfkuTdg__",
-                height: 45.0,
-                width: 180.0,
+        padding: Theme_req.defaultPadding_navBar,
+        child: Row(
+          // mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Image.network(
+              "https://s3-alpha-sig.figma.com/img/9a2e/d58e/aa7d7d387d8aedeaf7086c75f7aafc8c?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DfE9enMovUN3oToDRbl71KeYop~Pez6XfXbm4pYGZ~UHNHANZlpfX2IunwEyn7Qbhb5eAnvWEcwwIqFcFp4Mc1YFQso5iYJQb4H0jbRSpy3GjK1Rtd8ir1ysEaghTkPLrx7Zn~zjgNeTIE4k59-~TopZohxpQRIH51AzTtQiiIPZNCLyctGftEK-V1AaNWzoUFexCm1kup-q8J33BE9jVXqwzvIzVNVh2yFI5rLPZa9fYo95ShVfoHa4LiQCQiPK7i0tEyos-HANJ3iiAXlRHbkZEZQ~07WQdZ54VQ3iwRlSqCHHBK~Y9eQ1Dqtf9pgFxMtHBkJsMQ81GYzI0yXTAg__",
+              height: 45.0,
+              width: 180.0,
+            ),
+            const SizedBox(width: 30.0),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "Course",
+                style: GoogleFonts.montserrat(
+                    color: Theme_req.bio_name,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20),
               ),
-              const SizedBox(width: 30.0),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Course",
-                  style: GoogleFonts.montserrat(
-                      color: Theme_req.bio_name,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20),
-                ),
+            ),
+            const SizedBox(width: 10.0),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "Discussions",
+                style: GoogleFonts.montserrat(
+                    color: Theme_req.bio_name,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20),
               ),
-              const SizedBox(width: 10.0),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Discussions",
-                  style: GoogleFonts.montserrat(
-                      color: Theme_req.bio_name,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20),
-                ),
+            ),
+            const SizedBox(width: 10.0),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "Pricing",
+                style: GoogleFonts.montserrat(
+                    color: Theme_req.bio_name,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20),
               ),
-              const SizedBox(width: 10.0),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Pricing",
-                  style: GoogleFonts.montserrat(
-                      color: Theme_req.bio_name,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: SizedBox(
-                  width: 150.0,
-                  child: TextField(
-                    style: const TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.all(4.0),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      filled: true,
-                      fillColor: Theme_req.black,
-                      prefixIcon: const Padding(
-                        padding: EdgeInsets.only(left: 12.0),
-                        child: Icon(
-                          Icons.search,
-                          size: 30.0,
-                        ),
-                      ),
-                      prefixIconColor: Colors.white,
+            ),
+            const Spacer(),
+            Expanded(
+              child: SizedBox(
+                width: 150.0,
+                child: TextField(
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(4.0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50.0),
                     ),
+                    filled: true,
+                    fillColor: Theme_req.black,
+                    prefixIcon: const Padding(
+                      padding: EdgeInsets.only(left: 12.0),
+                      child: Icon(
+                        Icons.search,
+                        size: 30.0,
+                      ),
+                    ),
+                    prefixIconColor: Colors.white,
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 20,
-              ),
-              CircleAvatar(
-                  radius: 25,
-                  backgroundColor: Theme_req.black,
-                  child: IconButton(
-                    icon: const Icon(
-                      Icons.mail,
-                      color: Colors.white,
-                    ),
-                    color: Theme_req.black,
-                    onPressed: () {},
-                  )),
-              const SizedBox(
-                width: 15,
-              ),
-              CircleAvatar(
-                  radius: 25,
-                  backgroundColor: Theme_req.black,
-                  child: IconButton(
-                    icon: const Icon(
-                      Icons.notifications,
-                      color: Colors.white,
-                    ),
-                    color: Theme_req.black,
-                    onPressed: () {},
-                  )),
-              const SizedBox(width: 15),
-              GestureDetector(
-                child: CircleAvatar(
-                  radius: 25,
-                  child: Image.asset(
-                    "assets/Vector.png",
-                    fit: BoxFit.cover,
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            CircleAvatar(
+                radius: 25,
+                backgroundColor: Theme_req.black,
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.mail,
+                    color: Colors.white,
                   ),
+                  color: Theme_req.black,
+                  onPressed: () {},
+                )),
+            const SizedBox(
+              width: 15,
+            ),
+            CircleAvatar(
+                radius: 25,
+                backgroundColor: Theme_req.black,
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.notifications,
+                    color: Colors.white,
+                  ),
+                  color: Theme_req.black,
+                  onPressed: () {},
+                )),
+            const SizedBox(width: 15),
+            GestureDetector(
+              child: CircleAvatar(
+                radius: 25,
+                child: Image.asset(
+                  "assets/Vector.png",
+                  fit: BoxFit.cover,
                 ),
-                onTap: () {},
               ),
-            ],
-          ),
+              onTap: () {},
+            ),
+          ],
         ),
       ),
     );
