@@ -250,7 +250,8 @@ class _LoginPageState extends State<LoginPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text("Don't have an Account? "),
+                            Text("Don't have an Account?",
+                                style: GoogleFonts.poppins()),
                             TextButton(
                               onPressed: () {
                                 Navigator.pushNamedAndRemoveUntil(context,

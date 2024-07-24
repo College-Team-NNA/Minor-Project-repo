@@ -6,6 +6,7 @@ import 'package:minor_project/Pages&Widgets/login_page.dart';
 import 'package:minor_project/Pages&Widgets/navBar.dart';
 import 'package:minor_project/Pages&Widgets/protfolio.dart';
 import 'package:minor_project/Pages&Widgets/sign_up.dart';
+import 'package:minor_project/Pages&Widgets/under_construction_page.dart';
 import 'package:minor_project/firebase_options.dart';
 
 void main() async {
@@ -22,8 +23,9 @@ class Proj extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/signup",
+      initialRoute: "/underconstruction",
       routes: {
+        "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),
         "/portfolio": (context) =>
             logged_in ? const Portfolio() : const LoginPage(),

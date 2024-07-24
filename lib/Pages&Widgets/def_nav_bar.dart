@@ -95,9 +95,11 @@ class DefNavBar extends StatelessWidget {
                   shape: WidgetStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(1000)))),
               child: Text(
-                "LOGIN",
+                "  LOGIN  ",
                 style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.w400, color: Colors.white),
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                    fontSize: 12),
               ),
             ),
             const SizedBox(
@@ -118,7 +120,9 @@ class DefNavBar extends StatelessWidget {
               child: Text(
                 "SIGN UP",
                 style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.w400, color: Colors.white),
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                    fontSize: 12),
               ),
             ),
           ],

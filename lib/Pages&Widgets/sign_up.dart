@@ -98,32 +98,34 @@ class _SignUpState extends State<SignUp> {
                               )),
                         ),
                         const SizedBox(height: 20),
-                        RichText(
-                            textAlign: TextAlign.center,
-                            text: TextSpan(children: [
-                              TextSpan(
-                                  text: "By Signing  up you agree to our ",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w500)),
-                              TextSpan(
-                                  text: "Terms & Condition ",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: Theme_req.piechart_outer)),
-                              TextSpan(
-                                  text: "and ",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w500)),
-                              TextSpan(
-                                  text: "Privacy Policy",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: Theme_req.piechart_outer))
-                            ])),
+                        Center(
+                          child: RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: "By Signing  up you agree to our ",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w500)),
+                                TextSpan(
+                                    text: "Terms & Condition \n",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: Theme_req.piechart_outer)),
+                                TextSpan(
+                                    text: "and ",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w500)),
+                                TextSpan(
+                                    text: "Privacy Policy",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: Theme_req.piechart_outer))
+                              ])),
+                        ),
                         const SizedBox(height: 18),
                         TextButton(
                           onPressed: () {},
@@ -138,8 +140,8 @@ class _SignUpState extends State<SignUp> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10.0),
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10.0),
                                 child: Text(
                                   "Sign Up",
                                   style: GoogleFonts.poppins(
@@ -158,8 +160,8 @@ class _SignUpState extends State<SignUp> {
                                 child:
                                     Divider(color: Theme_req.piechart_outer)),
                             Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 15.0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15.0),
                               child: Text(
                                 "OR",
                                 style: GoogleFonts.poppins(
@@ -231,7 +233,10 @@ class _SignUpState extends State<SignUp> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text("Already have an Account?"),
+                            Text(
+                              "Already have an Account?",
+                              style: GoogleFonts.poppins(),
+                            ),
                             TextButton(
                               onPressed: () {
                                 Navigator.pushNamedAndRemoveUntil(context,
