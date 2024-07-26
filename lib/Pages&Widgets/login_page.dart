@@ -60,8 +60,8 @@ class _LoginPageState extends State<LoginPage> {
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10)),
-                              hintText: "Enter email or phone",
-                              hintStyle: GoogleFonts.poppins(
+                              labelText: "Enter email or phone",
+                              labelStyle: GoogleFonts.poppins(
                                 fontSize: 12,
                                 color: const Color(0xff949090),
                               )),
@@ -83,8 +83,8 @@ class _LoginPageState extends State<LoginPage> {
                                     : Icons.visibility_off),
                                 color: const Color(0xbb949090),
                               ),
-                              hintText: "Password",
-                              hintStyle: GoogleFonts.poppins(
+                              labelText: "Password",
+                              labelStyle: GoogleFonts.poppins(
                                 color: const Color(0xff949090),
                                 fontSize: 12,
                               )),
@@ -195,54 +195,89 @@ class _LoginPageState extends State<LoginPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width *
-                                  0.3 *
-                                  0.235,
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 6, horizontal: 8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
-                              ),
-                              child: const Center(
-                                child: FaIcon(
-                                  FontAwesomeIcons.google,
-                                  size: 36,
+                            IconButton(
+                              onPressed: () {},
+                              padding: EdgeInsets.symmetric(
+                                  horizontal:
+                                      MediaQuery.of(context).size.width *
+                                          0.3 *
+                                          0.235 *
+                                          0.3,
+                                  vertical: 5),
+                              icon: const FaIcon(FontAwesomeIcons.google,
+                                  size: 35),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    WidgetStateProperty.all(Colors.white),
+                                shape: WidgetStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10))),
+                                splashFactory: NoSplash.splashFactory,
+                                overlayColor:
+                                    WidgetStateProperty.resolveWith<Color>(
+                                  (Set<WidgetState> states) {
+                                    return Colors.transparent;
+                                  },
                                 ),
                               ),
                             ),
-                            Container(
-                              width: MediaQuery.of(context).size.width *
-                                  0.3 *
-                                  0.235,
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
+                            IconButton(
+                              onPressed: () {},
+                              padding: EdgeInsets.symmetric(
+                                  horizontal:
+                                      MediaQuery.of(context).size.width *
+                                          0.3 *
+                                          0.235 *
+                                          0.3,
+                                  vertical: 5),
+                              icon: const FaIcon(FontAwesomeIcons.github,
+                                  size: 35),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    WidgetStateProperty.all(Colors.white),
+                                shape: WidgetStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10))),
+                                splashFactory: NoSplash.splashFactory,
+                                overlayColor:
+                                    WidgetStateProperty.resolveWith<Color>(
+                                  (Set<WidgetState> states) {
+                                    return Colors.transparent;
+                                  },
+                                ),
                               ),
-                              child: const Center(
-                                  child: FaIcon(
-                                FontAwesomeIcons.github,
-                                size: 38,
-                              )),
                             ),
-                            Container(
-                              width: MediaQuery.of(context).size.width *
-                                  0.3 *
-                                  0.235,
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
+                            IconButton(
+                              onPressed: () {},
+                              padding: EdgeInsets.symmetric(
+                                  horizontal:
+                                      MediaQuery.of(context).size.width *
+                                          0.3 *
+                                          0.235 *
+                                          0.3,
+                                  vertical: 5),
+                              icon: const FaIcon(FontAwesomeIcons.apple,
+                                  size: 35),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    WidgetStateProperty.all(Colors.white),
+                                shape: WidgetStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10))),
+                                splashFactory: NoSplash.splashFactory,
+                                overlayColor:
+                                    WidgetStateProperty.resolveWith<Color>(
+                                  (Set<WidgetState> states) {
+                                    return Colors.transparent;
+                                  },
+                                ),
                               ),
-                              child: const Center(
-                                  child: FaIcon(
-                                FontAwesomeIcons.apple,
-                                size: 38,
-                              )),
                             ),
                           ],
                         ),

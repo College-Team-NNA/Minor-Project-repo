@@ -23,7 +23,7 @@ class Proj extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/underconstruction",
+      initialRoute: "/signup",
       routes: {
         "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),

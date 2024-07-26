@@ -14,6 +14,29 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  void signup() async {
+    String usr = usernameController.text;
+    String phone = phoneController.text;
+    String pass = passwordController.text;
+    String email = emailController.text;
+    const anydetail = SnackBar(content: Text("Please fill all the details !"));
+    const nophone =
+        SnackBar(content: Text("Pookie phone number toh dedo 👉👈"));
+    const nomail = SnackBar(content: Text("Kam se kam email hi dedo 👉👈"));
+
+    if (email == "") {
+      ScaffoldMessenger.of(context).showSnackBar(nomail);
+    } else if (phone == "") {
+      ScaffoldMessenger.of(context).showSnackBar(nophone);
+    } else if (email == "" && usr == "" && phone == "" && pass == "") {
+      ScaffoldMessenger.of(context).showSnackBar(anydetail);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,44 +78,52 @@ class _SignUpState extends State<SignUp> {
                         ),
                         const SizedBox(height: 20),
                         TextField(
+                          controller: usernameController,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10)),
-                              hintText: "username",
-                              hintStyle: GoogleFonts.poppins(
+                              labelText: "username",
+                              labelStyle: GoogleFonts.poppins(
                                 fontSize: 12,
                                 color: const Color(0xff949090),
                               )),
                         ),
                         const SizedBox(height: 10),
                         TextField(
+                          controller: emailController,
+                          keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10)),
-                              hintText: "email",
-                              hintStyle: GoogleFonts.poppins(
+                              labelText: "email",
+                              labelStyle: GoogleFonts.poppins(
                                 fontSize: 12,
                                 color: const Color(0xff949090),
                               )),
                         ),
                         const SizedBox(height: 10),
                         TextField(
+                          controller: phoneController,
+                          maxLength: 10,
+                          keyboardType: TextInputType.phone,
                           decoration: InputDecoration(
+                              counterText: "",
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10)),
-                              hintText: "phone number",
-                              hintStyle: GoogleFonts.poppins(
+                              labelText: "phone number",
+                              labelStyle: GoogleFonts.poppins(
                                 fontSize: 12,
                                 color: const Color(0xff949090),
                               )),
                         ),
                         const SizedBox(height: 10),
                         TextField(
+                          controller: passwordController,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10)),
-                              hintText: "set password",
-                              hintStyle: GoogleFonts.poppins(
+                              labelText: "set password",
+                              labelStyle: GoogleFonts.poppins(
                                 color: const Color(0xff949090),
                                 fontSize: 12,
                               )),
@@ -128,7 +159,9 @@ class _SignUpState extends State<SignUp> {
                         ),
                         const SizedBox(height: 18),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            signup();
+                          },
                           style: ButtonStyle(
                               backgroundColor: WidgetStateProperty.all<Color>(
                                   Theme_req.piechart_outer),
@@ -178,54 +211,89 @@ class _SignUpState extends State<SignUp> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width *
-                                  0.3 *
-                                  0.235,
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 6, horizontal: 8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
-                              ),
-                              child: const Center(
-                                child: FaIcon(
-                                  FontAwesomeIcons.google,
-                                  size: 36,
+                            IconButton(
+                              onPressed: () {},
+                              padding: EdgeInsets.symmetric(
+                                  horizontal:
+                                      MediaQuery.of(context).size.width *
+                                          0.3 *
+                                          0.235 *
+                                          0.3,
+                                  vertical: 5),
+                              icon: const FaIcon(FontAwesomeIcons.google,
+                                  size: 35),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    WidgetStateProperty.all(Colors.white),
+                                shape: WidgetStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10))),
+                                splashFactory: NoSplash.splashFactory,
+                                overlayColor:
+                                    WidgetStateProperty.resolveWith<Color>(
+                                  (Set<WidgetState> states) {
+                                    return Colors.transparent;
+                                  },
                                 ),
                               ),
                             ),
-                            Container(
-                              width: MediaQuery.of(context).size.width *
-                                  0.3 *
-                                  0.235,
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
+                            IconButton(
+                              onPressed: () {},
+                              padding: EdgeInsets.symmetric(
+                                  horizontal:
+                                      MediaQuery.of(context).size.width *
+                                          0.3 *
+                                          0.235 *
+                                          0.3,
+                                  vertical: 5),
+                              icon: const FaIcon(FontAwesomeIcons.github,
+                                  size: 35),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    WidgetStateProperty.all(Colors.white),
+                                shape: WidgetStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10))),
+                                splashFactory: NoSplash.splashFactory,
+                                overlayColor:
+                                    WidgetStateProperty.resolveWith<Color>(
+                                  (Set<WidgetState> states) {
+                                    return Colors.transparent;
+                                  },
+                                ),
                               ),
-                              child: const Center(
-                                  child: FaIcon(
-                                FontAwesomeIcons.github,
-                                size: 38,
-                              )),
                             ),
-                            Container(
-                              width: MediaQuery.of(context).size.width *
-                                  0.3 *
-                                  0.235,
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
+                            IconButton(
+                              onPressed: () {},
+                              padding: EdgeInsets.symmetric(
+                                  horizontal:
+                                      MediaQuery.of(context).size.width *
+                                          0.3 *
+                                          0.235 *
+                                          0.3,
+                                  vertical: 5),
+                              icon: const FaIcon(FontAwesomeIcons.apple,
+                                  size: 35),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    WidgetStateProperty.all(Colors.white),
+                                shape: WidgetStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10))),
+                                splashFactory: NoSplash.splashFactory,
+                                overlayColor:
+                                    WidgetStateProperty.resolveWith<Color>(
+                                  (Set<WidgetState> states) {
+                                    return Colors.transparent;
+                                  },
+                                ),
                               ),
-                              child: const Center(
-                                  child: FaIcon(
-                                FontAwesomeIcons.apple,
-                                size: 38,
-                              )),
                             ),
                           ],
                         ),
