@@ -39,14 +39,16 @@ class _SignUpState extends State<SignUp> {
       try {
         UserCredential createdUser = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: email, password: pass);
-        if (createdUser.user != null) {
+        if (createdUser.user != null && mounted) {
           Proj.logged_in = true;
           Navigator.pushNamedAndRemoveUntil(
               context, "/portfolio", ModalRoute.withName("/"));
         }
       } on FirebaseAuthException catch (ex) {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text(ex.code.toString())));
+        if (mounted) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text(ex.code.toString())));
+        }
       }
     }
   }
