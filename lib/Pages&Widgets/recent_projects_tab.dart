@@ -57,7 +57,7 @@ class _RecentProjectsTabState extends State<RecentProjectsTab> {
                   ),
                   clipBehavior: Clip.antiAlias,
                   child: Padding(
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(22)),

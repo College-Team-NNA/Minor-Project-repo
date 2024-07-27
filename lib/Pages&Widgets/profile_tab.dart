@@ -153,7 +153,7 @@ class _ProfileTabState extends State<ProfileTab> {
                         colorClickableText: Theme_req.piechart_outer,
                         trimCollapsedText: 'Show more',
                         trimExpandedText: 'Show less',
-                        textScaler: TextScaler.linear(1.2),
+                        textScaler: const TextScaler.linear(1.2),
                         style: GoogleFonts.montserrat(
                             fontSize: Theme_req.stxt_size),
                       ),

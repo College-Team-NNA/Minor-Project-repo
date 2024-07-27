@@ -18,7 +18,8 @@ void main() async {
 
 class Proj extends StatelessWidget {
   const Proj({super.key});
-  static bool logged_in = false;
+  static bool logged_in =
+      (FirebaseAuth.instance.currentUser != null) ? true : false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

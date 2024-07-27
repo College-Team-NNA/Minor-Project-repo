@@ -89,17 +89,20 @@ class DefNavBar extends StatelessWidget {
                     context, "/login", ModalRoute.withName("/"));
               },
               style: ButtonStyle(
-                  backgroundColor:
-                      WidgetStateProperty.all<Color>(Colors.black),
+                  backgroundColor: WidgetStateProperty.all<Color>(Colors.black),
                   elevation: WidgetStateProperty.all<double>(0),
                   shape: WidgetStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(1000)))),
-              child: Text(
-                "  LOGIN  ",
-                style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                    fontSize: 12),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 14.0, horizontal: 8),
+                child: Text(
+                  "  LOGIN  ",
+                  style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                      fontSize: 12),
+                ),
               ),
             ),
             const SizedBox(
@@ -112,17 +115,21 @@ class DefNavBar extends StatelessWidget {
               },
               clipBehavior: Clip.antiAliasWithSaveLayer,
               style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all<Color>(
-                      Theme_req.piechart_outer),
+                  backgroundColor:
+                      WidgetStateProperty.all<Color>(Theme_req.piechart_outer),
                   elevation: WidgetStateProperty.all<double>(0),
                   shape: WidgetStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(1000)))),
-              child: Text(
-                "SIGN UP",
-                style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                    fontSize: 12),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 14.0, horizontal: 8),
+                child: Text(
+                  "SIGN UP",
+                  style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                      fontSize: 12),
+                ),
               ),
             ),
           ],

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,7 +23,7 @@ class _SignUpState extends State<SignUp> {
     String usr = usernameController.text;
     String phone = phoneController.text;
     String pass = passwordController.text;
-    String email = emailController.text;
+    String email = emailController.text.trim();
     const anydetail = SnackBar(content: Text("Please fill all the details !"));
     const nophone =
         SnackBar(content: Text("Pookie phone number toh dedo 👉👈"));
@@ -34,8 +35,23 @@ class _SignUpState extends State<SignUp> {
       ScaffoldMessenger.of(context).showSnackBar(nophone);
     } else if (email == "" && usr == "" && phone == "" && pass == "") {
       ScaffoldMessenger.of(context).showSnackBar(anydetail);
+    } else {
+      try {
+        UserCredential createdUser = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: email, password: pass);
+        if (createdUser.user != null) {
+          Proj.logged_in = true;
+          Navigator.pushNamedAndRemoveUntil(
+              context, "/portfolio", ModalRoute.withName("/"));
+        }
+      } on FirebaseAuthException catch (ex) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(ex.code.toString())));
+      }
     }
   }
+
+  bool passvis = false;
 
   @override
   Widget build(BuildContext context) {
@@ -118,15 +134,27 @@ class _SignUpState extends State<SignUp> {
                         ),
                         const SizedBox(height: 10),
                         TextField(
+                          obscureText: !passvis,
                           controller: passwordController,
                           decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10)),
-                              labelText: "set password",
-                              labelStyle: GoogleFonts.poppins(
-                                color: const Color(0xff949090),
-                                fontSize: 12,
-                              )),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            labelText: "set password",
+                            labelStyle: GoogleFonts.poppins(
+                              color: const Color(0xff949090),
+                              fontSize: 12,
+                            ),
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  passvis = !passvis;
+                                });
+                              },
+                              icon: Icon(passvis
+                                  ? Icons.visibility
+                                  : Icons.visibility_off),
+                            ),
+                          ),
                         ),
                         const SizedBox(height: 20),
                         Center(

@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,6 +17,33 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool passvis = false;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+
+  void login() async {
+    String email = emailController.text.trim();
+    String password = passController.text;
+    if (email == "" || password == "") {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Please fill all details")));
+    } else {
+      try {
+        UserCredential userCredential = await FirebaseAuth.instance
+            .signInWithEmailAndPassword(email: email, password: password);
+        if (userCredential.user != null && mounted) {
+          Proj.logged_in = true;
+          Navigator.of(context)
+              .pushNamedAndRemoveUntil("/portfolio", ModalRoute.withName('/'));
+        }
+      } on FirebaseAuthException catch (ex) {
+        if (mounted) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text(ex.code.toString())));
+        }
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,6 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         const SizedBox(height: 20),
                         TextField(
+                          controller: emailController,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10)),
@@ -68,6 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         const SizedBox(height: 10),
                         TextField(
+                          controller: passController,
                           obscureText: !passvis,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -138,13 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(height: 18),
                         TextButton(
                           onPressed: () {
-                            setState(() {
-                              Proj.logged_in = !Proj.logged_in;
-                              if (Proj.logged_in) {
-                                Navigator.pushNamedAndRemoveUntil(context,
-                                    "/portfolio", ModalRoute.withName('/'));
-                              }
-                            });
+                            login();
                           },
                           style: ButtonStyle(
                               backgroundColor: WidgetStateProperty.all<Color>(
