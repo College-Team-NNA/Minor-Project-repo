@@ -1,15 +1,10 @@
-import 'dart:developer';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/Pages&Widgets/def_nav_bar.dart';
 import 'package:minor_project/Pages&Widgets/navBar.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
-import 'package:minor_project/main.dart';
-import 'package:minor_project/utils/data_class.dart';
+import 'package:minor_project/utils/func.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -23,47 +18,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController cpasswordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-  void signup() async {
-    String usr = usernameController.text;
-    String pass = passwordController.text;
-    String cpass = cpasswordController.text;
-    String email = emailController.text.trim();
-    const anydetail = SnackBar(content: Text("Please fill all the details !"));
-    const nomail = SnackBar(content: Text("Kam se kam email hi dedo 👉👈"));
-    const passMatch = SnackBar(content: Text("Password not matching"));
 
-    if (email == "") {
-      ScaffoldMessenger.of(context).showSnackBar(nomail);
-    } else if (email == "" && usr == "" && pass == "") {
-      ScaffoldMessenger.of(context).showSnackBar(anydetail);
-    } else if (pass == cpass) {
-      try {
-        UserCredential createdUser = await FirebaseAuth.instance
-            .createUserWithEmailAndPassword(email: email, password: pass);
-
-        if (createdUser.user != null && mounted) {
-          UserDetail user = UserDetail(email: email, username: usr);
-          await FirebaseFirestore.instance
-              .collection("UserDetails")
-              .doc(user.uid)
-              .set(user.toMap());
-          log("${FirebaseAuth.instance.currentUser!.uid.toString()}  ${user.uid}");
-          Proj.loggedIn = true;
-          if (mounted) {
-            Navigator.pushNamedAndRemoveUntil(
-                context, "/portfolio", ModalRoute.withName("/"));
-          }
-        }
-      } on FirebaseAuthException catch (ex) {
-        if (mounted) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(ex.code.toString())));
-        }
-      }
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(passMatch);
-    }
-  }
 
   bool passvis1 = false;
   bool passvis = false;
@@ -73,7 +28,7 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       backgroundColor: Theme_req.offWhite,
       appBar:
-          AppBar(actions: [Proj.loggedIn ? const navBar() : const DefNavBar()]),
+          AppBar(actions: [loggedIn() ? const navBar() : const DefNavBar()]),
       body: Center(
         child: SingleChildScrollView(
           child: Card(
@@ -212,7 +167,7 @@ class _SignUpState extends State<SignUp> {
                         const SizedBox(height: 18),
                         TextButton(
                           onPressed: () {
-                            signup();
+                            signup(context: context,cpc: cpasswordController,ec: emailController,pc: passwordController,uc: usernameController);
                           },
                           style: ButtonStyle(
                               backgroundColor: WidgetStateProperty.all<Color>(

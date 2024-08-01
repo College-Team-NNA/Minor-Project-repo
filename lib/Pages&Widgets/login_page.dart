@@ -1,12 +1,10 @@
-import 'dart:developer';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/Pages&Widgets/def_nav_bar.dart';
 import 'package:minor_project/Pages&Widgets/navBar.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
-import 'package:minor_project/main.dart';
+import 'package:minor_project/utils/func.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -20,36 +18,12 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
 
-  void login() async {
-    String email = emailController.text.trim();
-    String password = passController.text;
-    if (email == "" || password == "") {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Please fill all details")));
-    } else {
-      try {
-        UserCredential userCredential = await FirebaseAuth.instance
-            .signInWithEmailAndPassword(email: email, password: password);
-        if (userCredential.user != null && mounted) {
-          Proj.loggedIn = true;
-          Navigator.of(context)
-              .pushNamedAndRemoveUntil("/portfolio", ModalRoute.withName('/'));
-        }
-      } on FirebaseAuthException catch (ex) {
-        if (mounted) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(ex.code.toString())));
-        }
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme_req.offWhite,
       appBar:
-          AppBar(actions: [Proj.loggedIn ? const navBar() : const DefNavBar()]),
+          AppBar(actions: [loggedIn() ? const navBar() : const DefNavBar()]),
       body: Center(
         child: SingleChildScrollView(
           child: Card(
@@ -141,9 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             const Spacer(),
                             TextButton(
-                              onPressed: () {
-                                log("onPressed");
-                              },
+                              onPressed: () {},
                               style: ButtonStyle(
                                 overlayColor:
                                     WidgetStateProperty.resolveWith<Color>(
@@ -168,7 +140,10 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(height: 18),
                         TextButton(
                           onPressed: () {
-                            login();
+                            login(
+                                context: context,
+                                ec: emailController,
+                                pc: passController);
                           },
                           style: ButtonStyle(
                               backgroundColor: WidgetStateProperty.all<Color>(

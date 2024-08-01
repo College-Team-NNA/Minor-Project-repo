@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:minor_project/Pages&Widgets/def_nav_bar.dart';
@@ -8,6 +7,7 @@ import 'package:minor_project/Pages&Widgets/protfolio.dart';
 import 'package:minor_project/Pages&Widgets/sign_up.dart';
 import 'package:minor_project/Pages&Widgets/under_construction_page.dart';
 import 'package:minor_project/firebase_options.dart';
+import 'package:minor_project/utils/func.dart';
 
 void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
@@ -18,7 +18,6 @@ void main() async {
 
 class Proj extends StatelessWidget {
   const Proj({super.key});
-  static bool loggedIn = (FirebaseAuth.instance.currentUser != null);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +27,7 @@ class Proj extends StatelessWidget {
         "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),
         "/portfolio": (context) =>
-            loggedIn ? const Portfolio() : const LoginPage(),
+            loggedIn() ? const Portfolio() : const LoginPage(),
         "/login": (context) => const LoginPage(),
         "/signup": (context) => const SignUp(),
       },
@@ -43,7 +42,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            actions: [Proj.loggedIn ? const navBar() : const DefNavBar()]),
+            actions: [loggedIn() ? const navBar() : const DefNavBar()]),
         body: const Center(
           child: Text("Home Page"),
         ));
