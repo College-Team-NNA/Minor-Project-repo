@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
         UserCredential userCredential = await FirebaseAuth.instance
             .signInWithEmailAndPassword(email: email, password: password);
         if (userCredential.user != null && mounted) {
-          Proj.logged_in = true;
+          Proj.loggedIn = true;
           Navigator.of(context)
               .pushNamedAndRemoveUntil("/portfolio", ModalRoute.withName('/'));
         }
@@ -48,8 +48,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme_req.offWhite,
-      appBar: AppBar(
-          actions: [Proj.logged_in ? const navBar() : const DefNavBar()]),
+      appBar:
+          AppBar(actions: [Proj.loggedIn ? const navBar() : const DefNavBar()]),
       body: Center(
         child: SingleChildScrollView(
           child: Card(

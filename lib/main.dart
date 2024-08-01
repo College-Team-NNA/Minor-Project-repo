@@ -18,18 +18,17 @@ void main() async {
 
 class Proj extends StatelessWidget {
   const Proj({super.key});
-  static bool logged_in =
-      (FirebaseAuth.instance.currentUser != null) ? true : false;
+  static bool loggedIn = (FirebaseAuth.instance.currentUser != null);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/signup",
+      initialRoute: "/portfolio",
       routes: {
         "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),
         "/portfolio": (context) =>
-            logged_in ? const Portfolio() : const LoginPage(),
+            loggedIn ? const Portfolio() : const LoginPage(),
         "/login": (context) => const LoginPage(),
         "/signup": (context) => const SignUp(),
       },
@@ -44,7 +43,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            actions: [Proj.logged_in ? const navBar() : const DefNavBar()]),
+            actions: [Proj.loggedIn ? const navBar() : const DefNavBar()]),
         body: const Center(
           child: Text("Home Page"),
         ));

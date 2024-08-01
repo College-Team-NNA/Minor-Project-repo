@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
+import 'package:minor_project/utils/func.dart';
 import 'package:readmore/readmore.dart';
 
 class ProfileTab extends StatefulWidget {
@@ -39,12 +40,24 @@ class _ProfileTabState extends State<ProfileTab> {
                     color: Theme_req.piechart_outer,
                     borderRadius: BorderRadius.circular(25.0),
                   ),
-                  child: Image.network(
-                    "https://s3-alpha-sig.figma.com/img/bc9e/dea8/b59e91cfa53a4f01c9995fc82559370e?Expires=1722211200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ks-zkzQay~pMKP70AqfO0VExNX8LPT7lphsvbp8D6dmLnM7DVF2WfHkYzJWuLbUIK8T-KT5eTxlIsobCpRSfT9-O3LpP6DNQdJrVVP2s31Po4izlohgpXmChXwgnTnd5s3Klj-YiqRfpDxb5UeW2TfTQ-MtAGx2w5EryAA-Bgt-b8D4u2qdDqoX1Apkpu0gf4CDSY1G2kfgtuXRfaCM8LHTeTd0N0PPbPGIUvSmsGaAYHjI9GhnVXUd2zZP0yaCt0INNE7sxxAHabpXn-3nVTPpetMpAnVfQAw1FQgTjrT2gL~AXoElFBbj6RdmK5UXiB-CCPXLJ2lX~Je3dXidoLA__",
-                    color: Theme_req.piechart_outer,
-                    colorBlendMode: BlendMode.color,
-                    fit: BoxFit.cover,
-                  ),
+                  child: FutureBuilder(
+                      future: link("Rectangle 4164.png"),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.done) {
+                          return Image.network(
+                            snapshot.data.toString(),
+                            color: Theme_req.piechart_outer,
+                            colorBlendMode: BlendMode.color,
+                            fit: BoxFit.cover,
+                          );
+                        } else if (snapshot.hasError) {
+                          return Center(
+                              child: Text("Error : ${snapshot.error}"));
+                        } else {
+                          return const Center(
+                              child: CircularProgressIndicator());
+                        }
+                      }),
                 ),
                 Positioned(
                   top: widget.size.height * 0.118,
@@ -53,14 +66,21 @@ class _ProfileTabState extends State<ProfileTab> {
                   child: Column(
                     children: [
                       CircleAvatar(
-                        radius: widget.size.width *
-                            0.03, // Radius of the CircleAvatar
-                        backgroundColor: Theme_req.bio_name,
-                        child: Image.asset(
-                          "assets/Vector.png",
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                          radius: widget.size.width *
+                              0.03, // Radius of the CircleAvatar
+                          backgroundColor: Theme_req.bio_name,
+                          child: FutureBuilder(
+                              future: link("Vector.png"),
+                              builder: (context, snapshot) {
+                                if (!snapshot.hasData &&
+                                    snapshot.data == null) {
+                                  return const Padding(
+                                    padding: EdgeInsets.all(12.0),
+                                    child: CircularProgressIndicator(),
+                                  );
+                                }
+                                return Image.network(snapshot.data.toString());
+                              })),
                       Text(
                         "@aryajha",
                         style: GoogleFonts.montserrat(
@@ -146,16 +166,18 @@ class _ProfileTabState extends State<ProfileTab> {
                       const SizedBox(
                         height: 8,
                       ),
-                      ReadMoreText(
-                        "Takimata sit sit ut amet aliquyam vero elitr diam, justo et amet lorem no gubergren est, sea at kasd rebum. Duo amet justo sadipscing sed nonumy. Ipsum sed consetetur lorem voluptua takimata.",
-                        trimMode: TrimMode.Line,
-                        trimLines: 2,
-                        colorClickableText: Theme_req.piechart_outer,
-                        trimCollapsedText: 'Show more',
-                        trimExpandedText: 'Show less',
-                        textScaler: const TextScaler.linear(1.2),
-                        style: GoogleFonts.montserrat(
-                            fontSize: Theme_req.stxt_size),
+                      SingleChildScrollView(
+                        child: ReadMoreText(
+                          "Takimata sit sit ut amet aliquyam vero elitr diam, justo et amet lorem no gubergren est, sea at kasd rebum. Duo amet justo sadipscing sed nonumy. Ipsum sed consetetur lorem voluptua takimata.",
+                          trimMode: TrimMode.Line,
+                          trimLines: 2,
+                          colorClickableText: Theme_req.piechart_outer,
+                          trimCollapsedText: 'Show more',
+                          trimExpandedText: 'Show less',
+                          textScaler: const TextScaler.linear(1.2),
+                          style: GoogleFonts.montserrat(
+                              fontSize: Theme_req.stxt_size),
+                        ),
                       ),
                     ],
                   ),
@@ -301,7 +323,8 @@ class _ProfileTabState extends State<ProfileTab> {
           ),
           Container(
             //Contact Me Container
-            padding: Theme_req.defaultPadding_navBar,
+            padding:
+                const EdgeInsets.only(top: 6, left: 30, right: 30, bottom: 2),
             constraints: const BoxConstraints(maxHeight: 145),
             height: widget.size.height * 0.13,
             decoration: BoxDecoration(
@@ -319,7 +342,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 ),
                 const Divider(),
                 const SizedBox(
-                  height: 8,
+                  height: 5,
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40.0),

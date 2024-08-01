@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
+import 'package:minor_project/utils/func.dart';
 
 class navBar extends StatelessWidget {
   const navBar({super.key});
@@ -13,7 +14,6 @@ class navBar extends StatelessWidget {
         decoration: const BoxDecoration(color: Theme_req.offWhite),
         padding: Theme_req.defaultPadding_navBar,
         child: Row(
-          // mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Image.network(
@@ -117,20 +117,28 @@ class navBar extends StatelessWidget {
               builder: (BuildContext context, MenuController controller,
                   Widget? child) {
                 return CircleAvatar(
-                  radius: 25,
-                  child: IconButton(
-                    onPressed: () {
-                      if (controller.isOpen) {
-                        controller.close();
-                      } else {
-                        controller.open();
-                      }
-                    },
-                    icon: Image.asset(
-                      "assets/Vector.png",
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  radius: 21,
+                  // backgroundImage: const AssetImage("assets/Vector.png"),
+                  child: FutureBuilder(
+                      future: link("Vector.png"),
+                      builder: (context, snapshot) {
+                        if (!snapshot.hasData && snapshot.data == null) {
+                          return const Padding(
+                            padding: EdgeInsets.all(12.0),
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        return IconButton(
+                            onPressed: () {
+                              if (controller.isOpen) {
+                                controller.close();
+                              } else {
+                                controller.open();
+                              }
+                            },
+                            padding: EdgeInsets.zero,
+                            icon: Image.network(snapshot.data.toString()));
+                      }),
                 );
               },
             )
