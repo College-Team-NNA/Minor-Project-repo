@@ -22,14 +22,15 @@ class Proj extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/portfolio",
+      initialRoute: "/homepage",
       routes: {
         "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),
         "/portfolio": (context) =>
             loggedIn() ? const Portfolio() : const LoginPage(),
-        "/login": (context) => const LoginPage(),
-        "/signup": (context) => const SignUp(),
+        "/login": (context) =>
+            loggedIn() ? const Portfolio() : const LoginPage(),
+        "/signup": (context) => loggedIn() ? const Portfolio() : const SignUp(),
       },
     );
   }
@@ -41,8 +42,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            actions: [loggedIn() ? const navBar() : const DefNavBar()]),
+        appBar:
+            AppBar(actions: [loggedIn() ? const navBar() : const DefNavBar()]),
         body: const Center(
           child: Text("Home Page"),
         ));
