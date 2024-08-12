@@ -92,7 +92,7 @@ class _ProfileTabState extends State<ProfileTab> {
                         "Arya Jha",
                         style: GoogleFonts.montserrat(
                             color: Theme_req.bio_name,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w900,
                             fontSize: Theme_req.ltxt_size),
                       ),
                       Text(

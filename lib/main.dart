@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:minor_project/Pages&Widgets/def_nav_bar.dart';
+import 'package:minor_project/Pages&Widgets/home.dart';
 import 'package:minor_project/Pages&Widgets/login_page.dart';
 import 'package:minor_project/Pages&Widgets/navBar.dart';
 import 'package:minor_project/Pages&Widgets/protfolio.dart';
@@ -36,16 +37,4 @@ class Proj extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar:
-            AppBar(actions: [loggedIn() ? const navBar() : const DefNavBar()]),
-        body: const Center(
-          child: Text("Home Page"),
-        ));
-  }
-}
