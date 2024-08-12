@@ -19,11 +19,13 @@ class navBar extends StatelessWidget {
             FutureBuilder(
                 future: link("logo.png"),
                 builder: (context, snapshot) {
-                  return Image.network(
-                    snapshot.data.toString(),
-                    height: 45.0,
-                    width: 180.0,
-                  );
+                  return snapshot.connectionState == ConnectionState.done
+                      ? Image.network(
+                          snapshot.data.toString(),
+                          height: 45.0,
+                          width: 180.0,
+                        )
+                      : const Center(child: CircularProgressIndicator());
                 }),
             const SizedBox(width: 30.0),
             TextButton(
