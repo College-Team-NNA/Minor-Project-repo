@@ -8,6 +8,17 @@ class navBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final hoverbutton = ButtonStyle(
+      backgroundColor: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.focused)) {
+            return Colors.grey[200];
+          }
+          return Colors.white;
+        },
+      ),
+    );
+
     return Expanded(
       child: Container(
         height: 56.0,
@@ -116,9 +127,29 @@ class navBar extends StatelessWidget {
             const SizedBox(width: 15),
             MenuAnchor(
               childFocusNode: FocusNode(debugLabel: "Menu Button"),
-              menuChildren: const [
-                MenuItemButton(child: Text("1")),
-                MenuItemButton(child: Text("2"))
+              alignmentOffset: const Offset(-65, 8),
+              menuChildren: [
+                MenuItemButton(
+                  style: hoverbutton,
+                  requestFocusOnHover: true,
+                  leadingIcon: const Icon(
+                    Icons.edit_rounded,
+                    color: Colors.black,
+                  ),
+                  child: const Text("Edit profile",
+                      style: TextStyle(color: Colors.black)),
+                  onPressed: () =>
+                      Navigator.pushNamed(context, "/underconstruction"),
+                ),
+                MenuItemButton(
+                    style: hoverbutton,
+                    leadingIcon: const Icon(
+                      Icons.logout,
+                      color: Colors.black,
+                    ),
+                    child: const Text("Sign Out",
+                        style: TextStyle(color: Colors.black)),
+                    onPressed: () => logout())
               ],
               builder: (BuildContext context, MenuController controller,
                   Widget? child) {

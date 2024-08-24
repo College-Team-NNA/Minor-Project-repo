@@ -215,34 +215,36 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                 const SizedBox(height: 8),
                 Expanded(
                   child: Center(
-                    child: Container(
-                      width: widget.size.height * 0.415 * 0.68,
-                      height: widget.size.height * 0.415 * 0.68,
-                      child: CircularStepProgressIndicator(
-                        totalSteps: 42,
-                        currentStep: 35,
-                        stepSize: 20,
-                        padding: 3.1415 / 80,
-                        startingAngle: 0,
-                        selectedColor: Theme_req.piechart_outer,
-                        unselectedColor: const Color(0xffeaebec),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: CircularStepProgressIndicator(
-                            totalSteps: 42,
-                            currentStep: 28,
-                            stepSize: 20,
-                            padding: 3.1415 / 80,
-                            startingAngle: 0,
-                            selectedColor: Colors.black,
-                            unselectedColor: const Color(0xffeaebec),
-                            child: Center(
-                              child: Text(
-                                " 75%\nDone",
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 30,
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(4),
+                        child: CircularStepProgressIndicator(
+                          totalSteps: 40,
+                          currentStep: 30,
+                          stepSize: 20,
+                          padding: 3.1415 / 80,
+                          startingAngle: 0,
+                          selectedColor: Theme_req.piechart_outer,
+                          unselectedColor: const Color(0xffeaebec),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: CircularStepProgressIndicator(
+                              totalSteps: 42,
+                              currentStep: 28,
+                              stepSize: 20,
+                              padding: 3.1415 / 80,
+                              startingAngle: 0,
+                              selectedColor: Colors.black,
+                              unselectedColor: const Color(0xffeaebec),
+                              child: Center(
+                                child: Text(
+                                  " 75%\nDone",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.montserrat(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 30,
+                                  ),
                                 ),
                               ),
                             ),

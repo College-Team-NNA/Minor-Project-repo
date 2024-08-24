@@ -6,7 +6,7 @@ import 'package:minor_project/utils/data_class.dart';
 
 bool loggedIn() => (FirebaseAuth.instance.currentUser != null);
 
-link(String ch, {String? folder = null}) async {
+link(String ch, {String? folder}) async {
   if (folder != null) {
     return await FirebaseStorage.instance
         .ref()
@@ -81,4 +81,8 @@ void signup(
   } else {
     ScaffoldMessenger.of(context).showSnackBar(passMatch);
   }
+}
+
+void logout() async {
+  await FirebaseAuth.instance.signOut();
 }
