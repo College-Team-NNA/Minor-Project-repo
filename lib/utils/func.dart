@@ -6,8 +6,16 @@ import 'package:minor_project/utils/data_class.dart';
 
 bool loggedIn() => (FirebaseAuth.instance.currentUser != null);
 
-link(String ch) async {
-  return await FirebaseStorage.instance.ref().child(ch).getDownloadURL();
+link(String ch, {String? folder = null}) async {
+  if (folder != null) {
+    return await FirebaseStorage.instance
+        .ref()
+        .child(folder)
+        .child(ch)
+        .getDownloadURL();
+  } else {
+    return await FirebaseStorage.instance.ref().child(ch).getDownloadURL();
+  }
 }
 
 void login(

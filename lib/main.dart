@@ -1,10 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:minor_project/Pages&Widgets/def_nav_bar.dart';
 import 'package:minor_project/Pages&Widgets/home.dart';
 import 'package:minor_project/Pages&Widgets/login_page.dart';
-import 'package:minor_project/Pages&Widgets/navBar.dart';
-import 'package:minor_project/Pages&Widgets/protfolio.dart';
+import 'package:minor_project/Pages&Widgets/portfolio.dart';
 import 'package:minor_project/Pages&Widgets/sign_up.dart';
 import 'package:minor_project/Pages&Widgets/under_construction_page.dart';
 import 'package:minor_project/firebase_options.dart';
@@ -28,7 +26,7 @@ class Proj extends StatelessWidget {
         "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),
         "/portfolio": (context) =>
-            loggedIn() ? const Portfolio() : const LoginPage(),
+            loggedIn()||true ? const Portfolio() : const LoginPage(),
         "/login": (context) =>
             loggedIn() ? const Portfolio() : const LoginPage(),
         "/signup": (context) => loggedIn() ? const Portfolio() : const SignUp(),
