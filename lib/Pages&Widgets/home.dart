@@ -205,25 +205,25 @@ class _HomePageState extends State<HomePage> {
                                             'Olivia Hayes',
                                             'UI/UX Designer',
                                             context),
-                                        SizedBox(width: 50),
+                                        const SizedBox(width: 50),
                                         buildProfile(
                                             'miles.png', // Replace with the actual image asset
                                             'Miles Anderson',
                                             'Graphic Designer',
                                             context),
-                                        SizedBox(width: 50),
+                                        const SizedBox(width: 50),
                                         buildProfile(
                                             'owen.png', // Replace with the actual image asset
                                             'Owen Parker',
                                             'Web Designer',
                                             context),
-                                        SizedBox(width: 50),
+                                        const SizedBox(width: 50),
                                         buildProfile(
                                             'jasper.png', // Replace with the actual image asset
                                             'Jasper Collins',
                                             'Product Designer',
                                             context),
-                                        SizedBox(width: 50),
+                                        const SizedBox(width: 50),
                                         buildProfile(
                                             'zara.png', // Replace with the actual image asset
                                             'Zara Reed',
@@ -288,16 +288,16 @@ class _HomePageState extends State<HomePage> {
                                 height: 20,
                               ),
                               Container(
-                                padding: EdgeInsets.all(2),
+                                padding: const EdgeInsets.all(2),
                                 height: MediaQuery.of(context).size.height * 0.05,
                                 width: MediaQuery.of(context).size.width * 0.2,
                                 // color: const Color(0xFF222222),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(5),
-                                    color: Color(0xFF222222)),
+                                    color: const Color(0xFF222222)),
                                 child: Row(
                                   children: [
-                                    Expanded(
+                                    const Expanded(
                                         child: TextField(
                                           textAlign: TextAlign.left,
                                           decoration: InputDecoration(
@@ -352,7 +352,7 @@ class CategoryButton extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onPressed;
 
-  CategoryButton({
+  const CategoryButton({super.key,
     required this.label,
     required this.isSelected,
     required this.onPressed,
@@ -431,20 +431,20 @@ Widget buildProfile(String imagePath, String name, String role, BuildContext con
                   )
                 : const CircularProgressIndicator();
           }),
-      SizedBox(height: 10),
+      const SizedBox(height: 10),
       Text(
         name,
         style: GoogleFonts.poppins(
-          color: Color(0xFFE7E7E7),
+          color: const Color(0xFFE7E7E7),
           fontSize: 18,
           fontWeight: FontWeight.w300,
         ),
       ),
-      SizedBox(height: 5),
+      const SizedBox(height: 5),
       Text(
         role,
         style: GoogleFonts.poppins(
-          color: Color(0xFF656565),
+          color: const Color(0xFF656565),
           fontSize: 14,
         ),
       ),
@@ -636,10 +636,10 @@ class _TopColumnState extends State<TopColumn> {
           const SizedBox(
             height: 20,
           ),
-          Stack(
-            children: [
-              Expanded(
-                child: GridView.builder(
+          Expanded(
+            child: Stack(
+              children: [
+                GridView.builder(
                   shrinkWrap: true,
                   itemCount: 4,
                   padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -729,43 +729,14 @@ class _TopColumnState extends State<TopColumn> {
                     );
                   },
                 ),
-              ),
-              _lindex <= 3
-                  ? Positioned(
-                      right: 20,
-                      top: MediaQuery.of(context).size.height * .113,
-                      child: Material(
-                        elevation: 6, // Adjust the elevation value as needed
-                        shape:
-                            const CircleBorder(), // Ensures the button remains circular
-                        child: IconButton(
-                          icon: const FaIcon(
-                            FontAwesomeIcons.play,
-                            size: 18,
-                          ),
-                          color: Theme_req.follow_btn, // Icon color
-                          onPressed: () {
-                            if (_lindex < 4) {
-                              setState(() {
-                                _lindex++;
-                              });
-                            }
-                          },
-                        ),
-                      ),
-                    )
-                  : const SizedBox(),
-              _lindex > 0
-                  ? Positioned(
-                      left: 20,
-                      top: MediaQuery.of(context).size.height * .113,
-                      child: Material(
-                        elevation: 6, // Adjust the elevation value as needed
-                        shape:
-                            const CircleBorder(), // Ensures the button remains circular
-
-                        child: Transform.flip(
-                          flipX: true,
+                _lindex <= 3
+                    ? Positioned(
+                        right: 20,
+                        top: MediaQuery.of(context).size.height * .113,
+                        child: Material(
+                          elevation: 6, // Adjust the elevation value as needed
+                          shape:
+                              const CircleBorder(), // Ensures the button remains circular
                           child: IconButton(
                             icon: const FaIcon(
                               FontAwesomeIcons.play,
@@ -773,18 +744,47 @@ class _TopColumnState extends State<TopColumn> {
                             ),
                             color: Theme_req.follow_btn, // Icon color
                             onPressed: () {
-                              if (_lindex <= 4 && _lindex > 0) {
+                              if (_lindex < 4) {
                                 setState(() {
-                                  _lindex--;
+                                  _lindex++;
                                 });
                               }
                             },
                           ),
                         ),
-                      ),
-                    )
-                  : const SizedBox(),
-            ],
+                      )
+                    : const SizedBox(),
+                _lindex > 0
+                    ? Positioned(
+                        left: 20,
+                        top: MediaQuery.of(context).size.height * .113,
+                        child: Material(
+                          elevation: 6, // Adjust the elevation value as needed
+                          shape:
+                              const CircleBorder(), // Ensures the button remains circular
+            
+                          child: Transform.flip(
+                            flipX: true,
+                            child: IconButton(
+                              icon: const FaIcon(
+                                FontAwesomeIcons.play,
+                                size: 18,
+                              ),
+                              color: Theme_req.follow_btn, // Icon color
+                              onPressed: () {
+                                if (_lindex <= 4 && _lindex > 0) {
+                                  setState(() {
+                                    _lindex--;
+                                  });
+                                }
+                              },
+                            ),
+                          ),
+                        ),
+                      )
+                    : const SizedBox(),
+              ],
+            ),
           ),
           const SizedBox(
             height: 5,
@@ -881,10 +881,10 @@ class _TopDesignState extends State<TopDesign> {
             const SizedBox(
               height: 20,
             ),
-            Stack(
-              children: [
-                Expanded(
-                  child: GridView.builder(
+            Expanded(
+              child: Stack(
+                children: [
+                  GridView.builder(
                     shrinkWrap: true,
                     itemCount: 4,
                     padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -981,43 +981,14 @@ class _TopDesignState extends State<TopDesign> {
                       );
                     },
                   ),
-                ),
-                _lindex <= 3
-                    ? Positioned(
-                        right: 20,
-                        top: MediaQuery.of(context).size.height * .113,
-                        child: Material(
-                          elevation: 6, // Adjust the elevation value as needed
-                          shape:
-                              const CircleBorder(), // Ensures the button remains circular
-                          child: IconButton(
-                            icon: const FaIcon(
-                              FontAwesomeIcons.play,
-                              size: 18,
-                            ),
-                            color: Theme_req.follow_btn, // Icon color
-                            onPressed: () {
-                              if (_lindex < 4) {
-                                setState(() {
-                                  _lindex++;
-                                });
-                              }
-                            },
-                          ),
-                        ),
-                      )
-                    : const SizedBox(),
-                _lindex > 0
-                    ? Positioned(
-                        left: 20,
-                        top: MediaQuery.of(context).size.height * .113,
-                        child: Material(
-                          elevation: 6, // Adjust the elevation value as needed
-                          shape:
-                              const CircleBorder(), // Ensures the button remains circular
-
-                          child: Transform.flip(
-                            flipX: true,
+                  _lindex <= 3
+                      ? Positioned(
+                          right: 20,
+                          top: MediaQuery.of(context).size.height * .113,
+                          child: Material(
+                            elevation: 6, // Adjust the elevation value as needed
+                            shape:
+                                const CircleBorder(), // Ensures the button remains circular
                             child: IconButton(
                               icon: const FaIcon(
                                 FontAwesomeIcons.play,
@@ -1025,18 +996,47 @@ class _TopDesignState extends State<TopDesign> {
                               ),
                               color: Theme_req.follow_btn, // Icon color
                               onPressed: () {
-                                if (_lindex <= 4 && _lindex > 0) {
+                                if (_lindex < 4) {
                                   setState(() {
-                                    _lindex--;
+                                    _lindex++;
                                   });
                                 }
                               },
                             ),
                           ),
-                        ),
-                      )
-                    : const SizedBox(),
-              ],
+                        )
+                      : const SizedBox(),
+                  _lindex > 0
+                      ? Positioned(
+                          left: 20,
+                          top: MediaQuery.of(context).size.height * .113,
+                          child: Material(
+                            elevation: 6, // Adjust the elevation value as needed
+                            shape:
+                                const CircleBorder(), // Ensures the button remains circular
+              
+                            child: Transform.flip(
+                              flipX: true,
+                              child: IconButton(
+                                icon: const FaIcon(
+                                  FontAwesomeIcons.play,
+                                  size: 18,
+                                ),
+                                color: Theme_req.follow_btn, // Icon color
+                                onPressed: () {
+                                  if (_lindex <= 4 && _lindex > 0) {
+                                    setState(() {
+                                      _lindex--;
+                                    });
+                                  }
+                                },
+                              ),
+                            ),
+                          ),
+                        )
+                      : const SizedBox(),
+                ],
+              ),
             ),
             const SizedBox(
               height: 5,
@@ -1133,10 +1133,10 @@ class _NewJoineeState extends State<NewJoinee> {
             const SizedBox(
               height: 20,
             ),
-            Stack(
-              children: [
-                Expanded(
-                  child: GridView.builder(
+            Expanded(
+              child: Stack(
+                children: [
+                  GridView.builder(
                     shrinkWrap: true,
                     itemCount: 4,
                     padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -1234,43 +1234,14 @@ class _NewJoineeState extends State<NewJoinee> {
                       );
                     },
                   ),
-                ),
-                _lindex <= 3
-                    ? Positioned(
-                        right: 20,
-                        top: MediaQuery.of(context).size.height * .113,
-                        child: Material(
-                          elevation: 6, // Adjust the elevation value as needed
-                          shape:
-                              const CircleBorder(), // Ensures the button remains circular
-                          child: IconButton(
-                            icon: const FaIcon(
-                              FontAwesomeIcons.play,
-                              size: 18,
-                            ),
-                            color: Theme_req.follow_btn, // Icon color
-                            onPressed: () {
-                              if (_lindex < 4) {
-                                setState(() {
-                                  _lindex++;
-                                });
-                              }
-                            },
-                          ),
-                        ),
-                      )
-                    : const SizedBox(),
-                _lindex > 0
-                    ? Positioned(
-                        left: 20,
-                        top: MediaQuery.of(context).size.height * .113,
-                        child: Material(
-                          elevation: 6, // Adjust the elevation value as needed
-                          shape:
-                              const CircleBorder(), // Ensures the button remains circular
-
-                          child: Transform.flip(
-                            flipX: true,
+                  _lindex <= 3
+                      ? Positioned(
+                          right: 20,
+                          top: MediaQuery.of(context).size.height * .113,
+                          child: Material(
+                            elevation: 6, // Adjust the elevation value as needed
+                            shape:
+                                const CircleBorder(), // Ensures the button remains circular
                             child: IconButton(
                               icon: const FaIcon(
                                 FontAwesomeIcons.play,
@@ -1278,18 +1249,47 @@ class _NewJoineeState extends State<NewJoinee> {
                               ),
                               color: Theme_req.follow_btn, // Icon color
                               onPressed: () {
-                                if (_lindex <= 4 && _lindex > 0) {
+                                if (_lindex < 4) {
                                   setState(() {
-                                    _lindex--;
+                                    _lindex++;
                                   });
                                 }
                               },
                             ),
                           ),
-                        ),
-                      )
-                    : const SizedBox(),
-              ],
+                        )
+                      : const SizedBox(),
+                  _lindex > 0
+                      ? Positioned(
+                          left: 20,
+                          top: MediaQuery.of(context).size.height * .113,
+                          child: Material(
+                            elevation: 6, // Adjust the elevation value as needed
+                            shape:
+                                const CircleBorder(), // Ensures the button remains circular
+              
+                            child: Transform.flip(
+                              flipX: true,
+                              child: IconButton(
+                                icon: const FaIcon(
+                                  FontAwesomeIcons.play,
+                                  size: 18,
+                                ),
+                                color: Theme_req.follow_btn, // Icon color
+                                onPressed: () {
+                                  if (_lindex <= 4 && _lindex > 0) {
+                                    setState(() {
+                                      _lindex--;
+                                    });
+                                  }
+                                },
+                              ),
+                            ),
+                          ),
+                        )
+                      : const SizedBox(),
+                ],
+              ),
             ),
             const SizedBox(
               height: 5,
