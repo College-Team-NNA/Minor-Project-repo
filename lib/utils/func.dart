@@ -1,10 +1,24 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:minor_project/utils/data_class.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 bool loggedIn() => (FirebaseAuth.instance.currentUser != null);
+
+final nosplashstyle = ButtonStyle(
+  overlayColor: WidgetStateProperty.resolveWith<Color>(
+    (Set<WidgetState> states) {
+      return Colors.transparent;
+    },
+  ),
+  shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+      const RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
+  splashFactory: NoSplash.splashFactory,
+);
 
 link(String ch, {String? folder}) async {
   if (folder != null) {
@@ -85,4 +99,10 @@ void signup(
 
 void logout() async {
   await FirebaseAuth.instance.signOut();
+}
+
+Future<void> weblauncher(String url) async {
+  log(Uri.dataFromString(url).data.toString());
+  await launchUrl(Uri.dataFromString(url),
+      mode: LaunchMode.externalApplication);
 }

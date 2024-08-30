@@ -11,7 +11,7 @@ class Theme_req {
   static const Color titles = Color(0xFF1E1E1E); //titles
 
   static const EdgeInsets defaultPadding_navBar =
-      EdgeInsets.only(left: 30.0, right: 30.0, top: 8.0, bottom: 4);
+      EdgeInsets.only(left: 60.0, right: 60.0, top: 8.0, bottom: 4);
   static const EdgeInsets screenPadding =
       EdgeInsets.only(left: 30.0, right: 30.0, top: 10);
 

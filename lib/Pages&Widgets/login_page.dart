@@ -116,19 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                             const Spacer(),
                             TextButton(
                               onPressed: () {},
-                              style: ButtonStyle(
-                                overlayColor:
-                                    WidgetStateProperty.resolveWith<Color>(
-                                  (Set<WidgetState> states) {
-                                    return Colors.transparent;
-                                  },
-                                ),
-                                shape: WidgetStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                    const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.zero)),
-                                splashFactory: NoSplash.splashFactory,
-                              ),
+                              style: nosplashstyle,
                               child: Text(
                                 'Forgot password?',
                                 style: GoogleFonts.poppins(

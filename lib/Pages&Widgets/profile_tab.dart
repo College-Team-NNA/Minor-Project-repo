@@ -102,81 +102,42 @@ class _ProfileTabState extends State<ProfileTab> {
                             fontWeight: FontWeight.w600,
                             fontSize: Theme_req.stxt_size),
                       ),
-                      const Divider(),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20.0, right: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {},
-                              style: ButtonStyle(
-                                elevation: WidgetStateProperty.all<double>(0),
-                                backgroundColor: WidgetStateProperty.all<Color>(
-                                    Theme_req.follow_btn),
-                                shape: WidgetStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                        8), // Curved corners
-                                  ),
-                                ),
-                              ),
-                              child: Text(
-                                "FOLLOW",
-                                style: GoogleFonts.montserrat(
-                                    color: Theme_req.white,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 11),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 15,
-                            ),
-                            OutlinedButton(
-                              onPressed: () {},
-                              style: ButtonStyle(
-                                elevation: WidgetStateProperty.all<double>(0),
-                                // backgroundColor:
-                                //     MaterialStateProperty.all<
-                                //         Color>(Colors.white),
-                                side: WidgetStateProperty.all<BorderSide>(
-                                    const BorderSide(
-                                        color: Theme_req.piechart_outer)),
-                                shape: WidgetStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                        8), // Curved corners
-                                  ),
-                                ),
-                              ),
-                              child: Text(
-                                "Edit Profile",
-                                style: GoogleFonts.montserrat(
-                                    color: Theme_req.follow_btn,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 11),
-                              ),
-                            )
-                          ],
+                      const SizedBox(height: 5),
+                      Container(
+                        child: OutlinedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            minimumSize:
+                                WidgetStateProperty.all(Size.fromHeight(40)),
+                            shape: WidgetStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8))),
+                            side: WidgetStateProperty.all(
+                                BorderSide(color: Theme_req.follow_btn)),
+                          ),
+                          child: const Text(
+                            "Edit Profile",
+                            style: TextStyle(color: Theme_req.follow_btn),
+                          ),
                         ),
                       ),
+                      const Divider(),
                       const SizedBox(
                         height: 8,
                       ),
-                      SingleChildScrollView(
-                        child: ReadMoreText(
-                          "Takimata sit sit ut amet aliquyam vero elitr diam, justo et amet lorem no gubergren est, sea at kasd rebum. Duo amet justo sadipscing sed nonumy. Ipsum sed consetetur lorem voluptua takimata.",
-                          trimMode: TrimMode.Line,
-                          trimLines: 2,
-                          colorClickableText: Theme_req.piechart_outer,
-                          trimCollapsedText: 'Show more',
-                          trimExpandedText: 'Show less',
-                          textScaler: const TextScaler.linear(1.2),
-                          style: GoogleFonts.montserrat(
-                              fontSize: Theme_req.stxt_size),
+                      SizedBox(
+                        child: SingleChildScrollView(
+                          child: ReadMoreText(
+                            "Takimata sit sit ut amet aliquyam vero elitr diam, justo et amet lorem no gubergren est, sea at kasd rebum. Duo amet justo sadipscing sed nonumy. Ipsum sed consetetur lorem voluptua takimata.",
+                            trimMode: TrimMode.Line,
+                            trimLines: 2,
+                            colorClickableText: Theme_req.piechart_outer,
+                            trimCollapsedText: 'Show more',
+                            trimExpandedText: 'Show less',
+                            textScaler: const TextScaler.linear(1.3),
+                            style: GoogleFonts.montserrat(
+                                fontSize: Theme_req.stxt_size),
+                          ),
                         ),
                       ),
                     ],
@@ -344,40 +305,17 @@ class _ProfileTabState extends State<ProfileTab> {
                 const SizedBox(
                   height: 5,
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      FaIcon(
-                        FontAwesomeIcons.linkedin,
-                        color: Theme_req.follow_btn,
-                        size: 30,
-                      ),
-                      // Spacer(),
-                      FaIcon(
-                        FontAwesomeIcons.instagram,
-                        color: Theme_req.follow_btn,
-                        size: 30,
-                      ),
-                      // Spacer(),
-                      FaIcon(
-                        FontAwesomeIcons.meta,
-                        color: Theme_req.follow_btn,
-                        size: 30,
-                      ),
-                      // Spacer(),
-                      FaIcon(
-                        FontAwesomeIcons.github,
-                        color: Theme_req.follow_btn,
-                        size: 30,
-                      ),
-                      // Spacer(),
-                      FaIcon(
-                        FontAwesomeIcons.behance,
-                        color: Theme_req.follow_btn,
-                        size: 30,
-                      ),
+                      ContactButton(context, FontAwesomeIcons.linkedin,
+                          'www.linkedin.com/in/naman-goel-c3306/'),
+                      ContactButton(context, FontAwesomeIcons.instagram, () {}),
+                      ContactButton(context, FontAwesomeIcons.meta, () {}),
+                      ContactButton(context, FontAwesomeIcons.github, () {}),
+                      ContactButton(context, FontAwesomeIcons.behance, () {}),
                     ],
                   ),
                 )
@@ -388,4 +326,16 @@ class _ProfileTabState extends State<ProfileTab> {
       ),
     );
   }
+}
+
+Widget ContactButton(BuildContext context, icon, url) {
+  return IconButton(
+    style: nosplashstyle,
+    icon: FaIcon(
+      icon,
+      color: Theme_req.follow_btn,
+      size: 30,
+    ),
+    onPressed: () => weblauncher(url),
+  );
 }

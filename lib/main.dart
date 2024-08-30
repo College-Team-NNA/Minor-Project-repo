@@ -21,12 +21,12 @@ class Proj extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/homepage",
+      initialRoute: "/portfolio",
       routes: {
         "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),
         "/portfolio": (context) =>
-            loggedIn()||true ? const Portfolio() : const LoginPage(),
+            loggedIn() || true ? const Portfolio() : const LoginPage(),
         "/login": (context) =>
             loggedIn() ? const Portfolio() : const LoginPage(),
         "/signup": (context) => loggedIn() ? const Portfolio() : const SignUp(),
@@ -34,5 +34,3 @@ class Proj extends StatelessWidget {
     );
   }
 }
-
-

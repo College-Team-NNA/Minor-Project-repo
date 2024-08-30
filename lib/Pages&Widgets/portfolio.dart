@@ -29,27 +29,46 @@ class _PortfolioState extends State<Portfolio> {
             children: [
               Expanded(
                 //Full Profile Column 6/19 parts flex
-                flex: 6,
+                flex: 26,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: ProfileTab(size: _size),
+                  child: ProfileTab(size: MediaQuery.of(context).size),
                 ),
               ),
               Expanded(
                 //Statistics Column 4/19 Part flex
-                flex: 4,
+                flex: 45,
                 child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: StatusLearningTab(size: _size)),
+                    child:
+                        StatusLearningTab(size: MediaQuery.of(context).size)),
               ),
               Expanded(
-                flex: 9, //Recent Projects Column 9/19 Parts flex
+                flex: 27, //Recent Projects Column 9/19 Parts flex
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: RecentProjectsTab(size: _size),
+                  child: RecentProjectsTab(size: MediaQuery.of(context).size),
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(40),
+                topLeft: Radius.circular(40),
+                bottomLeft: Radius.circular(40),
+                bottomRight: Radius.circular(8))),
+        onPressed: () => Navigator.pushNamed(context, "/underconstruction"),
+        backgroundColor: Theme_req.follow_btn.withOpacity(0.8),
+        child: Transform.flip(
+          flipX: true,
+          child: const Icon(
+            Icons.menu,
+            size: 36,
+            color: Colors.white,
           ),
         ),
       ),
