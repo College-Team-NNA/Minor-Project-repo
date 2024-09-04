@@ -15,7 +15,7 @@ class Portfolio extends StatefulWidget {
 class _PortfolioState extends State<Portfolio> {
   @override
   Widget build(BuildContext context) {
-    Size _size = MediaQuery.of(context).size;
+    // Size _size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Theme_req.offWhite,
       appBar: AppBar(

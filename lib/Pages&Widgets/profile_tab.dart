@@ -108,11 +108,11 @@ class _ProfileTabState extends State<ProfileTab> {
                           onPressed: () {},
                           style: ButtonStyle(
                             minimumSize:
-                                WidgetStateProperty.all(Size.fromHeight(40)),
+                                WidgetStateProperty.all(const Size.fromHeight(40)),
                             shape: WidgetStateProperty.all(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8))),
-                            side: WidgetStateProperty.all(
+                            side: WidgetStateProperty.all(const 
                                 BorderSide(color: Theme_req.follow_btn)),
                           ),
                           child: const Text(

@@ -26,7 +26,7 @@ class Proj extends StatelessWidget {
         "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),
         "/portfolio": (context) =>
-            loggedIn() || true ? const Portfolio() : const LoginPage(),
+            loggedIn() ? const Portfolio() : const LoginPage(),
         "/login": (context) =>
             loggedIn() ? const Portfolio() : const LoginPage(),
         "/signup": (context) => loggedIn() ? const Portfolio() : const SignUp(),
