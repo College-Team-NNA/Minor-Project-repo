@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:minor_project/Pages&Widgets/home.dart';
 import 'package:minor_project/Pages&Widgets/login_page.dart';
 import 'package:minor_project/Pages&Widgets/portfolio.dart';
+import 'package:minor_project/Pages&Widgets/profile_visitor_view.dart';
 import 'package:minor_project/Pages&Widgets/sign_up.dart';
 import 'package:minor_project/Pages&Widgets/under_construction_page.dart';
 import 'package:minor_project/firebase_options.dart';
@@ -21,8 +22,9 @@ class Proj extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/portfolio",
+      initialRoute: "/visitorView",
       routes: {
+        "/visitorView": (context) => const ProfileVisitorView(),
         "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),
         "/portfolio": (context) =>
