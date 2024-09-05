@@ -65,23 +65,11 @@ class _ChatState extends State<Chat> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        CustomChatCard(
-                          profileImage: FutureBuilder(
-                              future: link("pfp1.png"),
-                              builder: (context, snapshot) {
-                                return snapshot.connectionState ==
-                                        ConnectionState.done
-                                    ? Image.network(
-                                        snapshot.data.toString(),
-                                        height: 50.0,
-                                        width: 50.0,
-                                      )
-                                    : const Center(
-                                        child: CircularProgressIndicator());
-                              }),
+                        const CustomChatCard(
+                          profileImage: "pfp1.png",
                           name: 'Naman Goel',
                           message: 'Dashboard ready, will start other ...',
                           time: '4m',
@@ -90,20 +78,8 @@ class _ChatState extends State<Chat> {
                           isSelected: true,
                           isPinned: true,
                         ),
-                        CustomChatCard(
-                          profileImage: FutureBuilder(
-                              future: link("pfp2.png"),
-                              builder: (context, snapshot) {
-                                return snapshot.connectionState ==
-                                        ConnectionState.done
-                                    ? Image.network(
-                                        snapshot.data.toString(),
-                                        height: 50.0,
-                                        width: 50.0,
-                                      )
-                                    : const Center(
-                                        child: CircularProgressIndicator());
-                              }),
+                        const CustomChatCard(
+                          profileImage: "pfp2.png",
                           name: 'Naman Dixit',
                           message:
                               'Designs are ready, review now for changes...',
@@ -112,20 +88,8 @@ class _ChatState extends State<Chat> {
                           isOnline: true,
                           isPinned: true,
                         ),
-                        CustomChatCard(
-                          profileImage: FutureBuilder(
-                              future: link("pfp3.png"),
-                              builder: (context, snapshot) {
-                                return snapshot.connectionState ==
-                                        ConnectionState.done
-                                    ? Image.network(
-                                        snapshot.data.toString(),
-                                        height: 50.0,
-                                        width: 50.0,
-                                      )
-                                    : const Center(
-                                        child: CircularProgressIndicator());
-                              }),
+                        const CustomChatCard(
+                          profileImage: "pfp3.png",
                           name: 'Arya Jha',
                           message: 'Graphs on the way, trying to figure o...',
                           time: '20m',
@@ -261,7 +225,7 @@ Widget chatBox(context) {
 }
 
 class CustomChatCard extends StatelessWidget {
-  final Widget profileImage;
+  final String profileImage;
   final String name;
   final String message;
   final String time;
@@ -296,7 +260,17 @@ class CustomChatCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(
                   8.0), // You can adjust the roundness here
-              child: profileImage,
+              child: FutureBuilder(
+                  future: link(profileImage),
+                  builder: (context, snapshot) {
+                    return snapshot.connectionState == ConnectionState.done
+                        ? Image.network(
+                            snapshot.data.toString(),
+                            height: 50.0,
+                            width: 50.0,
+                          )
+                        : const Center(child: CircularProgressIndicator());
+                  }),
             ),
             SizedBox(width: 10),
             // Name, message and online status
@@ -342,7 +316,7 @@ class CustomChatCard extends StatelessWidget {
             ),
             Spacer(),
             Column(
-              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
                   textAlign: TextAlign.end,
