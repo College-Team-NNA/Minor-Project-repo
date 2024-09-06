@@ -347,7 +347,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class CategoryButton extends StatelessWidget {
+class CategoryButton extends StatelessWidget {  
   final String label;
   final bool isSelected;
   final VoidCallback onPressed;
