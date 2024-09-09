@@ -130,12 +130,21 @@ class ProfileVisitorView extends StatelessWidget {
                       future: link("1.png"),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
-                          return Image.network(
-                            snapshot.data.toString(),
-                            fit: BoxFit.cover,
+                          return AspectRatio(
+                            aspectRatio: 16 / 11,
+                            child: Image.network(
+                              snapshot.data.toString(),
+                              fit: BoxFit.cover,
+                            ),
                           );
                         }
-                        return const SizedBox();
+                        return const AspectRatio(
+                          aspectRatio: 16 / 11,
+                          child: SizedBox(
+                            width: 2000,
+                            height: 2000,
+                          ),
+                        );
                       },
                     ),
                   ),
@@ -244,12 +253,21 @@ class ProfileVisitorView extends StatelessWidget {
                       future: link("1.png"),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
-                          return Image.network(
-                            snapshot.data.toString(),
-                            fit: BoxFit.cover,
+                          return AspectRatio(
+                            aspectRatio: 16 / 11,
+                            child: Image.network(
+                              snapshot.data.toString(),
+                              fit: BoxFit.cover,
+                            ),
                           );
                         }
-                        return const SizedBox();
+                        return const AspectRatio(
+                          aspectRatio: 16 / 11,
+                          child: SizedBox(
+                            width: 2000,
+                            height: 2000,
+                          ),
+                        );
                       },
                     ),
                   ),
@@ -347,9 +365,7 @@ class ProfileVisitorView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   Container(
                     padding: const EdgeInsets.all(2),
                     height: MediaQuery.of(context).size.height * 0.05,
@@ -361,18 +377,19 @@ class ProfileVisitorView extends StatelessWidget {
                     child: Row(
                       children: [
                         const Expanded(
-                            child: TextField(
-                          textAlign: TextAlign.left,
-                          decoration: InputDecoration(
-                            hintText: 'Type to search',
-                            hintStyle: TextStyle(
-                              color: Color(0xFFACACAC),
-                              fontSize: 15.0,
+                          child: TextField(
+                            textAlign: TextAlign.left,
+                            decoration: InputDecoration(
+                              hintText: 'Type to search',
+                              hintStyle: TextStyle(
+                                color: Color(0xFFACACAC),
+                                fontSize: 15.0,
+                              ),
+                              contentPadding: EdgeInsets.all(15.0),
+                              border: InputBorder.none,
                             ),
-                            contentPadding: EdgeInsets.all(15.0),
-                            border: InputBorder.none,
                           ),
-                        )),
+                        ),
                         const Spacer(),
                         Container(
                           decoration: BoxDecoration(
@@ -380,14 +397,15 @@ class ProfileVisitorView extends StatelessWidget {
                               color: Theme_req.black),
                           child: Center(
                             child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.search,
-                                  color: Color(0xFFACACAC),
-                                  size: 20,
-                                )),
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.search,
+                                color: Color(0xFFACACAC),
+                                size: 20,
+                              ),
+                            ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -398,7 +416,7 @@ class ProfileVisitorView extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
