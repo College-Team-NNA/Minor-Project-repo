@@ -23,7 +23,7 @@ class Proj extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/visitorView",
+      initialRoute: "/chat",
       routes: {
         "/visitorView": (context) => const ProfileVisitorView(),
         "/underconstruction": (context) => const UnderConstructionPage(),
