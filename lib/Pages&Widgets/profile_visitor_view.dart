@@ -161,7 +161,7 @@ class ProfileVisitorView extends StatelessWidget {
                     "\"Explore Japan\" is an innovative project leveraging Figma's collaborative design platform to craft an immersive and visually captivating user interface for tourists exploring Japan. The project aims to merge the power of Figma's design tools with the essence of Japanese culture to create an engaging digital experience for travelers.",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                   const SizedBox(height: 30),
@@ -169,7 +169,7 @@ class ProfileVisitorView extends StatelessWidget {
                     "Key Features:",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                   const SizedBox(height: 30),
@@ -177,42 +177,42 @@ class ProfileVisitorView extends StatelessWidget {
                     "1. Responsive Design🚀",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                   SelectableText(
                     "2. Component Libraries📚",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                   SelectableText(
                     "3. Prototype Interactions🤖",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                   SelectableText(
                     "4. Collaborative Design Process🙌",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                   SelectableText(
                     "5. Accessibility Considerations",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                   SelectableText(
                     "6. Localization Support",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                   const SizedBox(height: 50),
