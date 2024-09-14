@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -335,7 +334,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
           SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           Container(
             height: widget.size.height * 0.4008,
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
             clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(24)),
@@ -350,7 +349,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                     ),
                     const Spacer(),
                     IconButton(
-                        onPressed: () => null,
+                        onPressed: () {},
                         icon: const Icon(
                           Icons.edit,
                           size: 26,
@@ -358,7 +357,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                         ))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Expanded(
@@ -371,7 +370,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                           ),
                       itemBuilder: (BuildContext context, int index) {
                         return Container(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               vertical: 10, horizontal: 20),
                           height:
                               MediaQuery.of(context).size.height * 0.4 * 0.3,
@@ -389,7 +388,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                                   Text(
                                     DateFormat("MMM dd yyyy ● EEEE")
                                         .format(DateTime.now()),
-                                    style: TextStyle(color: Colors.white),
+                                    style: const TextStyle(color: Colors.white),
                                   ),
                                   const Spacer(),
                                   IconButton(

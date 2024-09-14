@@ -16,7 +16,7 @@ class ProfileTab extends StatefulWidget {
 class _ProfileTabState extends State<ProfileTab> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: widget.size.height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -103,22 +103,20 @@ class _ProfileTabState extends State<ProfileTab> {
                             fontSize: Theme_req.stxt_size),
                       ),
                       const SizedBox(height: 5),
-                      Container(
-                        child: OutlinedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            minimumSize:
-                                WidgetStateProperty.all(const Size.fromHeight(40)),
-                            shape: WidgetStateProperty.all(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8))),
-                            side: WidgetStateProperty.all(const 
-                                BorderSide(color: Theme_req.follow_btn)),
-                          ),
-                          child: const Text(
-                            "Edit Profile",
-                            style: TextStyle(color: Theme_req.follow_btn),
-                          ),
+                      OutlinedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          minimumSize:
+                              WidgetStateProperty.all(const Size.fromHeight(40)),
+                          shape: WidgetStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8))),
+                          side: WidgetStateProperty.all(const
+                              BorderSide(color: Theme_req.follow_btn)),
+                        ),
+                        child: const Text(
+                          "Edit Profile",
+                          style: TextStyle(color: Theme_req.follow_btn),
                         ),
                       ),
                       const Divider(),

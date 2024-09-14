@@ -61,7 +61,7 @@ class _PortfolioState extends State<Portfolio> {
                 topLeft: Radius.circular(40),
                 bottomLeft: Radius.circular(40),
                 bottomRight: Radius.circular(8))),
-        onPressed: () => Navigator.pushNamed(context, "/underconstruction"),
+        onPressed: () => Navigator.pushNamed(context, "/chat"),
         backgroundColor: Theme_req.follow_btn.withOpacity(0.8),
         child: Transform.flip(
           flipX: true,

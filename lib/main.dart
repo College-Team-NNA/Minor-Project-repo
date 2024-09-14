@@ -5,6 +5,7 @@ import 'package:minor_project/Pages&Widgets/home.dart';
 import 'package:minor_project/Pages&Widgets/login_page.dart';
 import 'package:minor_project/Pages&Widgets/portfolio.dart';
 import 'package:minor_project/Pages&Widgets/profile_visitor_view.dart';
+import 'package:minor_project/Pages&Widgets/project_upload.dart';
 import 'package:minor_project/Pages&Widgets/sign_up.dart';
 import 'package:minor_project/Pages&Widgets/under_construction_page.dart';
 import 'package:minor_project/firebase_options.dart';
@@ -23,7 +24,7 @@ class Proj extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/chat",
+      initialRoute: "/projectuploadform",
       routes: {
         "/visitorView": (context) => const ProfileVisitorView(),
         "/underconstruction": (context) => const UnderConstructionPage(),
@@ -33,7 +34,8 @@ class Proj extends StatelessWidget {
         "/login": (context) =>
             loggedIn() ? const Portfolio() : const LoginPage(),
         "/signup": (context) => loggedIn() ? const Portfolio() : const SignUp(),
-        "/chat" :(context) => const Chat()
+        "/chat" :(context) => const Chat(),
+        "/projectuploadform":(context)=> const ProjectUpload()
       },
     );
   }
