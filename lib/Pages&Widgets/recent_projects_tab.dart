@@ -30,7 +30,7 @@ class _RecentProjectsTabState extends State<RecentProjectsTab> {
               ),
               const Spacer(),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushNamed(context, "/projectuploadform"),
                   icon: const Icon(
                     Icons.file_upload_outlined,
                     color: Theme_req.follow_btn,
