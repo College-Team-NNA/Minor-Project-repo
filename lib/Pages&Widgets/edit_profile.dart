@@ -233,9 +233,15 @@ class _changeLinksState extends State<changeLinks> {
             Flexible(flex:1,child:  CustomTextField(label: 'Email',isRequired: true,)),
             SizedBox(width: 15,),
             Flexible(flex:1,child:  CustomTextField(label: 'Phone Number',isRequired: true,)),
-
           ],
-        )
+        ),
+        Text("*please use generic information to maintain professionalism",
+          style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w400,
+            decoration: TextDecoration.none,
+            fontSize: 10,
+            color: Theme_req.piechart_outer,
+          ),)
       ],
     );
   }
