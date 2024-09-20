@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:minor_project/Pages&Widgets/androui.dart';
 import 'package:minor_project/Pages&Widgets/chat.dart';
+import 'package:minor_project/Pages&Widgets/edit_profile.dart';
 import 'package:minor_project/Pages&Widgets/home.dart';
 import 'package:minor_project/Pages&Widgets/login_page.dart';
 import 'package:minor_project/Pages&Widgets/portfolio.dart';
@@ -43,7 +44,8 @@ class Proj extends StatelessWidget {
         "/signup": (context) => loggedIn() ? const Portfolio() : const SignUp(),
         "/chat": (context) => loggedIn() ? const Chat() : const LoginPage(),
         "/projectuploadform": (context) =>
-            !loggedIn() ? const LoginPage() : const ProjectUpload()
+            !loggedIn() ? const LoginPage() : const ProjectUpload(),
+        "/editprofile":(context) => const EditProfile()
       },
     );
   }
