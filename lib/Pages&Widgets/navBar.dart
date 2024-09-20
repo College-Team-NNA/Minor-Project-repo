@@ -142,8 +142,7 @@ class navBar extends StatelessWidget {
                   ),
                   child: const Text("Edit profile",
                       style: TextStyle(color: Colors.black)),
-                  onPressed: () =>
-                      Navigator.pushNamed(context, "/underconstruction"),
+                  onPressed: () => Navigator.pushNamed(context, "/editprofile"),
                 ),
                 MenuItemButton(
                     style: hoverbutton,

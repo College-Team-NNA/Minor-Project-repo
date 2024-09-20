@@ -104,7 +104,8 @@ class _ProfileTabState extends State<ProfileTab> {
                       ),
                       const SizedBox(height: 5),
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () =>
+                            Navigator.pushNamed(context, "/editprofile"),
                         style: ButtonStyle(
                           minimumSize: WidgetStateProperty.all(
                               const Size.fromHeight(40)),

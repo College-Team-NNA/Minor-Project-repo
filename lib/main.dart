@@ -45,7 +45,8 @@ class Proj extends StatelessWidget {
         "/chat": (context) => loggedIn() ? const Chat() : const LoginPage(),
         "/projectuploadform": (context) =>
             !loggedIn() ? const LoginPage() : const ProjectUpload(),
-        "/editprofile":(context) => const EditProfile()
+        "/editprofile": (context) =>
+            !loggedIn() ? const LoginPage() : const EditProfile()
       },
     );
   }
