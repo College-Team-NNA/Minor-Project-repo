@@ -309,10 +309,13 @@ class _ProfileTabState extends State<ProfileTab> {
                     children: [
                       ContactButton(context, FontAwesomeIcons.linkedin,
                           'https://www.linkedin.com/in/itsnemo/'),
-                      ContactButton(context, FontAwesomeIcons.instagram, ""),
+                      ContactButton(context, FontAwesomeIcons.instagram,
+                          "https://www.instagram.com/its.nemo.art/"),
                       ContactButton(context, FontAwesomeIcons.meta, ""),
-                      ContactButton(context, FontAwesomeIcons.github, ""),
-                      ContactButton(context, FontAwesomeIcons.behance, ""),
+                      ContactButton(context, FontAwesomeIcons.github,
+                          "https://github.com/dixitnaman"),
+                      ContactButton(context, FontAwesomeIcons.behance,
+                          "https://www.behance.net/namandixit"),
                     ],
                   ),
                 )
