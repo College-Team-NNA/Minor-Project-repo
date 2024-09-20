@@ -27,17 +27,21 @@ class navBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            FutureBuilder(
-                future: link("logo.png"),
-                builder: (context, snapshot) {
-                  return snapshot.connectionState == ConnectionState.done
-                      ? Image.network(
-                          snapshot.data.toString(),
-                          height: 45.0,
-                          width: 180.0,
-                        )
-                      : const Center(child: CircularProgressIndicator());
-                }),
+            GestureDetector(
+              child: FutureBuilder(
+                  future: link("logo.png"),
+                  builder: (context, snapshot) {
+                    return snapshot.connectionState == ConnectionState.done
+                        ? Image.network(
+                            snapshot.data.toString(),
+                            height: 45.0,
+                            width: 180.0,
+                          )
+                        : const Center(child: CircularProgressIndicator());
+                  }),
+              onTap: () => Navigator.pushNamedAndRemoveUntil(
+                  context, "/homepage", ModalRoute.withName("/")),
+            ),
             const SizedBox(width: 30.0),
             TextButton(
               onPressed: () {},
@@ -155,9 +159,8 @@ class navBar extends StatelessWidget {
                   Widget? child) {
                 return CircleAvatar(
                   radius: 21,
-                  // backgroundImage: const AssetImage("assets/Vector.png"),
                   child: FutureBuilder(
-                      future: link("Vector.png"),
+                      future: link("3dmodel 1.png"),
                       builder: (context, snapshot) {
                         if (!snapshot.hasData && snapshot.data == null) {
                           return const Padding(
@@ -165,16 +168,24 @@ class navBar extends StatelessWidget {
                             child: CircularProgressIndicator(),
                           );
                         }
-                        return IconButton(
-                            onPressed: () {
-                              if (controller.isOpen) {
-                                controller.close();
-                              } else {
-                                controller.open();
-                              }
-                            },
-                            padding: EdgeInsets.zero,
-                            icon: Image.network(snapshot.data.toString()));
+                        return CircleAvatar(
+                            radius: 21,
+                            backgroundColor: Theme_req.bio_name,
+                            backgroundImage:
+                                NetworkImage(snapshot.data.toString()),
+                            child: IconButton(
+                                onPressed: () {
+                                  if (controller.isOpen) {
+                                    controller.close();
+                                  } else {
+                                    controller.open();
+                                  }
+                                },
+                                padding: EdgeInsets.zero,
+                                icon: Icon(
+                                  Icons.abc,
+                                  color: Colors.transparent,
+                                )));
                       }),
                 );
               },

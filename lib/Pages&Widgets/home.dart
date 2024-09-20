@@ -40,14 +40,14 @@ class _HomePageState extends State<HomePage> {
                                 alignment: Alignment.center,
                                 children: [
                                   RichText(
-                                    textAlign:
-                                    TextAlign.center, // Center-align the text
+                                    textAlign: TextAlign
+                                        .center, // Center-align the text
                                     text: TextSpan(
                                       style: DefaultTextStyle.of(context)
                                           .style
                                           .copyWith(
-                                          color: const Color(
-                                              0xFF9489E9)), // Default text color
+                                              color: const Color(
+                                                  0xFF9489E9)), // Default text color
                                       children: [
                                         TextSpan(
                                           text: 'Welcome to\nthe new ',
@@ -87,24 +87,25 @@ class _HomePageState extends State<HomePage> {
                                 height: 20,
                               ),
                               Container(
-                                height: MediaQuery.of(context).size.height * 0.05,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.05,
                                 width: MediaQuery.of(context).size.width * 0.2,
                                 color: const Color(0xFFE0E0E4),
                                 child: Row(
                                   children: [
                                     const Expanded(
                                         child: TextField(
-                                          textAlign: TextAlign.left,
-                                          decoration: InputDecoration(
-                                            hintText: 'Type to search',
-                                            hintStyle: TextStyle(
-                                              color: Color(0xFFACACAC),
-                                              fontSize: 15.0,
-                                            ),
-                                            contentPadding: EdgeInsets.all(15.0),
-                                            border: InputBorder.none,
-                                          ),
-                                        )),
+                                      textAlign: TextAlign.left,
+                                      decoration: InputDecoration(
+                                        hintText: 'Type to search',
+                                        hintStyle: TextStyle(
+                                          color: Color(0xFFACACAC),
+                                          fontSize: 15.0,
+                                        ),
+                                        contentPadding: EdgeInsets.all(15.0),
+                                        border: InputBorder.none,
+                                      ),
+                                    )),
                                     const Spacer(),
                                     IconButton(
                                         onPressed: () {},
@@ -135,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     color: Colors.black,
                     width: MediaQuery.of(context).size.width,
-                    child:Column(
+                    child: Column(
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width,
@@ -149,14 +150,15 @@ class _HomePageState extends State<HomePage> {
                                 Align(
                                   alignment: Alignment.topLeft,
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Stack(
                                         children: [
                                           Padding(
                                             padding: const EdgeInsets.symmetric(
                                                 horizontal:
-                                                30.0), // Adjust as necessary
+                                                    30.0), // Adjust as necessary
                                             child: Text(
                                               "Top Artists ",
                                               style: GoogleFonts.poppins(
@@ -198,13 +200,17 @@ class _HomePageState extends State<HomePage> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        buildProfile(
-                                            'olivia.png', // Replace with the actual image asset
-                                            'Olivia Hayes',
-                                            'UI/UX Designer',
-                                            context),
+                                        GestureDetector(
+                                          child: buildProfile(
+                                              '3dmodel 1.png', // Replace with the actual image asset
+                                              'Naman Dixit',
+                                              'UI/UX Designer',
+                                              context),
+                                          onTap: ()=>Navigator.pushNamed(context,"/"),
+                                        ),
                                         const SizedBox(width: 50),
                                         buildProfile(
                                             'miles.png', // Replace with the actual image asset
@@ -258,7 +264,8 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 30.0), // Adjust as necessary
+                                        horizontal:
+                                            30.0), // Adjust as necessary
                                     child: RichText(
                                       textAlign: TextAlign.center,
                                       text: TextSpan(
@@ -289,7 +296,8 @@ class _HomePageState extends State<HomePage> {
                               ),
                               Container(
                                 padding: const EdgeInsets.all(2),
-                                height: MediaQuery.of(context).size.height * 0.05,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.05,
                                 width: MediaQuery.of(context).size.width * 0.2,
                                 // color: const Color(0xFF222222),
                                 decoration: BoxDecoration(
@@ -299,21 +307,22 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     const Expanded(
                                         child: TextField(
-                                          textAlign: TextAlign.left,
-                                          decoration: InputDecoration(
-                                            hintText: 'Type to search',
-                                            hintStyle: TextStyle(
-                                              color: Color(0xFFACACAC),
-                                              fontSize: 15.0,
-                                            ),
-                                            contentPadding: EdgeInsets.all(15.0),
-                                            border: InputBorder.none,
-                                          ),
-                                        )),
+                                      textAlign: TextAlign.left,
+                                      decoration: InputDecoration(
+                                        hintText: 'Type to search',
+                                        hintStyle: TextStyle(
+                                          color: Color(0xFFACACAC),
+                                          fontSize: 15.0,
+                                        ),
+                                        contentPadding: EdgeInsets.all(15.0),
+                                        border: InputBorder.none,
+                                      ),
+                                    )),
                                     const Spacer(),
                                     Container(
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(5),
+                                          borderRadius:
+                                              BorderRadius.circular(5),
                                           color: Theme_req.black),
                                       child: Center(
                                         child: IconButton(
@@ -336,23 +345,23 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ],
-                    ) ,
+                    ),
                   ),
                 ],
               ),
             ),
           ],
-        )
-    );
+        ));
   }
 }
 
-class CategoryButton extends StatelessWidget {  
+class CategoryButton extends StatelessWidget {
   final String label;
   final bool isSelected;
   final VoidCallback onPressed;
 
-  const CategoryButton({super.key,
+  const CategoryButton({
+    super.key,
     required this.label,
     required this.isSelected,
     required this.onPressed,
@@ -364,7 +373,7 @@ class CategoryButton extends StatelessWidget {
       style: OutlinedButton.styleFrom(
         foregroundColor: isSelected ? Colors.white : Theme_req.black,
         backgroundColor:
-        isSelected ? const Color(0xFF9489E9) : Colors.transparent,
+            isSelected ? const Color(0xFF9489E9) : Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -381,6 +390,7 @@ class CategoryButton extends StatelessWidget {
     );
   }
 }
+
 class TaperedDividerPainter extends CustomPainter {
   final double taperWidth;
 
@@ -403,8 +413,10 @@ class TaperedDividerPainter extends CustomPainter {
         rightTaperStart, size.height / 2,
       )
       ..quadraticBezierTo(
-        size.width / 2, size.height / 2 + 3,
-        leftTaperEnd, size.height / 2,
+        size.width / 2,
+        size.height / 2 + 3,
+        leftTaperEnd,
+        size.height / 2,
       )
       ..close();
 
@@ -417,7 +429,8 @@ class TaperedDividerPainter extends CustomPainter {
   }
 }
 
-Widget buildProfile(String imagePath, String name, String role, BuildContext context) {
+Widget buildProfile(
+    String imagePath, String name, String role, BuildContext context) {
   return Column(
     children: [
       FutureBuilder(
@@ -492,22 +505,21 @@ class _TopColumnState extends State<TopColumn> {
               children: [
                 Expanded(
                     child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Wrap(
-                        children: List.generate(categories.length, (index) {
-                          return CategoryButton(
-                            label: categories[index],
-                            isSelected: selectedIndex == index,
-                            onPressed: () {
-                              setState(() {
-                                selectedIndex = index;
-                              });
-                            },
-                          );
-                        }),
-                      ),
-                    )
-                ),
+                  scrollDirection: Axis.horizontal,
+                  child: Wrap(
+                    children: List.generate(categories.length, (index) {
+                      return CategoryButton(
+                        label: categories[index],
+                        isSelected: selectedIndex == index,
+                        onPressed: () {
+                          setState(() {
+                            selectedIndex = index;
+                          });
+                        },
+                      );
+                    }),
+                  ),
+                )),
                 // TODO:Category Button List onpress func @aryaJha
                 Row(
                   children: [
@@ -762,7 +774,7 @@ class _TopColumnState extends State<TopColumn> {
                           elevation: 6, // Adjust the elevation value as needed
                           shape:
                               const CircleBorder(), // Ensures the button remains circular
-            
+
                           child: Transform.flip(
                             flipX: true,
                             child: IconButton(
@@ -986,7 +998,8 @@ class _TopDesignState extends State<TopDesign> {
                           right: 20,
                           top: MediaQuery.of(context).size.height * .113,
                           child: Material(
-                            elevation: 6, // Adjust the elevation value as needed
+                            elevation:
+                                6, // Adjust the elevation value as needed
                             shape:
                                 const CircleBorder(), // Ensures the button remains circular
                             child: IconButton(
@@ -1011,10 +1024,11 @@ class _TopDesignState extends State<TopDesign> {
                           left: 20,
                           top: MediaQuery.of(context).size.height * .113,
                           child: Material(
-                            elevation: 6, // Adjust the elevation value as needed
+                            elevation:
+                                6, // Adjust the elevation value as needed
                             shape:
                                 const CircleBorder(), // Ensures the button remains circular
-              
+
                             child: Transform.flip(
                               flipX: true,
                               child: IconButton(
@@ -1239,7 +1253,8 @@ class _NewJoineeState extends State<NewJoinee> {
                           right: 20,
                           top: MediaQuery.of(context).size.height * .113,
                           child: Material(
-                            elevation: 6, // Adjust the elevation value as needed
+                            elevation:
+                                6, // Adjust the elevation value as needed
                             shape:
                                 const CircleBorder(), // Ensures the button remains circular
                             child: IconButton(
@@ -1264,10 +1279,11 @@ class _NewJoineeState extends State<NewJoinee> {
                           left: 20,
                           top: MediaQuery.of(context).size.height * .113,
                           child: Material(
-                            elevation: 6, // Adjust the elevation value as needed
+                            elevation:
+                                6, // Adjust the elevation value as needed
                             shape:
                                 const CircleBorder(), // Ensures the button remains circular
-              
+
                             child: Transform.flip(
                               flipX: true,
                               child: IconButton(

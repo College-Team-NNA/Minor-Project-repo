@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:intl/intl.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
 import 'package:minor_project/utils/data_class.dart';
@@ -25,6 +26,51 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Container(
+            height: MediaQuery.of(context).size.height * 0.085,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15), color: Colors.white),
+            padding: const EdgeInsets.symmetric(vertical: 1),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Wrap(
+                spacing: 10,
+                alignment: WrapAlignment.spaceEvenly,
+                children: [
+                  const SizedBox(width: 10),
+                  Brand(
+                    Brands.adobe_photoshop,
+                    size: 80,
+                  ),
+                  Brand(
+                    Brands.adobe_illustrator,
+                    size: 80,
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 10.0, left: 10, right: 15),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: const Color(0xff1f1f27),
+                      ),
+                      padding: const EdgeInsets.all(10),
+                      child: Brand(
+                        Brands.figma,
+                        size: 40,
+                      ),
+                    ),
+                  ),
+                  Brand(
+                    Brands.blender_3d,
+                    size: 80,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -47,12 +93,12 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                         children: <Widget>[
                           const SizedBox(height: 15),
                           Text(
-                            "Course Details",
+                            "Activity",
                             style: GoogleFonts.montserrat(
                                 fontSize: 24, fontWeight: FontWeight.w600),
                           ),
                           Text(
-                            "Learning Stats",
+                            "Project Stats",
                             style: GoogleFonts.montserrat(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
@@ -73,7 +119,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                                     ),
                                   ),
                                   TextSpan(
-                                      text: " CANCELLED",
+                                      text: " In Progress",
                                       style: GoogleFonts.montserrat(
                                           fontWeight: FontWeight.w500))
                                 ]),
@@ -123,12 +169,12 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                                   interval: 1,
                                 ),
                                 series: <SplineAreaSeries>[
-                                  SplineAreaSeries<chartdata, String>(
+                                  SplineAreaSeries<ChartData, String>(
                                     name: "Finished",
                                     dataSource: UserDetail.graph_1,
-                                    xValueMapper: (chartdata data, _) =>
+                                    xValueMapper: (ChartData data, _) =>
                                         data.month,
-                                    yValueMapper: (chartdata data, _) =>
+                                    yValueMapper: (ChartData data, _) =>
                                         data.data,
                                     gradient: LinearGradient(
                                       colors: [
@@ -146,12 +192,12 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                                         height: 6,
                                         width: 6),
                                   ),
-                                  SplineAreaSeries<chartdata, String>(
+                                  SplineAreaSeries<ChartData, String>(
                                     name: "Cancelled",
                                     dataSource: UserDetail.graph_2,
-                                    xValueMapper: (chartdata data, _) =>
+                                    xValueMapper: (ChartData data, _) =>
                                         data.month,
-                                    yValueMapper: (chartdata data, _) =>
+                                    yValueMapper: (ChartData data, _) =>
                                         data.data,
                                     gradient: LinearGradient(
                                       colors: [
@@ -185,35 +231,35 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
                         right: 30,
                       ),
                       decoration: BoxDecoration(
-                        color: Theme_req.follow_btn,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(25.0),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 28.0),
                         child: Column(
                           children: [
-                            Center(
-                                child: Text(
+                            Text(
                               "Continue Learning",
                               style: GoogleFonts.montserrat(
-                                  color: Theme_req.white,
+                                  color: Theme_req.follow_btn,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 20),
-                            )),
+                              textAlign: TextAlign.left,
+                            ),
                             const SizedBox(
                               height: 10,
                             ),
                             Align(
                               alignment: Alignment.bottomRight,
                               child: CircleAvatar(
-                                backgroundColor: Theme_req.white,
+                                backgroundColor: Theme_req.follow_btn,
                                 radius: 21,
                                 child: IconButton(
                                   icon: const FaIcon(
                                     FontAwesomeIcons.play,
                                     size: 18,
                                   ), // Your icon
-                                  color: Theme_req.follow_btn, // Icon color
+                                  color: Colors.white, // Icon color
                                   onPressed: () {},
                                 ),
                               ),
@@ -333,7 +379,7 @@ class _StatusLearningTabState extends State<StatusLearningTab> {
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           Container(
-            height: widget.size.height * 0.4008,
+            height: widget.size.height * 0.3008,
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
             clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(

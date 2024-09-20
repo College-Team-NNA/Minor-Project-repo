@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:minor_project/Pages&Widgets/def_nav_bar.dart';
 import 'package:minor_project/Pages&Widgets/navBar.dart';
 import 'package:minor_project/UI%20req/Colors_req.dart';
+import 'package:minor_project/utils/data_class.dart';
 import 'package:minor_project/utils/func.dart';
 
 class ProjectUpload extends StatefulWidget {
@@ -14,17 +15,22 @@ class ProjectUpload extends StatefulWidget {
 }
 
 class _ProjectUploadState extends State<ProjectUpload> {
-
+  TextEditingController ptitle = TextEditingController();
+  TextEditingController pabout = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    ProjectDetails np;
     return Scaffold(
         backgroundColor: Theme_req.offWhite,
-        appBar: AppBar(actions: [loggedIn() ? const navBar() : const DefNavBar()]),
-        body: Padding(padding: const EdgeInsets.only(left: 50.0, right: 50.0, top: 15.0, bottom: 25),
+        appBar:
+            AppBar(actions: [loggedIn() ? const navBar() : const DefNavBar()]),
+        body: Padding(
+          padding: const EdgeInsets.only(
+              left: 50.0, right: 50.0, top: 15.0, bottom: 25),
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.symmetric(horizontal: 35,vertical: 28),
+            padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 28),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: Theme_req.white,
@@ -33,14 +39,15 @@ class _ProjectUploadState extends State<ProjectUpload> {
               children: [
                 Row(
                   children: [
-                    Text("UPLOAD PROJECT",
+                    Text(
+                      "UPLOAD PROJECT",
                       style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      decoration: TextDecoration.none,
-                      fontSize: 26,
-                      color: Theme_req.bio_name,
-
-                    ),),
+                        fontWeight: FontWeight.w600,
+                        decoration: TextDecoration.none,
+                        fontSize: 26,
+                        color: Theme_req.bio_name,
+                      ),
+                    ),
                     const Spacer(),
                     ElevatedButton.icon(
                       onPressed: () {},
@@ -58,13 +65,17 @@ class _ProjectUploadState extends State<ProjectUpload> {
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Theme_req.piechart_outer,
-                        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 15),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6), // Rounded corners
+                          borderRadius:
+                              BorderRadius.circular(6), // Rounded corners
                         ),
                       ),
                     ),
-                    const SizedBox(width: 10,),
+                    const SizedBox(
+                      width: 10,
+                    ),
                     ElevatedButton.icon(
                       onPressed: () {
                         Navigator.pushNamed(context, "/portfolio");
@@ -83,208 +94,227 @@ class _ProjectUploadState extends State<ProjectUpload> {
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Theme_req.bio_name,
-                        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 15),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6), // Rounded corners
+                          borderRadius:
+                              BorderRadius.circular(6), // Rounded corners
                         ),
                       ),
                     )
                   ],
                 ), // Header
-                const SizedBox(height: 25,),
+                const SizedBox(
+                  height: 25,
+                ),
                 TextFormField(
+                  controller: ptitle,
                   decoration: InputDecoration(
-                    hintText: 'PROJECT TITLE',
-                    hintStyle: GoogleFonts.poppins(
-                      color: Color(0x669489E9),
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.1,
-                      fontSize: 20,
-                    ),
-                    filled: true,
-                    fillColor: const Color(0xFFF8F8FD),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide.none,
-                    ),
-                      contentPadding: EdgeInsets.only(left: 50,top: 15,bottom: 15)
-                  ),
+                      hintText: 'PROJECT TITLE',
+                      hintStyle: GoogleFonts.poppins(
+                        color: Color(0x669489E9),
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.1,
+                        fontSize: 20,
+                      ),
+                      filled: true,
+                      fillColor: const Color(0xFFF8F8FD),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
+                      ),
+                      contentPadding:
+                          EdgeInsets.only(left: 50, top: 15, bottom: 15)),
                   style: GoogleFonts.poppins(
                     color: Theme_req.piechart_outer,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1.1,
                     fontSize: 20,
                   ),
-                ),// Title
-                SizedBox(height: 20,),
+                ), // Title
+                SizedBox(
+                  height: 20,
+                ),
                 UploadDocs(),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 TagsAndTools(),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 AboutProject()
               ],
             ),
-        ),
-        )
-    );
+          ),
+        ));
   }
 }
+
 class UploadDocs extends StatefulWidget {
   const UploadDocs({Key? key}) : super(key: key);
 
   @override
   State<UploadDocs> createState() => _UploadDocsState();
 }
+
 class _UploadDocsState extends State<UploadDocs> {
   @override
   Widget build(BuildContext context) {
     return Row(
-        children: [
-          Expanded(flex: 5,
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.25,
-              padding: EdgeInsets.symmetric(vertical: 15,horizontal: 50),
-              decoration: BoxDecoration(
-                color: Color(0xFFF8F8FD),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Upload Thumbnail',
+      children: [
+        Expanded(
+          flex: 5,
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.25,
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+            decoration: BoxDecoration(
+              color: Color(0xFFF8F8FD),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Text(
+                    'Upload Thumbnail',
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
+                      color: Theme_req.piechart_outer, // Light purple color
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16),
+                DottedBorder(
+                  borderType: BorderType.RRect,
+                  radius: Radius.circular(8),
+                  color: Theme_req.piechart_outer, // Adjust the color as needed
+                  strokeWidth: 2,
+                  dashPattern: [10, 6],
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.15,
+                      color: Theme_req.white,
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () {
+                            selectnUpload();
+                          },
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'Drop your file(s) here or ',
+                              style: GoogleFonts.poppins(
+                                color: Color(0x669489E9),
+                                fontSize: 15,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              children: [
+                                TextSpan(
+                                  text: 'browse',
+                                  style: GoogleFonts.poppins(
+                                    color: Color(0xFF9489E9),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 20,
+        ),
+        Expanded(
+          flex: 5,
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.25,
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+            decoration: BoxDecoration(
+              color: Color(0xFFF8F8FD),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'Upload Document ',
                       style: GoogleFonts.poppins(
+                        color: Color(0xFF9489E9),
                         fontSize: 15,
-                        color: Theme_req.piechart_outer, // Light purple color
+                        fontWeight: FontWeight.normal,
                       ),
+                      children: [
+                        TextSpan(
+                          text: 'Image/Video',
+                          style: GoogleFonts.poppins(
+                            color: Color(0xFF9489E9),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(height: 16),
-                  DottedBorder(
-                    borderType: BorderType.RRect,
-                    radius: Radius.circular(8),
-                    color: Theme_req.piechart_outer, // Adjust the color as needed
-                    strokeWidth: 2,
-                    dashPattern: [10, 6],
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(8)),
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.15,
-                        color: Theme_req.white,
-                        child: Center(
-                          child: TextButton(
-                            onPressed: () {},
-                            child: RichText(
-                              text: TextSpan(
-                                text: 'Drop your file(s) here or ',
-                                style: GoogleFonts.poppins(
-                                  color: Color(0x669489E9),
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: 'browse',
-                                    style: GoogleFonts.poppins(
-                                      color: Color(0xFF9489E9),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
+                ),
+                SizedBox(height: 16),
+                DottedBorder(
+                  borderType: BorderType.RRect,
+                  radius: Radius.circular(8),
+                  color: Theme_req.piechart_outer, // Adjust the color as needed
+                  strokeWidth: 2,
+                  dashPattern: [10, 6],
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.15,
+                      color: Theme_req.white,
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () {
+                            selectnUpload();
+                          },
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'Drop your file(s) here or ',
+                              style: GoogleFonts.poppins(
+                                color: Color(0x669489E9),
+                                fontSize: 15,
+                                fontWeight: FontWeight.normal,
                               ),
+                              children: [
+                                TextSpan(
+                                  text: 'browse',
+                                  style: GoogleFonts.poppins(
+                                    color: Color(0xFF9489E9),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-          SizedBox(width: 20,),
-          Expanded(flex: 5,
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.25,
-              padding: EdgeInsets.symmetric(vertical: 15,horizontal: 50),
-              decoration: BoxDecoration(
-                color: Color(0xFFF8F8FD),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: RichText(
-                      text: TextSpan(
-                        text: 'Upload Document ',
-                        style: GoogleFonts.poppins(
-                          color: Color(0xFF9489E9),
-                          fontSize: 15,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: 'Image/Video',
-                            style: GoogleFonts.poppins(
-                              color: Color(0xFF9489E9),
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  DottedBorder(
-                    borderType: BorderType.RRect,
-                    radius: Radius.circular(8),
-                    color: Theme_req.piechart_outer, // Adjust the color as needed
-                    strokeWidth: 2,
-                    dashPattern: [10, 6],
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(8)),
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.15,
-                        color: Theme_req.white,
-                        child: Center(
-                          child: TextButton(
-                            onPressed: () {},
-                            child: RichText(
-                              text: TextSpan(
-                                text: 'Drop your file(s) here or ',
-                                style: GoogleFonts.poppins(
-                                  color: Color(0x669489E9),
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: 'browse',
-                                    style: GoogleFonts.poppins(
-                                      color: Color(0xFF9489E9),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      );
-
+        ),
+      ],
+    );
   }
 }
 
@@ -294,8 +324,8 @@ class TagsAndTools extends StatefulWidget {
   @override
   State<TagsAndTools> createState() => _TagsAndToolsState();
 }
-class _TagsAndToolsState extends State<TagsAndTools> {
 
+class _TagsAndToolsState extends State<TagsAndTools> {
   final TextEditingController _controller = TextEditingController();
   final List<String> _chips = [];
 
@@ -303,8 +333,9 @@ class _TagsAndToolsState extends State<TagsAndTools> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(flex: 5,
-          child:Container(
+        Expanded(
+          flex: 5,
+          child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
             decoration: BoxDecoration(
               color: const Color(0xFFF8F8FD),
@@ -319,11 +350,12 @@ class _TagsAndToolsState extends State<TagsAndTools> {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Chip(
-                      label: Text(chip,style: GoogleFonts.poppins(
-                        color: const Color(0xFF9489E9),
-                        letterSpacing: 1.1,
-                        fontSize: 15,
-                      )),
+                      label: Text(chip,
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xFF9489E9),
+                            letterSpacing: 1.1,
+                            fontSize: 15,
+                          )),
                       onDeleted: () {
                         setState(() {
                           _chips.remove(chip);
@@ -369,9 +401,12 @@ class _TagsAndToolsState extends State<TagsAndTools> {
             ),
           ),
         ),
-        SizedBox(width: 20,),
-        Expanded(flex: 5,
-          child:DropdownButtonFormField<String>(
+        SizedBox(
+          width: 20,
+        ),
+        Expanded(
+          flex: 5,
+          child: DropdownButtonFormField<String>(
             decoration: InputDecoration(
               hintText: 'TOOLS USED',
               hintStyle: GoogleFonts.poppins(
@@ -386,7 +421,8 @@ class _TagsAndToolsState extends State<TagsAndTools> {
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide.none,
               ),
-              contentPadding: const EdgeInsets.only(left: 50,top: 16,bottom: 16),
+              contentPadding:
+                  const EdgeInsets.only(left: 50, top: 16, bottom: 16),
             ),
             style: GoogleFonts.poppins(
               color: Theme_req.piechart_outer,
@@ -394,7 +430,8 @@ class _TagsAndToolsState extends State<TagsAndTools> {
               letterSpacing: 1.1,
               fontSize: 20,
             ),
-            items: <String>['Tool 1', 'Tool 2', 'Tool 3'].map<DropdownMenuItem<String>>((String value) {
+            items: <String>['Tool 1', 'Tool 2', 'Tool 3']
+                .map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
                 child: Text(value),
@@ -407,7 +444,6 @@ class _TagsAndToolsState extends State<TagsAndTools> {
             //   // size: 25,
             // ),
           ),
-
         ),
       ],
     );
@@ -420,6 +456,7 @@ class AboutProject extends StatefulWidget {
   @override
   State<AboutProject> createState() => _AboutProjectState();
 }
+
 class _AboutProjectState extends State<AboutProject> {
   @override
   Widget build(BuildContext context) {
@@ -442,8 +479,7 @@ class _AboutProjectState extends State<AboutProject> {
               borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide.none,
             ),
-            contentPadding: EdgeInsets.only(left: 50,top: 15),
-
+            contentPadding: EdgeInsets.only(left: 50, top: 15),
           ),
           style: GoogleFonts.poppins(
             color: Theme_req.piechart_outer,
@@ -459,5 +495,3 @@ class _AboutProjectState extends State<AboutProject> {
     );
   }
 }
-
-

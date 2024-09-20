@@ -1,9 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:minor_project/Pages&Widgets/androui.dart';
 import 'package:minor_project/Pages&Widgets/chat.dart';
 import 'package:minor_project/Pages&Widgets/home.dart';
 import 'package:minor_project/Pages&Widgets/login_page.dart';
 import 'package:minor_project/Pages&Widgets/portfolio.dart';
+import 'package:minor_project/Pages&Widgets/portui.dart';
 import 'package:minor_project/Pages&Widgets/profile_visitor_view.dart';
 import 'package:minor_project/Pages&Widgets/project_upload.dart';
 import 'package:minor_project/Pages&Widgets/sign_up.dart';
@@ -24,18 +26,20 @@ class Proj extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/projectuploadform",
+      initialRoute: "/portui",
       routes: {
         "/visitorView": (context) => const ProfileVisitorView(),
+        "/portui": (context) => const PortUI(),
+        "/androui": (context) => const AndroUI(),
         "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),
-        "/portfolio": (context) =>
-            loggedIn() ? const Portfolio() : const LoginPage(),
+        "/portfolio": (context) => const Portfolio(),
+        //loggedIn() ? const Portfolio() : const LoginPage(),
         "/login": (context) =>
             loggedIn() ? const Portfolio() : const LoginPage(),
         "/signup": (context) => loggedIn() ? const Portfolio() : const SignUp(),
-        "/chat" :(context) => const Chat(),
-        "/projectuploadform":(context)=> const ProjectUpload()
+        "/chat": (context) => const Chat(),
+        "/projectuploadform": (context) => const ProjectUpload()
       },
     );
   }

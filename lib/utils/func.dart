@@ -1,6 +1,8 @@
 import 'dart:developer';
+import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +23,7 @@ final nosplashstyle = ButtonStyle(
 );
 
 link(String ch, {String? folder}) async {
-  if (folder != null) {
+  if (folder != null && ch != "") {
     return await FirebaseStorage.instance
         .ref()
         .child(folder)
@@ -30,6 +32,14 @@ link(String ch, {String? folder}) async {
   } else {
     return await FirebaseStorage.instance.ref().child(ch).getDownloadURL();
   }
+}
+
+Future<ListResult> linklist(String ch) async {
+  return await FirebaseStorage.instance.ref().child(ch).listAll();
+}
+
+dlink(Reference item) async {
+  return await item.getDownloadURL();
 }
 
 void login(
@@ -102,7 +112,20 @@ void logout() async {
 }
 
 Future<void> weblauncher(String url) async {
-  log(Uri.dataFromString(url).data.toString());
-  await launchUrl(Uri.dataFromString(url),
-      mode: LaunchMode.externalApplication);
+  // log(Uri.dataFromString(url).data.toString());
+  await launchUrl(Uri.parse(url), mode: LaunchMode.platformDefault);
+}
+
+selectnUpload() async {
+  // String uid = FirebaseAuth.instance.currentUser!.uid.toString();
+  FilePickerResult? res = await FilePicker.platform.pickFiles(
+    allowMultiple: false,
+  );
+  if (res != null) {
+    // Uint8List fdata = res.files.first.bytes!;
+    // String Filename = res.files.first.name;
+    // await FirebaseStorage.instance
+    //     .ref('$uid/project/$pUid/$Filename')
+    //     .putData(fdata);
+  }
 }

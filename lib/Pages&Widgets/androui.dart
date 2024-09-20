@@ -8,13 +8,12 @@ import 'package:minor_project/UI%20req/Colors_req.dart';
 import 'package:minor_project/utils/func.dart';
 import 'package:readmore/readmore.dart';
 
-class ProfileVisitorView extends StatelessWidget {
-  const ProfileVisitorView({super.key});
+class AndroUI extends StatelessWidget {
+  const AndroUI({super.key});
 
   @override
   Widget build(BuildContext context) {
     List<String> tagslist = [
-      "Tourism",
       "UI",
       "Figma",
       "Prototyping",
@@ -38,7 +37,7 @@ class ProfileVisitorView extends StatelessWidget {
                 [
                   const SizedBox(height: 40),
                   ReadMoreText(
-                    "Explore Japan: A User-Centric Tourism Experience ",
+                    "Andromeda: Design Journey",
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w600, fontSize: 75, height: 1.2),
                     trimMode: TrimMode.Line,
@@ -127,11 +126,12 @@ class ProfileVisitorView extends StatelessWidget {
                         BoxDecoration(borderRadius: BorderRadius.circular(40)),
                     clipBehavior: Clip.antiAlias,
                     child: FutureBuilder(
-                      future: link("1.png"),
+                      future: link("homepage - logined.png",
+                          folder: "xMKnY6mzopZbzxGXfsBeV1dnGs82"),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: 16 / 11,
+                            aspectRatio: 16 / 9,
                             child: Image.network(
                               snapshot.data.toString(),
                               fit: BoxFit.cover,
@@ -139,7 +139,7 @@ class ProfileVisitorView extends StatelessWidget {
                           );
                         }
                         return const AspectRatio(
-                          aspectRatio: 16 / 11,
+                          aspectRatio: 16 / 9,
                           child: SizedBox(
                             width: 2000,
                             height: 2000,
@@ -158,7 +158,7 @@ class ProfileVisitorView extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   SelectableText(
-                    "\"Explore Japan\" is an innovative project leveraging Figma's collaborative design platform to craft an immersive and visually captivating user interface for tourists exploring Japan. The project aims to merge the power of Figma's design tools with the essence of Japanese culture to create an engaging digital experience for travelers.",
+                    "Andromeda is a platform that empowers designers by offering tools for showcasing work, accessing design courses, finding freelance gigs, and networking. Unlike developers with platforms like GitHub, designers lack a dedicated space for growth. Andromeda fills this gap with online portfolios, a job board, and community collaboration through chat features.",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       fontSize: 18,
@@ -166,7 +166,7 @@ class ProfileVisitorView extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   SelectableText(
-                    "Key Features:",
+                    "Andromeda addresses this gap by providing:",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       fontSize: 18,
@@ -174,42 +174,28 @@ class ProfileVisitorView extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   SelectableText(
-                    "1. Responsive Design🚀",
+                    "1. Online Portfolios",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
                   ),
                   SelectableText(
-                    "2. Component Libraries📚",
+                    "2. Resources",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
                   ),
                   SelectableText(
-                    "3. Prototype Interactions🤖",
+                    "3. Freelance Opportunities",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
                   ),
                   SelectableText(
-                    "4. Collaborative Design Process🙌",
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
-                  SelectableText(
-                    "5. Accessibility Considerations",
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
-                  SelectableText(
-                    "6. Localization Support",
+                    "4. Community Collaboration ",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -250,11 +236,11 @@ class ProfileVisitorView extends StatelessWidget {
                         BoxDecoration(borderRadius: BorderRadius.circular(40)),
                     clipBehavior: Clip.antiAlias,
                     child: FutureBuilder(
-                      future: link("japan.png"),
+                      future: link("ANDROMEDA.png"),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: 16 / 11,
+                            aspectRatio: 16 / 9,
                             child: Image.network(
                               snapshot.data.toString(),
                               fit: BoxFit.cover,
@@ -262,7 +248,7 @@ class ProfileVisitorView extends StatelessWidget {
                           );
                         }
                         return const AspectRatio(
-                          aspectRatio: 16 / 11,
+                          aspectRatio: 16 / 9,
                           child: SizedBox(
                             width: 2000,
                             height: 2000,

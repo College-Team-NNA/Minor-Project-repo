@@ -8,13 +8,12 @@ import 'package:minor_project/UI%20req/Colors_req.dart';
 import 'package:minor_project/utils/func.dart';
 import 'package:readmore/readmore.dart';
 
-class ProfileVisitorView extends StatelessWidget {
-  const ProfileVisitorView({super.key});
+class PortUI extends StatelessWidget {
+  const PortUI({super.key});
 
   @override
   Widget build(BuildContext context) {
     List<String> tagslist = [
-      "Tourism",
       "UI",
       "Figma",
       "Prototyping",
@@ -38,7 +37,7 @@ class ProfileVisitorView extends StatelessWidget {
                 [
                   const SizedBox(height: 40),
                   ReadMoreText(
-                    "Explore Japan: A User-Centric Tourism Experience ",
+                    "Bento Box Web Portfolio UI",
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w600, fontSize: 75, height: 1.2),
                     trimMode: TrimMode.Line,
@@ -127,11 +126,12 @@ class ProfileVisitorView extends StatelessWidget {
                         BoxDecoration(borderRadius: BorderRadius.circular(40)),
                     clipBehavior: Clip.antiAlias,
                     child: FutureBuilder(
-                      future: link("1.png"),
+                      future: link("portfolio ui.png",
+                          folder: "xMKnY6mzopZbzxGXfsBeV1dnGs82"),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: 16 / 11,
+                            aspectRatio: 16 / 9,
                             child: Image.network(
                               snapshot.data.toString(),
                               fit: BoxFit.cover,
@@ -139,7 +139,7 @@ class ProfileVisitorView extends StatelessWidget {
                           );
                         }
                         return const AspectRatio(
-                          aspectRatio: 16 / 11,
+                          aspectRatio: 16 / 9,
                           child: SizedBox(
                             width: 2000,
                             height: 2000,
@@ -158,7 +158,7 @@ class ProfileVisitorView extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   SelectableText(
-                    "\"Explore Japan\" is an innovative project leveraging Figma's collaborative design platform to craft an immersive and visually captivating user interface for tourists exploring Japan. The project aims to merge the power of Figma's design tools with the essence of Japanese culture to create an engaging digital experience for travelers.",
+                    "I recently designed a Grid-based user interface (UI) for my personal web portfolio using Figma and Photoshop, focusing on creating a clean and organized layout. This multipage portfolio showcases my projects, experiences, and skills in a visually appealing and professional manner. The Grid UI enhances usability by providing a structured and responsive design, making it easy for visitors to navigate through different sections. Each page highlights my expertise in front-end development, UI/UX design, and various projects, with a cohesive style across the site. From the initial wireframes to the final design, the portfolio reflects my creativity and technical skills, offering an immersive user experience across devices.",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       fontSize: 18,
@@ -166,50 +166,28 @@ class ProfileVisitorView extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   SelectableText(
-                    "Key Features:",
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 18,
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                  SelectableText(
-                    "1. Responsive Design🚀",
+                    "1. Wireframing in Figma",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
                   ),
                   SelectableText(
-                    "2. Component Libraries📚",
+                    "2. Designing Visuals in Photoshop",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
                   ),
                   SelectableText(
-                    "3. Prototype Interactions🤖",
+                    "3. Responsive Design",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
                   ),
                   SelectableText(
-                    "4. Collaborative Design Process🙌",
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
-                  SelectableText(
-                    "5. Accessibility Considerations",
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
-                  SelectableText(
-                    "6. Localization Support",
+                    "4. Prototyping",
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -250,19 +228,19 @@ class ProfileVisitorView extends StatelessWidget {
                         BoxDecoration(borderRadius: BorderRadius.circular(40)),
                     clipBehavior: Clip.antiAlias,
                     child: FutureBuilder(
-                      future: link("japan.png"),
+                      future: link("Group 2409.png"),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: 16 / 11,
+                            aspectRatio: 16 / 14,
                             child: Image.network(
                               snapshot.data.toString(),
-                              fit: BoxFit.cover,
+                              fit: BoxFit.fitWidth,
                             ),
                           );
                         }
                         return const AspectRatio(
-                          aspectRatio: 16 / 11,
+                          aspectRatio: 16 / 14,
                           child: SizedBox(
                             width: 2000,
                             height: 2000,

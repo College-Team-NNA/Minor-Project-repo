@@ -1,67 +1,143 @@
+import 'dart:convert';
+
 import 'package:firebase_auth/firebase_auth.dart';
 
 class UserDetail {
   String uid;
   String username;
   String email;
-  String about =
-      "Takimata sit sit ut amet aliquyam vero elitr diam, justo et amet lorem no gubergren est, sea at kasd rebum. Duo amet justo sadipscing sed nonumy. Ipsum sed consetetur lorem voluptua takimata.";
-  Map<String, double> progress = {
-    "assignment_done": 75,
-    "total_assignment": 100,
-    "lecture_done": 20,
-    "total_lecture": 30
-  };
-  static List<chartdata> graph_1 = [
-    chartdata("", 0),
-    chartdata('Jan', 2),
-    chartdata('Feb', 3),
-    chartdata('Mar', 2),
-    chartdata('Apr', 3.5),
-    chartdata('May', 2.2),
-    chartdata('Jun', 1.2),
-    chartdata('Jul', 2),
+  String? designation;
+  String? about;
+  String? website;
+  String? phone;
+  String? joindate;
+  String? linkedin;
+  String? instagram;
+  String? meta;
+  String? github;
+  String? behance;
+
+  static List<ChartData> graph_1 = [
+    ChartData("", 0),
+    ChartData('Jan', 2),
+    ChartData('Feb', 3),
+    ChartData('Mar', 2),
+    ChartData('Apr', 3.5),
+    ChartData('May', 2.2),
+    ChartData('Jun', 1.2),
+    ChartData('Jul', 2),
   ];
-  static List<chartdata> graph_2 = [
-    chartdata('', 0),
-    chartdata('Jan', 1),
-    chartdata('Feb', 0),
-    chartdata('Mar', 0),
-    chartdata('Apr', 0),
-    chartdata('May', 1),
-    chartdata('Jun', 0),
-    chartdata('Jul', 1),
+  static List<ChartData> graph_2 = [
+    ChartData('', 0),
+    ChartData('Jan', 1),
+    ChartData('Feb', 0),
+    ChartData('Mar', 0),
+    ChartData('Apr', 0),
+    ChartData('May', 1),
+    ChartData('Jun', 0),
+    ChartData('Jul', 1),
   ];
 
-  UserDetail({required this.email, required this.username})
-      : uid = FirebaseAuth.instance.currentUser!.uid.toString();
-
-  // void addDetail(
-  //   Map<String, double> progress,
-  //   List graph,
-  //   String profilePic,
-  // ) {
-  //   this.progress = progress;
-  // }
+  UserDetail({
+    required this.username,
+    required this.email,
+    this.designation,
+    this.about,
+    this.website,
+    this.phone,
+    this.joindate,
+    this.linkedin,
+    this.instagram,
+    this.meta,
+    this.github,
+    this.behance,
+  }) : uid = FirebaseAuth.instance.currentUser!.uid.toString();
 
   Map<String, dynamic> toMap() {
     return {
-      "uid": uid,
-      "name": username,
-      "email": email,
-      "graph_1": graph_1,
-      "graph_2": graph_2,
-      "progress": progress,
+      'uid': uid,
+      'username': username,
+      'email': email,
+      'designation': designation,
+      'about': about,
+      'website': website,
+      'phone': phone,
+      'joindate': joindate,
+      'linkedin': linkedin,
+      'instagram': instagram,
+      'meta': meta,
+      'github': github,
+      'behance': behance,
     };
+  }
+
+  factory UserDetail.fromMap(Map<String, dynamic> map) {
+    return UserDetail(
+      username: map['username'] ?? '',
+      email: map['email'] ?? '',
+      designation: map['designation'],
+      about: map['about'],
+      website: map['website'],
+      phone: map['phone'],
+      joindate: map['joindate'],
+      linkedin: map['linkedin'],
+      instagram: map['instagram'],
+      meta: map['meta'],
+      github: map['github'],
+      behance: map['behance'],
+    );
   }
 }
 
-class chartdata {
+class ChartData {
   String month = "";
   double data = 0;
-  chartdata(month,data) {
-    this.month=month;
-    this.data=data;
+  ChartData(month, data) {
+    this.month = month;
+    this.data = data;
+  }
+}
+
+class ProjectDetails {
+  String? pUid;
+  String? oUid;
+  String? projectTitle;
+  String? about;
+  List? tags;
+  List? toolsUsed;
+  ProjectDetails({
+    this.pUid,
+    this.oUid,
+    this.projectTitle,
+    this.about,
+    this.tags,
+    this.toolsUsed,
+  });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'pUid': pUid,
+      'oUid': oUid,
+      'projectTitle': projectTitle,
+      'about': about,
+      'tags': tags,
+      'toolsUsed': toolsUsed,
+    };
   }
 
+  factory ProjectDetails.fromMap(Map<String, dynamic> map) {
+    return ProjectDetails(
+      pUid: map['pUid'],
+      oUid: map['oUid'],
+      projectTitle: map['projectTitle'],
+      about: map['about'],
+      tags: map['tags'],
+      toolsUsed: map['toolsUsed'],
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory ProjectDetails.fromJson(String source) =>
+      ProjectDetails.fromMap(json.decode(source));
 }

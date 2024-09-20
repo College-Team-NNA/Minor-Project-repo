@@ -65,38 +65,38 @@ class _ProfileTabState extends State<ProfileTab> {
                   right: 50, // Adjust the positioning as needed
                   child: Column(
                     children: [
-                      CircleAvatar(
-                          radius: widget.size.width *
-                              0.03, // Radius of the CircleAvatar
-                          backgroundColor: Theme_req.bio_name,
-                          child: FutureBuilder(
-                              future: link("Vector.png"),
-                              builder: (context, snapshot) {
-                                if (!snapshot.hasData &&
-                                    snapshot.data == null) {
-                                  return const Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: CircularProgressIndicator(),
-                                  );
-                                }
-                                return Image.network(snapshot.data.toString());
-                              })),
+                      FutureBuilder(
+                          future: link("3dmodel 1.png"),
+                          builder: (context, snapshot) {
+                            if (!snapshot.hasData && snapshot.data == null) {
+                              return const Padding(
+                                padding: EdgeInsets.all(12.0),
+                                child: CircularProgressIndicator(),
+                              );
+                            }
+                            return CircleAvatar(
+                              radius: MediaQuery.of(context).size.width * 0.03,
+                              backgroundColor: Theme_req.bio_name,
+                              backgroundImage:
+                                  NetworkImage(snapshot.data.toString()),
+                            );
+                          }),
                       Text(
-                        "@aryajha",
+                        "@itsnemo",
                         style: GoogleFonts.montserrat(
                             color: Theme_req.bio_name,
                             fontWeight: FontWeight.w500,
                             fontSize: Theme_req.mtxt_size),
                       ),
                       Text(
-                        "Arya Jha",
+                        "Naman Dixit",
                         style: GoogleFonts.montserrat(
                             color: Theme_req.bio_name,
                             fontWeight: FontWeight.w900,
                             fontSize: Theme_req.ltxt_size),
                       ),
                       Text(
-                        "Flutter Developer",
+                        "UI/UX Designer",
                         style: GoogleFonts.montserrat(
                             color: Theme_req.bio_name,
                             fontWeight: FontWeight.w600,
@@ -106,13 +106,12 @@ class _ProfileTabState extends State<ProfileTab> {
                       OutlinedButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          minimumSize:
-                              WidgetStateProperty.all(const Size.fromHeight(40)),
-                          shape: WidgetStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8))),
-                          side: WidgetStateProperty.all(const
-                              BorderSide(color: Theme_req.follow_btn)),
+                          minimumSize: WidgetStateProperty.all(
+                              const Size.fromHeight(40)),
+                          shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8))),
+                          side: WidgetStateProperty.all(
+                              const BorderSide(color: Theme_req.follow_btn)),
                         ),
                         child: const Text(
                           "Edit Profile",
@@ -123,18 +122,18 @@ class _ProfileTabState extends State<ProfileTab> {
                       const SizedBox(
                         height: 8,
                       ),
-                      SizedBox(
-                        child: SingleChildScrollView(
-                          child: ReadMoreText(
-                            "Takimata sit sit ut amet aliquyam vero elitr diam, justo et amet lorem no gubergren est, sea at kasd rebum. Duo amet justo sadipscing sed nonumy. Ipsum sed consetetur lorem voluptua takimata.",
-                            trimMode: TrimMode.Line,
-                            trimLines: 2,
-                            colorClickableText: Theme_req.piechart_outer,
-                            trimCollapsedText: 'Show more',
-                            trimExpandedText: 'Show less',
-                            textScaler: const TextScaler.linear(1.3),
-                            style: GoogleFonts.montserrat(
-                                fontSize: Theme_req.stxt_size),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height * 0.08,
+                        child: Expanded(
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.vertical,
+                            child: Text(
+                              "Naman Dixit known affectionately as Nemo, a 21-year-old Frontend Developer, UI/UX designer, and Graphic Designer from India. Driven by the ideology \"I can be better than them\", Nemo strives for excellence in  every project. Nemo is passionate about creating Visually appealing and User-Friendly digital experiences.",
+                              textScaler: const TextScaler.linear(1.3),
+                              style: GoogleFonts.montserrat(
+                                  fontSize: Theme_req.stxt_size),
+                            ),
                           ),
                         ),
                       ),
@@ -211,7 +210,7 @@ class _ProfileTabState extends State<ProfileTab> {
                     ),
                     const Spacer(),
                     Text(
-                      "jhaarya1002@gmail.com",
+                      "namandixit518@gmail.com",
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
@@ -238,7 +237,7 @@ class _ProfileTabState extends State<ProfileTab> {
                     ),
                     const Spacer(),
                     Text(
-                      "+91 8750728921",
+                      "+91 9643200089",
                       style: GoogleFonts.montserrat(
                           color: Theme_req.black,
                           fontWeight: FontWeight.w500,
@@ -309,11 +308,11 @@ class _ProfileTabState extends State<ProfileTab> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ContactButton(context, FontAwesomeIcons.linkedin,
-                          'www.linkedin.com/in/naman-goel-c3306/'),
-                      ContactButton(context, FontAwesomeIcons.instagram, () {}),
-                      ContactButton(context, FontAwesomeIcons.meta, () {}),
-                      ContactButton(context, FontAwesomeIcons.github, () {}),
-                      ContactButton(context, FontAwesomeIcons.behance, () {}),
+                          'https://www.linkedin.com/in/itsnemo/'),
+                      ContactButton(context, FontAwesomeIcons.instagram, ""),
+                      ContactButton(context, FontAwesomeIcons.meta, ""),
+                      ContactButton(context, FontAwesomeIcons.github, ""),
+                      ContactButton(context, FontAwesomeIcons.behance, ""),
                     ],
                   ),
                 )
