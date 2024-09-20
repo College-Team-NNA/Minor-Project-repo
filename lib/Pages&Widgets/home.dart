@@ -17,341 +17,355 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar:
-            AppBar(actions: [loggedIn() ? const navBar() : const DefNavBar()]),
-        body: CustomScrollView(
-          slivers: [
-            SliverList(
-              delegate: SliverChildListDelegate(
-                [
-                  Container(
-                    color: Theme_req.offWhite,
-                    child: Column(
-                      children: [
-                        Container(
-                          height: MediaQuery.of(context).size.height *
-                              0.45, // 50% of screen height
-                          width: MediaQuery.of(context).size.width,
-                          color: Theme_req.offWhite,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  RichText(
-                                    textAlign: TextAlign
-                                        .center, // Center-align the text
-                                    text: TextSpan(
-                                      style: DefaultTextStyle.of(context)
-                                          .style
-                                          .copyWith(
-                                              color: const Color(
-                                                  0xFF9489E9)), // Default text color
-                                      children: [
-                                        TextSpan(
-                                          text: 'Welcome to\nthe new ',
-                                          style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w600,
-                                            decoration: TextDecoration.none,
-                                            fontSize: 60,
-                                            height: 1,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text: 'ORIGINS',
-                                          style: GoogleFonts.arefRuqaaInk(
-                                            fontWeight: FontWeight.w600,
-                                            color: const Color(0xFF070707),
-                                            decoration: TextDecoration.none,
-                                            fontSize: 60,
-                                            height: 1,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  const Positioned(
-                                    top: -2,
-                                    right: 15,
-                                    left: 430,
-                                    child: Icon(
-                                      Icons.auto_awesome,
-                                      size: 35,
-                                      color: Color(0xFF070707),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.05,
-                                width: MediaQuery.of(context).size.width * 0.2,
-                                color: const Color(0xFFE0E0E4),
-                                child: Row(
-                                  children: [
-                                    const Expanded(
-                                        child: TextField(
-                                      textAlign: TextAlign.left,
-                                      decoration: InputDecoration(
-                                        hintText: 'Type to search',
-                                        hintStyle: TextStyle(
-                                          color: Color(0xFFACACAC),
-                                          fontSize: 15.0,
-                                        ),
-                                        contentPadding: EdgeInsets.all(15.0),
-                                        border: InputBorder.none,
-                                      ),
-                                    )),
-                                    const Spacer(),
-                                    IconButton(
-                                        onPressed: () {},
-                                        icon: const Icon(Icons.search))
-                                  ],
-                                ),
-                              ),
-                              const Text(
-                                  "Tip: Search using tags for better results."),
-                            ],
-                          ),
-                        ),
-                        LayoutBuilder(
-                          builder: (context, constraints) {
-                            return CustomPaint(
-                              size: Size(constraints.maxWidth,
-                                  2), // 70% of screen width
-                              painter: TaperedDividerPainter(),
-                            );
-                          },
-                        ),
-                        const TopColumn(),
-                      ],
-                    ),
-                  ),
-                  const TopDesign(),
-                  const NewJoinee(),
-                  Container(
-                    color: Colors.black,
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height *
-                              0.4, // 30% of screen height
-                          color: Colors.black,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
+      appBar:
+          AppBar(actions: [loggedIn() ? const navBar() : const DefNavBar()]),
+      body: CustomScrollView(
+        slivers: [
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Container(
+                  color: Theme_req.offWhite,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height *
+                            0.45, // 50% of screen height
+                        width: MediaQuery.of(context).size.width,
+                        color: Theme_req.offWhite,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Stack(
+                              alignment: Alignment.center,
                               children: [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                RichText(
+                                  textAlign:
+                                      TextAlign.center, // Center-align the text
+                                  text: TextSpan(
+                                    style: DefaultTextStyle.of(context)
+                                        .style
+                                        .copyWith(
+                                            color: const Color(
+                                                0xFF9489E9)), // Default text color
                                     children: [
-                                      Stack(
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal:
-                                                    30.0), // Adjust as necessary
-                                            child: Text(
-                                              "Top Artists ",
-                                              style: GoogleFonts.poppins(
-                                                fontWeight: FontWeight.w600,
-                                                decoration: TextDecoration.none,
-                                                fontSize: 30,
-                                                color: Theme_req.white,
-                                              ),
-                                            ),
-                                          ),
-                                          const Positioned(
-                                            top: 3,
-                                            left: 195,
-                                            child: Icon(
-                                              Icons.auto_awesome,
-                                              size: 20,
-                                              color: Theme_req.white,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 30.0),
-                                        child: Text(
-                                          "Collab with the best",
-                                          style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w300,
-                                            decoration: TextDecoration.none,
-                                            fontSize: 19,
-                                            color: Theme_req.white,
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Center(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        GestureDetector(
-                                          child: buildProfile(
-                                              '3dmodel 1.png', // Replace with the actual image asset
-                                              'Naman Dixit',
-                                              'UI/UX Designer',
-                                              context),
-                                          onTap: ()=>Navigator.pushNamed(context,"/"),
-                                        ),
-                                        const SizedBox(width: 50),
-                                        buildProfile(
-                                            'miles.png', // Replace with the actual image asset
-                                            'Miles Anderson',
-                                            'Graphic Designer',
-                                            context),
-                                        const SizedBox(width: 50),
-                                        buildProfile(
-                                            'owen.png', // Replace with the actual image asset
-                                            'Owen Parker',
-                                            'Web Designer',
-                                            context),
-                                        const SizedBox(width: 50),
-                                        buildProfile(
-                                            'jasper.png', // Replace with the actual image asset
-                                            'Jasper Collins',
-                                            'Product Designer',
-                                            context),
-                                        const SizedBox(width: 50),
-                                        buildProfile(
-                                            'zara.png', // Replace with the actual image asset
-                                            'Zara Reed',
-                                            'Digital Illustrator',
-                                            context),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        LayoutBuilder(
-                          builder: (context, constraints) {
-                            return CustomPaint(
-                              size: Size(constraints.maxWidth,
-                                  2), // 70% of screen width
-                              painter: TaperedDividerPainter(),
-                            );
-                          },
-                        ),
-                        Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height *
-                              0.6, // 70% of screen height
-                          color: Colors.black,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Stack(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal:
-                                            30.0), // Adjust as necessary
-                                    child: RichText(
-                                      textAlign: TextAlign.center,
-                                      text: TextSpan(
-                                        text: "GET\nINSPIRED ",
+                                      TextSpan(
+                                        text: 'Welcome to\nthe new ',
                                         style: GoogleFonts.poppins(
                                           fontWeight: FontWeight.w600,
                                           decoration: TextDecoration.none,
                                           fontSize: 60,
                                           height: 1,
-                                          color: Theme_req.white,
                                         ),
                                       ),
-                                    ),
+                                      TextSpan(
+                                        text: 'ORIGINS',
+                                        style: GoogleFonts.arefRuqaaInk(
+                                          fontWeight: FontWeight.w600,
+                                          color: const Color(0xFF070707),
+                                          decoration: TextDecoration.none,
+                                          fontSize: 60,
+                                          height: 1,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  const Positioned(
-                                    top: 3,
-                                    left: 230,
-                                    child: Icon(
-                                      Icons.auto_awesome,
-                                      size: 15,
-                                      color: Theme_req.white,
-                                    ),
+                                ),
+                                const Positioned(
+                                  top: -2,
+                                  right: 15,
+                                  left: 430,
+                                  child: Icon(
+                                    Icons.auto_awesome,
+                                    size: 35,
+                                    color: Color(0xFF070707),
                                   ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              width: MediaQuery.of(context).size.width * 0.2,
+                              color: const Color(0xFFE0E0E4),
+                              child: Row(
+                                children: [
+                                  const Expanded(
+                                      child: TextField(
+                                    textAlign: TextAlign.left,
+                                    decoration: InputDecoration(
+                                      hintText: 'Type to search',
+                                      hintStyle: TextStyle(
+                                        color: Color(0xFFACACAC),
+                                        fontSize: 15.0,
+                                      ),
+                                      contentPadding: EdgeInsets.all(15.0),
+                                      border: InputBorder.none,
+                                    ),
+                                  )),
+                                  const Spacer(),
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: const Icon(Icons.search))
                                 ],
                               ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              Container(
-                                padding: const EdgeInsets.all(2),
-                                height:
-                                    MediaQuery.of(context).size.height * 0.05,
-                                width: MediaQuery.of(context).size.width * 0.2,
-                                // color: const Color(0xFF222222),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    color: const Color(0xFF222222)),
-                                child: Row(
+                            ),
+                            const Text(
+                                "Tip: Search using tags for better results."),
+                          ],
+                        ),
+                      ),
+                      LayoutBuilder(
+                        builder: (context, constraints) {
+                          return CustomPaint(
+                            size: Size(
+                                constraints.maxWidth, 2), // 70% of screen width
+                            painter: TaperedDividerPainter(),
+                          );
+                        },
+                      ),
+                      const TopColumn(),
+                    ],
+                  ),
+                ),
+                const TopDesign(),
+                const NewJoinee(),
+                Container(
+                  color: Colors.black,
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height *
+                            0.4, // 30% of screen height
+                        color: Colors.black,
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Expanded(
-                                        child: TextField(
-                                      textAlign: TextAlign.left,
-                                      decoration: InputDecoration(
-                                        hintText: 'Type to search',
-                                        hintStyle: TextStyle(
-                                          color: Color(0xFFACACAC),
-                                          fontSize: 15.0,
+                                    Stack(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal:
+                                                  30.0), // Adjust as necessary
+                                          child: Text(
+                                            "Top Artists ",
+                                            style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              decoration: TextDecoration.none,
+                                              fontSize: 30,
+                                              color: Theme_req.white,
+                                            ),
+                                          ),
                                         ),
-                                        contentPadding: EdgeInsets.all(15.0),
-                                        border: InputBorder.none,
-                                      ),
-                                    )),
-                                    const Spacer(),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                          color: Theme_req.black),
-                                      child: Center(
-                                        child: IconButton(
-                                            onPressed: () {},
-                                            icon: const Icon(
-                                              Icons.search,
-                                              color: Color(0xFFACACAC),
-                                              size: 20,
-                                            )),
+                                        const Positioned(
+                                          top: 3,
+                                          left: 195,
+                                          child: Icon(
+                                            Icons.auto_awesome,
+                                            size: 20,
+                                            color: Theme_req.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 30.0),
+                                      child: Text(
+                                        "Collab with the best",
+                                        style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.w300,
+                                          decoration: TextDecoration.none,
+                                          fontSize: 19,
+                                          color: Theme_req.white,
+                                        ),
                                       ),
                                     )
                                   ],
                                 ),
                               ),
-                              const Text(
-                                "Tip: Search using tags for better results.",
-                                style: TextStyle(color: Theme_req.white),
+                              Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      GestureDetector(
+                                        child: buildProfile(
+                                            '3dmodel 1.png', // Replace with the actual image asset
+                                            'Naman Dixit',
+                                            'UI/UX Designer',
+                                            context),
+                                        onTap: () =>
+                                            Navigator.pushNamed(context, "/"),
+                                      ),
+                                      const SizedBox(width: 50),
+                                      buildProfile(
+                                          'miles.png', // Replace with the actual image asset
+                                          'Miles Anderson',
+                                          'Graphic Designer',
+                                          context),
+                                      const SizedBox(width: 50),
+                                      buildProfile(
+                                          'owen.png', // Replace with the actual image asset
+                                          'Owen Parker',
+                                          'Web Designer',
+                                          context),
+                                      const SizedBox(width: 50),
+                                      buildProfile(
+                                          'jasper.png', // Replace with the actual image asset
+                                          'Jasper Collins',
+                                          'Product Designer',
+                                          context),
+                                      const SizedBox(width: 50),
+                                      buildProfile(
+                                          'zara.png', // Replace with the actual image asset
+                                          'Zara Reed',
+                                          'Digital Illustrator',
+                                          context),
+                                    ],
+                                  ),
+                                ),
                               ),
                             ],
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                      LayoutBuilder(
+                        builder: (context, constraints) {
+                          return CustomPaint(
+                            size: Size(
+                                constraints.maxWidth, 2), // 70% of screen width
+                            painter: TaperedDividerPainter(),
+                          );
+                        },
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height *
+                            0.6, // 70% of screen height
+                        color: Colors.black,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Stack(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 30.0), // Adjust as necessary
+                                  child: RichText(
+                                    textAlign: TextAlign.center,
+                                    text: TextSpan(
+                                      text: "GET\nINSPIRED ",
+                                      style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.w600,
+                                        decoration: TextDecoration.none,
+                                        fontSize: 60,
+                                        height: 1,
+                                        color: Theme_req.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const Positioned(
+                                  top: 3,
+                                  left: 230,
+                                  child: Icon(
+                                    Icons.auto_awesome,
+                                    size: 15,
+                                    color: Theme_req.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              padding: const EdgeInsets.all(2),
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              width: MediaQuery.of(context).size.width * 0.2,
+                              // color: const Color(0xFF222222),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: const Color(0xFF222222)),
+                              child: Row(
+                                children: [
+                                  const Expanded(
+                                      child: TextField(
+                                    textAlign: TextAlign.left,
+                                    decoration: InputDecoration(
+                                      hintText: 'Type to search',
+                                      hintStyle: TextStyle(
+                                        color: Color(0xFFACACAC),
+                                        fontSize: 15.0,
+                                      ),
+                                      contentPadding: EdgeInsets.all(15.0),
+                                      border: InputBorder.none,
+                                    ),
+                                  )),
+                                  const Spacer(),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        color: Theme_req.black),
+                                    child: Center(
+                                      child: IconButton(
+                                          onPressed: () {},
+                                          icon: const Icon(
+                                            Icons.search,
+                                            color: Color(0xFFACACAC),
+                                            size: 20,
+                                          )),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            const Text(
+                              "Tip: Search using tags for better results.",
+                              style: TextStyle(color: Theme_req.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(40),
+                topLeft: Radius.circular(40),
+                bottomLeft: Radius.circular(40),
+                bottomRight: Radius.circular(8))),
+        onPressed: () => Navigator.pushNamed(context, "/chat"),
+        backgroundColor: Theme_req.follow_btn.withOpacity(0.8),
+        child: Transform.flip(
+          flipX: true,
+          child: const Icon(
+            Icons.menu,
+            size: 36,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
   }
 }
 

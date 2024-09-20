@@ -26,20 +26,24 @@ class Proj extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/portui",
+      initialRoute: "/homepage",
       routes: {
-        "/visitorView": (context) => const ProfileVisitorView(),
-        "/portui": (context) => const PortUI(),
-        "/androui": (context) => const AndroUI(),
+        "/visitorView": (context) =>
+            !loggedIn() ? const LoginPage() : const ProfileVisitorView(),
+        "/portui": (context) =>
+            !loggedIn() ? const LoginPage() : const PortUI(),
+        "/androui": (context) =>
+            !loggedIn() ? const LoginPage() : const AndroUI(),
         "/underconstruction": (context) => const UnderConstructionPage(),
         "/homepage": (context) => const HomePage(),
-        "/portfolio": (context) => const Portfolio(),
-        //loggedIn() ? const Portfolio() : const LoginPage(),
+        "/portfolio": (context) =>
+            loggedIn() ? const Portfolio() : const LoginPage(),
         "/login": (context) =>
             loggedIn() ? const Portfolio() : const LoginPage(),
         "/signup": (context) => loggedIn() ? const Portfolio() : const SignUp(),
-        "/chat": (context) => const Chat(),
-        "/projectuploadform": (context) => const ProjectUpload()
+        "/chat": (context) => loggedIn() ? const Chat() : const LoginPage(),
+        "/projectuploadform": (context) =>
+            !loggedIn() ? const LoginPage() : const ProjectUpload()
       },
     );
   }

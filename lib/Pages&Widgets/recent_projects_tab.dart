@@ -67,19 +67,18 @@ class _RecentProjectsTabState extends State<RecentProjectsTab> {
                                           Navigator.pushNamed(
                                               context, "/projectuploadform");
                                         }
-                                        if (index == 1) {
+                                        if (index == 2) {
                                           Navigator.pushNamed(
                                               context, "/visitorView");
                                         }
-                                        if (index == 2) {
-                                          Navigator.pushNamed(
-                                              context, "/portui");
-                                        }                                        
                                         if (index == 3) {
                                           Navigator.pushNamed(
-                                              context, "/projectuploadform");
-                                        }                                        
-
+                                              context, "/portui");
+                                        }
+                                        if (index == 1) {
+                                          Navigator.pushNamed(
+                                              context, "/androui");
+                                        }
                                       },
                                     );
                                   } else {
