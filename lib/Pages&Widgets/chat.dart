@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:minor_project/Pages&Widgets/def_nav_bar.dart';
@@ -14,6 +15,7 @@ class Chat extends StatefulWidget {
 
 class _ChatState extends State<Chat> {
   String? selectedUser;
+  String? chatId;
   String? selectedUserImage;
   int? selectedIndex; // Add selectedIndex state
 
@@ -21,10 +23,11 @@ class _ChatState extends State<Chat> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme_req.offWhite,
-      appBar: AppBar(actions: [loggedIn() ? const navBar() : const DefNavBar()]),
+      appBar:
+          AppBar(actions: [loggedIn() ? const navBar() : const DefNavBar()]),
       body: Padding(
-        padding: const EdgeInsets.only(
-            left: 30.0, right: 30.0, top: 10, bottom: 20),
+        padding:
+            const EdgeInsets.only(left: 30.0, right: 30.0, top: 10, bottom: 20),
         child: Row(
           children: [
             Expanded(
@@ -68,7 +71,13 @@ class _ChatState extends State<Chat> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    // ListView.separated(
+                    //   itemCount: itemCount
+                    //   itemBuilder: itemBuilder,
+                    //   separatorBuilder: separatorBuilder,
+                    //   ),
+
+                    const SizedBox(height: 10),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -88,7 +97,9 @@ class _ChatState extends State<Chat> {
                         isPinned: true,
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -100,8 +111,7 @@ class _ChatState extends State<Chat> {
                       child: CustomChatCard(
                         profileImage: "pfp2.png",
                         name: 'Naman Dixit',
-                        message:
-                        'Designs are ready, review now for changes...',
+                        message: 'Designs are ready, review now for changes...',
                         time: '12m',
                         notificationCount: 2,
                         isOnline: true,
@@ -109,7 +119,9 @@ class _ChatState extends State<Chat> {
                         isPinned: true,
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -148,10 +160,11 @@ class _ChatState extends State<Chat> {
   }
 }
 
-
-Widget chatBox(BuildContext context, String selectedUser, String selectedUserImage) {
+Widget chatBox(
+    BuildContext context, String selectedUser, String selectedUserImage) {
   return Container(
-    padding: const EdgeInsets.only(left: 18.0, right: 18.0, top: 18, bottom: 18),
+    padding:
+        const EdgeInsets.only(left: 18.0, right: 18.0, top: 18, bottom: 18),
     height: MediaQuery.of(context).size.height,
     width: MediaQuery.of(context).size.width,
     decoration: BoxDecoration(
@@ -163,14 +176,15 @@ Widget chatBox(BuildContext context, String selectedUser, String selectedUserIma
         Row(
           children: [
             FutureBuilder(
-                future: link(selectedUserImage), // Use dynamic image based on selected user
+                future: link(
+                    selectedUserImage), // Use dynamic image based on selected user
                 builder: (context, snapshot) {
                   return snapshot.connectionState == ConnectionState.done
                       ? Image.network(
-                    snapshot.data.toString(),
-                    height: 50.0,
-                    width: 50.0,
-                  )
+                          snapshot.data.toString(),
+                          height: 50.0,
+                          width: 50.0,
+                        )
                       : const Center(child: CircularProgressIndicator());
                 }),
             const SizedBox(
@@ -231,15 +245,15 @@ Widget chatBox(BuildContext context, String selectedUser, String selectedUserIma
               ),
               const Expanded(
                   child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Your message",
-                      hintStyle: TextStyle(
-                        color: Color(0xFF3E3E3E),
-                        fontSize: 13,
-                      ),
-                    ),
-                  )),
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Your message",
+                  hintStyle: TextStyle(
+                    color: Color(0xFF3E3E3E),
+                    fontSize: 13,
+                  ),
+                ),
+              )),
               const Spacer(),
               IconButton(
                   onPressed: () {},
@@ -260,7 +274,6 @@ Widget chatBox(BuildContext context, String selectedUser, String selectedUserIma
     ),
   );
 }
-
 
 class CustomChatCard extends StatelessWidget {
   final String profileImage;

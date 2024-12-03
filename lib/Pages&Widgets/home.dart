@@ -206,8 +206,8 @@ class _HomePageState extends State<HomePage> {
                                             'Naman Dixit',
                                             'UI/UX Designer',
                                             context),
-                                        onTap: () =>
-                                            Navigator.pushNamed(context, "/"),
+                                        onTap: () => Navigator.pushNamed(
+                                            context, "/portfolio"),
                                       ),
                                       const SizedBox(width: 50),
                                       buildProfile(

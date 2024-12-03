@@ -46,7 +46,7 @@ class Proj extends StatelessWidget {
         "/projectuploadform": (context) =>
             !loggedIn() ? const LoginPage() : const ProjectUpload(),
         "/editprofile": (context) =>
-            !loggedIn() ? const LoginPage() : const EditProfile()
+            !loggedIn() ? const LoginPage() : const EditProfile(),
       },
     );
   }
